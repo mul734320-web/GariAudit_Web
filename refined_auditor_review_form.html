@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/10 bg-white dark:bg-background-dark px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3 text-primary dark:text-slate-100">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-tight">GariAudit</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Auditors</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Reports</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Feedback</a>
+</nav>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaZ906uhuBhSk6xlfuIbvVp89GpW_RT_cAVGnerrCF8AIzlFOWhnNwG4qF_E1msT3FuNd2vZfK_wN4jLfE7fXRCeBg31rWJIEy0vxm5Cis29jU4-eriFZPI612Sfap_u0sA-Qww1Q78IoAc5jE9xiHQDShl7r3-9d9mvqVh_RKwwM4no9XCI9U-cZjbsN1yi4kc2XUIb5vLB35p6WMmd4UD5_KjzhO6NpSZy0XT6mL0vgpli1_5YAb3NPHshcs-ZkU0LMbFJT5hus");'></div>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<div class="layout-content-container flex flex-col max-w-[1200px] w-full px-6 py-10">
+<!-- Hero Section -->
+<div class="flex flex-col gap-4 mb-12">
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-tight">Transparency &amp; Continuous Improvement</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl leading-relaxed">
+                            Your feedback powers the Review &amp; Trust Layer of Bangladesh's most reliable car audit network.
+                        </p>
+</div>
+<!-- Top Metrics Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Customer Satisfaction</p>
+<h3 class="text-3xl font-black text-primary">98%</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">star</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Avg Auditor Rating</p>
+<h3 class="text-3xl font-black text-primary">4.8/5</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">history_edu</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Reports Audited</p>
+<h3 class="text-3xl font-black text-primary">12,450+</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Feedback Form Section (Left Column) -->
+<div class="lg:col-span-5">
+<div class="sticky top-24 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-md border border-primary/10">
+<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rate_review</span>
+                                    Submit Feedback
+                                </h2>
+<form class="flex flex-col gap-8"><div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Report ID</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-3 focus:ring-primary focus:border-primary transition-all" placeholder="e.g., GA-12345" type="text"/>
+<p class="text-[10px] text-slate-500">Used to verify your audit session</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Select Auditor</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-3 focus:ring-primary focus:border-primary transition-all">
+<option>Choose an auditor...</option>
+<option>Anwar Hossain - Dhaka Central</option>
+<option>Farhana Karim - Chattogram</option>
+<option>Zahid Hassan - Sylhet</option>
+<option>Mahmudul Islam - Rajshahi</option>
+</select>
+</div>
+<div class="flex flex-col gap-4 py-2 border-y border-slate-100 dark:border-slate-700">
+<p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">Rate your experience</p>
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-600 dark:text-slate-400">Technical Knowledge</span>
+<div class="flex gap-1">
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-slate-300 text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-600 dark:text-slate-400">Punctuality</span>
+<div class="flex gap-1">
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-slate-300 text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-600 dark:text-slate-400">Communication</span>
+<div class="flex gap-1">
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-primary text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+<button class="material-symbols-outlined text-slate-300 text-xl cursor-pointer hover:scale-110 transition-transform" type="button">star</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Comment</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 p-3 focus:ring-primary focus:border-primary transition-all" placeholder="How was your experience with the auditor and the report?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary/95 text-white font-black py-5 rounded-xl shadow-xl shadow-primary/30 transition-all flex items-center justify-center gap-3 text-lg uppercase tracking-wider group" type="submit">Publish Verified Review <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">verified</span></button>
+<p class="text-xs text-center text-slate-500">Your review will be verified before appearing on the public feed.</p>
+</form>
+</div>
+</div>
+<!-- Public Feedback Feed (Right Column) -->
+<div class="lg:col-span-7">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold">Community Feedback</h2>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 text-xs font-bold rounded-full bg-primary text-white">Recent</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Top Rated</button>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Feedback Item 1 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">A</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Anwar S.</h4>
+<p class="text-xs text-slate-500">Verified Client • 2 hours ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm)">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed italic">"Anwar was extremely thorough. He found a hidden structural repair on the chassis that the dealer was hiding. The report literally saved me from a bad deal!"</p>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-700 flex justify-between items-center">
+<p class="text-xs text-slate-400 uppercase tracking-tighter">Auditor: <span class="font-bold text-primary">Anwar Hossain</span></p>
+<span class="material-symbols-outlined text-slate-300 text-lg">thumb_up</span>
+</div>
+</div>
+<!-- Feedback Item 2 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">F</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Fahim K.</h4>
+<p class="text-xs text-slate-500">Verified Client • 5 hours ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed italic">"Detailed report with high-res photos. Farhana explained the engine compression test results in a way I could easily understand."</p>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-700 flex justify-between items-center">
+<p class="text-xs text-slate-400 uppercase tracking-tighter">Auditor: <span class="font-bold text-primary">Farhana Karim</span></p>
+<span class="material-symbols-outlined text-slate-300 text-lg">thumb_up</span>
+</div>
+</div>
+<!-- Feedback Item 3 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3 items-center">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">M</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Munir R.</h4>
+<p class="text-xs text-slate-500">Verified Client • 1 day ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-slate-200 text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed italic">"Great service. Only minor delay in getting the digital report link, but the audit quality was top-notch. Highly recommended for used car buyers in Dhaka."</p>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-700 flex justify-between items-center">
+<p class="text-xs text-slate-400 uppercase tracking-tighter">Auditor: <span class="font-bold text-primary">Mahmudul Islam</span></p>
+<span class="material-symbols-outlined text-slate-300 text-lg">thumb_up</span>
+</div>
+</div>
+<button class="mt-4 text-primary font-bold text-sm flex items-center justify-center gap-2 hover:underline">
+                                    Load More Feedback
+                                    <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="bg-primary text-white py-16 px-6 md:px-20 mt-20">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 text-white">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black">GariAudit</h2>
+</div>
+<p class="text-primary/60 text-sm leading-relaxed text-slate-300">
+                            The Review &amp; Trust Layer for used car transactions in Bangladesh. We bring transparency to every engine.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-lg">Services</h4>
+<nav class="flex flex-col gap-2 text-sm text-slate-300">
+<a class="hover:text-white" href="#">Pre-purchase Inspection</a>
+<a class="hover:text-white" href="#">Price Valuation</a>
+<a class="hover:text-white" href="#">Accident History Check</a>
+<a class="hover:text-white" href="#">Full Digital Report</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-lg">Company</h4>
+<nav class="flex flex-col gap-2 text-sm text-slate-300">
+<a class="hover:text-white" href="#">About Us</a>
+<a class="hover:text-white" href="#">Our Auditors</a>
+<a class="hover:text-white" href="#">Partnerships</a>
+<a class="hover:text-white" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-lg">Newsletter</h4>
+<p class="text-sm text-slate-300">Stay updated on car buying tips.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-white/20 rounded px-4 py-2 text-sm w-full focus:ring-1 focus:ring-white" placeholder="Email" type="email"/>
+<button class="bg-white text-primary p-2 rounded">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 GariAudit. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

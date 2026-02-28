@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GariAudit | Support &amp; Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark px-6 md:px-20 py-4 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-slate-100">
+<a href="landing%20page.html" class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-tight">GariAudit</h2>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="faq_community_wall.html">FAQ</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="faq_community_wall.html">Community</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="auditor_dashboard_active_gigs.html">Auditors</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="contact_support_hub.html">Support</a>
+</nav>
+</div>
+<div class="relative z-10 flex items-center gap-6">
+<label class="hidden lg:flex items-stretch rounded-lg h-10 bg-primary/5 dark:bg-slate-800">
+<div class="flex items-center justify-center pl-4 text-slate-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full min-w-[200px] border-none bg-transparent focus:ring-0 text-sm placeholder:text-slate-500" placeholder="Search Help Center"/>
+</label>
+<button class="flex h-10 px-6 bg-primary hover:bg-primary/90 text-white text-sm font-bold rounded-lg transition-all shadow-md">
+<span class="m-auto">Sign In</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary/10 border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5ZT2QJuTkmTiD7Ocg_xGYryBqWvVvFpxhtUe6lvWqI9T3H8NT-FovOOaiB_7lG5rJchjYOT5F5mmkjSIqghkfq27fiXE4YaEXAuiEpevM9A4A2U2CBYJ_LaBr_Sv5nselHOOUbZVj6stj8t2mfZwaG8p_nOzqGqAsEoPrXNM86Py7AaSxC7MPgZPDB7bew6iWijkll90OLJq9ek2ydDc8jMEyRKGVO-sQZne_kxfQdgSztUwwhabjoad8TY3jwDtbr_EmQAWuMy4")'></div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto px-6 md:px-20 py-12 space-y-20">
+<!-- Hero Header -->
+<section class="text-center space-y-4 max-w-3xl mx-auto">
+<h1 class="text-4xl md:text-5xl font-black text-primary dark:text-slate-100 tracking-tight">Support &amp; Community</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400">Join thousands of smart car buyers. Find answers, celebrate success stories, and compete with the best auditors in the industry.</p>
+</section>
+<!-- FAQ Section -->
+<section class="space-y-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">quiz</span>
+<h2 class="text-2xl font-bold tracking-tight">Frequently Asked Questions</h2>
+</div>
+<div class="grid gap-4 max-w-4xl">
+<details class="group bg-white dark:bg-slate-900 border border-primary/10 rounded-xl overflow-hidden shadow-sm" open="">
+<summary class="flex cursor-pointer items-center justify-between p-6 list-none">
+<span class="font-bold text-primary dark:text-slate-200">What if the seller refuses the audit?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 border-t border-primary/5 pt-4">
+                                If a seller refuses an audit, we strongly recommend finding a different vehicle. Transparency is the cornerstone of a safe purchase. A refusal often indicates undisclosed issues. GariAudit is here to ensure you never buy a lemon.
+                            </div>
+</details>
+<details class="group bg-white dark:bg-slate-900 border border-primary/10 rounded-xl overflow-hidden shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-6 list-none">
+<span class="font-bold text-primary dark:text-slate-200">Is the audit fee refundable?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 border-t border-primary/5 pt-4">
+                                Fees are refundable up to 24 hours before the scheduled audit. If the auditor has already begun the journey to the vehicle location, a partial travel fee may apply. Contact our support team for specific cases.
+                            </div>
+</details>
+<details class="group bg-white dark:bg-slate-900 border border-primary/10 rounded-xl overflow-hidden shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-6 list-none">
+<span class="font-bold text-primary dark:text-slate-200">How accurate is the OBD scan?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 border-t border-primary/5 pt-4">
+                                Our OBD-II scans use industrial-grade diagnostic tools that interface directly with the vehicle's ECU. We can detect hidden error codes, mileage discrepancies, and emissions issues that standard consumer-grade scanners often miss.
+                            </div>
+</details>
+<details class="group bg-white dark:bg-slate-900 border border-primary/10 rounded-xl overflow-hidden shadow-sm">
+<summary class="flex cursor-pointer items-center justify-between p-6 list-none">
+<span class="font-bold text-primary dark:text-slate-200">Can I request a specific auditor?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 border-t border-primary/5 pt-4">
+                                Yes, you can browse auditor profiles and request specific individuals based on their ratings and expertise in certain vehicle brands.
+                            </div>
+</details>
+</div>
+</section>
+<!-- Wall of Love Section -->
+<section class="space-y-8">
+<div class="flex items-end justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+<h2 class="text-2xl font-bold tracking-tight">Wall of Love</h2>
+</div>
+<p class="text-slate-500">Real stories from our amazing community members.</p>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-2 hover:underline">
+                            Share your story <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="masonry-grid">
+<!-- Community Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Community member profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ8HH8oqfNXJHHbx7U3bHkrN2QrQOg32LPZfzrvLF_OeZG5Fk0FvYrb6Tri9nxMiPcXZRVXC4ApC9pigik2hqcxPsClf17-F7F_cSvqdTeNvJm7vxqeZRiD02QaOrnBr33vschW5Y4CW2ZbPtiYfo4Mq7sb8OiUOYRwp8Hxx2gBDh3C3gi6E-l8VgwTGviwxS-If8BdCP186CVRYe-uXeVhAsOmz58Ot1YPz2DgF2tNMH_Us3CGiRMK5I2fLKp2j1P92L8_X37icA")'></div>
+<div>
+<p class="font-bold text-sm">Kevin M.</p>
+<p class="text-xs text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-[12px] text-blue-500">verified</span> WhatsApp Share</p>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden border border-slate-100 dark:border-slate-800">
+<img class="w-full h-48 object-cover" data-alt="Screenshot of a digital GariAudit vehicle report badge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3JVE4O6pq5hnfQTGb93pgKdVVX25yPK_zSdupqKoKuRoDd-HdovYGgR48qmVJVQe94PuPcnywBzZ1--IX9odP1YDtJQnPjPcriB9MjIve0LdmcHiVvHcRBHUt8RPvsezewVIryAlOKC-CwYsTpMCffjRIBsrbcphyuSXEjC24S9fnp3OdUbnRkEkT_YEkYEBdOOH_67IC428687S8-gODcsY6jreG7LHxgFSgOspBa_kti4pJSxqGCoMdMtOAHRLiF2VuWY7Ly80"/>
+</div>
+<p class="text-sm italic text-slate-600 dark:text-slate-400">"Just saved myself $4,000 in hidden repairs thanks to this audit badge! Best money spent. 🙌"</p>
+</div>
+<!-- Community Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Community member profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcXSXP2GX4k2fHLAxPXHC34lA0V8gbtsCuZLDEVc1GVD29JJLExtoOBtFark5sJ12XbHi9zTs7ACzdGBjlzJL_0IbADH0Z1RzCrAN-K8tWaWhfjNwssv7tIVDxRnkhdsDNkjIiu83zyHrcNE7zGFKDzaMDH3ReYmKC0pVl4qrqrwhBq5_vf4kABQeSfv-PDoToLDbSQrIfywSbdWRpSYXnIOyl5goe3pfReHOZSgZOfTxFucIYmB9_O2mic2Rfqm9Rbihijk103qQ")'></div>
+<div>
+<p class="font-bold text-sm">Sarah L.</p>
+<p class="text-xs text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-[12px] text-blue-600">social_leaderboard</span> Facebook Post</p>
+</div>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300">Finally got my dream car! The GariAudit report gave me so much peace of mind during the negotiation. 🚗💨 #SmartBuyer #GariAudit</p>
+<div class="grid grid-cols-2 gap-2">
+<img class="rounded-lg h-32 w-full object-cover" data-alt="A clean white SUV parked in a driveway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj7v0XsMsG0vvzjSN8vPwqw_ntC0CCjtnzV_m7o-dquRcLq-pKD20g5L9E5w578wKFUzj-Rqn68wjBZ0i5YWP60LB3rvQBU8Ub8uZytcUx6RHK9rnTbGlYOx3LIohr6fm-g_adGOnAVP151mLnS8qnpvRedcwT4YNJuf6TKKSihg3z1NALn7qdn5A9e-w7U3VQpZXRdbvjlZnYptlTMpQhqHQXQN3P7MLe95n-HjECI84hwc8C1deVDeT3GcDbwI0osTuYyDmItL4"/>
+<div class="bg-primary/90 rounded-lg flex flex-col items-center justify-center text-white text-center p-2">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="text-[10px] uppercase font-bold tracking-widest mt-1">Verified Audit</span>
+</div>
+</div>
+</div>
+<!-- Community Card 3 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Community member profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDT-XATFvxztGUm7wkmn5mLFyi9gCOHE43wlqR4xWeoMXbE7ZWXBwZfA4rdakWkX7707PLnq5iSTKEuWf8d6q_EM-aBbGIs6W-uum1SbT4L_uB_MHii8bkH1zAABWOdGRHGRKx4sAkT3Vu4Tt-IZ4QELhGgaKvFLGGJRISAtbpwaAmUnE01zjSh7FmnipNTqUU4gBsoe6MwRN-6pBzGqdF9Ys2VK97fKXUq3wx2ddzoFTA3sOvBUitj-GP2DUBtt8Be-CjOf1xCY8c")'></div>
+<div>
+<p class="font-bold text-sm">Ahmed R.</p>
+<p class="text-xs text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-[12px] text-blue-500">verified</span> WhatsApp Status</p>
+</div>
+</div>
+<div class="aspect-video bg-gradient-to-br from-primary to-[#4800cc] rounded-lg flex flex-col items-center justify-center p-6 text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<h4 class="text-lg font-black tracking-tight z-10">AUDIT PASSED</h4>
+<p class="text-4xl font-black mt-2 z-10">94/100</p>
+<p class="text-xs mt-4 opacity-75 z-10">Report ID: #GA-9921</p>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 italic">"GariAudit never fails. High quality inspection every time."</p>
+</div>
+</div>
+</section>
+<!-- Auditor Corner: Top Earners -->
+<section class="bg-primary/5 dark:bg-slate-900/50 rounded-2xl p-8 md:p-12 border border-primary/10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">military_tech</span>
+<h2 class="text-2xl font-bold tracking-tight">Auditor Corner</h2>
+</div>
+<p class="text-slate-600 dark:text-slate-400 max-w-lg">Honoring our top-performing auditors this month. Join the ranks and maximize your earnings!</p>
+</div>
+<div class="flex items-center gap-2 text-sm font-bold text-primary bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-primary/10 shadow-sm">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                            October 2023 Leaders
+                        </div>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Top Earner 1 -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border-2 border-primary/20 shadow-xl relative transform transition-transform hover:-translate-y-1">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-900 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Rank #1</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="size-24 rounded-full border-4 border-yellow-400 p-1">
+<div class="w-full h-full rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of the top-ranked auditor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrVfC4355pe7DTFjgqzsgmWBdv2zlFiPB3z03W0a9CrGHkbRXq_l9SpoFBfwpEGy-efvoPY4x_opICQXMDtJs1fMd7PT1kl1Cy-VcBWr2dS1dwLI8vhhYccus8MzMFri4OqZai7vPc6EDzEaD_eHFDkWzL5trGDmaM5ry5oAnOY4N57wpORE9bJUhOg8rtb2g3kQqncqWV-S9nrUcNJHxVipTinHMIybzuRcq9L0-m54x9z9rU7VnvYA9DRfNwz9dIOVY7hW0QZ0A")'></div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-primary dark:text-white">Marcus Thorne</h3>
+<p class="text-xs text-slate-500 font-medium">Expert Mechanic • 4.98 Rating</p>
+</div>
+<div class="w-full pt-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-2xl font-black text-primary dark:text-slate-100">$8,450.00</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Earned this month</p>
+</div>
+</div>
+</div>
+<!-- Top Earner 2 -->
+<div class="bg-white/70 dark:bg-slate-800/70 p-8 rounded-2xl border border-primary/10 shadow-md relative transform transition-transform hover:-translate-y-1">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-300 text-slate-700 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Rank #2</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="size-20 rounded-full border-4 border-slate-200 p-1">
+<div class="w-full h-full rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of the second-ranked auditor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCE48mCgz_nAUXHUmuefudD5ue8y7OLkEz_dfpkKYISFINCt4iWQskwGzhQKHbmDvgblBrLMCzmarFSl4BPq9Sd9Hcyf7nqvn5IIycxEWyoOuQ5uudM95n9SHr8_nN3mj6eppDOesYNUfk4n_ja3S3sjll3B5sherIqLKuv9HuAd5fWkSQEep-YeNJzSnYmX2we-2bQJHUINtw3uxcjnD5mONHOPYofkMtUmiAFFHHKXiC0i1zNIXGMGxjfHSunEsYtgxU_dqe2dSE")'></div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800 dark:text-white">Elena Rodriguez</h3>
+<p class="text-xs text-slate-500 font-medium">Systems Analyst • 4.95 Rating</p>
+</div>
+<div class="w-full pt-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-xl font-black text-slate-800 dark:text-slate-100">$6,220.00</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Earned this month</p>
+</div>
+</div>
+</div>
+<!-- Top Earner 3 -->
+<div class="bg-white/70 dark:bg-slate-800/70 p-8 rounded-2xl border border-primary/10 shadow-md relative transform transition-transform hover:-translate-y-1">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-300 text-orange-900 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Rank #3</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="size-20 rounded-full border-4 border-orange-200 p-1">
+<div class="w-full h-full rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of the third-ranked auditor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuckk89LKpd0SZPlT5MuP0PZ0ph6NheipQVsE-Gyo8yQ0Y0UNbxEl0vCpp8_iZaCmoNf0z78aQTYMWGHmXB0QlSAZYLgQ85QhdFVZKTNUb_lw9u40PcXoYMDZQgxav3bfz-KhMX5kGszkdP4RkBJ0WYOj2q-BbS8CZ8WsxT0K2dnc5Rwd84wo71oo7uOP22DN3gYqMD3h9OvYWisUOypjhzHdcgZdChg_apQrFwSiexf4O5bebnD2aXihTqHNu2lm4NX97RGiPYHY")'></div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-800 dark:text-white">Samuel Okafor</h3>
+<p class="text-xs text-slate-500 font-medium">Auto Electrician • 4.92 Rating</p>
+</div>
+<div class="w-full pt-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-xl font-black text-slate-800 dark:text-slate-100">$5,890.00</p>
+<p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Earned this month</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-slate-500 text-sm mb-4">Are you a professional car inspector or mechanic?</p>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition-all">Apply as an Auditor</button>
+</div>
+</section>
+<!-- Newsletter/Support Action -->
+<section class="bg-white dark:bg-slate-900 border border-primary/10 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-3">
+<h3 class="text-2xl font-bold tracking-tight">Still have questions?</h3>
+<p class="text-slate-500 max-w-md">Our support team is available 24/7 to help you with your vehicle audit or auditor application.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-colors">Chat Support</button>
+<button class="px-6 py-3 bg-primary text-white font-bold rounded-xl hover:shadow-lg transition-all">Contact Us</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-primary/10 px-6 md:px-20 py-12 mt-10">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="col-span-2 space-y-4">
+<div class="flex items-center gap-3 text-primary dark:text-white">
+<div class="size-5">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-lg font-bold">GariAudit</h2>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">The world's most trusted vehicle auditing network. Ensuring transparency and trust in every car deal.</p>
+<div class="flex gap-4">
+<a class="p-2 rounded-full bg-primary/5 hover:bg-primary/10 transition-colors" href="#"><span class="material-symbols-outlined text-primary text-xl">share</span></a>
+<a class="p-2 rounded-full bg-primary/5 hover:bg-primary/10 transition-colors" href="#"><span class="material-symbols-outlined text-primary text-xl">public</span></a>
+<a class="p-2 rounded-full bg-primary/5 hover:bg-primary/10 transition-colors" href="#"><span class="material-symbols-outlined text-primary text-xl">mail</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-widest text-primary dark:text-slate-200">Links</h4>
+<nav class="flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Find Auditor</a>
+<a class="hover:text-primary" href="#">Pricing</a>
+<a class="hover:text-primary" href="#">Sample Reports</a>
+<a class="hover:text-primary" href="#">Help Center</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm uppercase tracking-widest text-primary dark:text-slate-200">Legal</h4>
+<nav class="flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Refund Policy</a>
+<a class="hover:text-primary" href="#">Cookie Policy</a>
+</nav>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
+<p>© 2023 GariAudit Global. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">language</span> English (US)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">currency_exchange</span> USD</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

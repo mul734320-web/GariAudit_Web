@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GariAudit | Market Demand Heatmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">GariAudit</h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Audit Reports</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary py-1" href="#">Market Insights</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="hidden sm:flex flex-col min-w-40 h-10">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full border border-slate-200 dark:border-slate-700">
+<div class="text-slate-400 flex items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 text-sm" placeholder="Global Search..."/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm" data-alt="User profile avatar circle">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgnsnrzkO7iW-0hfVL_lWUvF6sDaikdZZL0RbUmSSL2djbCw9BF8GioV8T57xT8Tf5PdE2K0NygINkLMpG9r4WemqEyh8WhBuVQnIKbXzciOjUO43LB0apeJCld18UB-DF4D7qozUXVgcN-02H2A-PLWqzejCWarh1luOYofUAaDaNgArVAZ9-UjMQ2sPPb9yZZZByDOr_-xabCOX-hfg7fqQMaQOwFhVA_bmCbCLIZF1CzQ714H5Kv4TaOK-CuBS6x9pn8q-juGU"/>
+</div>
+</div>
+</header>
+<main class="flex flex-1 flex-col lg:flex-row p-4 lg:p-6 gap-6 max-w-[1600px] mx-auto w-full">
+<!-- Left Panel: Navigation & Top Performers -->
+<div class="w-full lg:w-1/4 flex flex-col gap-6">
+<!-- Market Context -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Market Demand</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Deep-dive density analysis for Bangladesh</p>
+<div class="mt-6 flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined">map</span>
+<span class="text-sm font-semibold">Live Heatmap</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="text-sm font-medium">Supply Gaps</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Price Band Analysis</span>
+</div>
+</div>
+</div>
+<!-- Fastest Moving Models -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-slate-900 dark:text-white">Fastest Moving</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 px-2 py-1 rounded">Avg. Days: 12</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">01</div>
+<div>
+<p class="text-sm font-bold leading-none">Toyota Premio</p>
+<p class="text-[11px] text-slate-500">2018-2021 Models</p>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">4 Days</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">02</div>
+<div>
+<p class="text-sm font-bold leading-none">Honda Vezel</p>
+<p class="text-[11px] text-slate-500">Hybrid Z Grade</p>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">7 Days</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">03</div>
+<div>
+<p class="text-sm font-bold leading-none">Mitsubishi Xpander</p>
+<p class="text-[11px] text-slate-500">Cross Utility</p>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">9 Days</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-xs">04</div>
+<div>
+<p class="text-sm font-bold leading-none">Toyota Corolla</p>
+<p class="text-[11px] text-slate-500">Altis / Hybrid</p>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">11 Days</span>
+</div>
+</div>
+</div>
+<!-- Trend Predictor Sidebar -->
+<div class="bg-gradient-to-br from-primary to-orange-600 p-5 rounded-xl shadow-lg text-white">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined">auto_awesome</span>
+<h3 class="font-bold text-sm">AI Trend Predictor</h3>
+</div>
+<div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<p class="text-xs font-medium mb-1">Segment: <span class="font-bold underline">Luxury EVs</span></p>
+<div class="flex items-center gap-2 text-green-300">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-lg font-black">+24% RISE</span>
+</div>
+<p class="text-[10px] mt-2 text-white/80 leading-relaxed">Expected spike in the next 30 days based on search volume from Gulshan &amp; Banani and increased audit requests for MG4/Tesla models.</p>
+</div>
+</div>
+</div>
+<!-- Central Content: Heatmap -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Filters Row -->
+<div class="flex flex-wrap gap-2 overflow-x-auto pb-1 scrollbar-hide">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl text-sm font-bold shrink-0">
+                        All Vehicles <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm font-medium shrink-0">
+                        EVs/Hybrids <span class="material-symbols-outlined text-sm">bolt</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm font-medium shrink-0">
+                        SUVs <span class="material-symbols-outlined text-sm">minor_crash</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm font-medium shrink-0">
+                        Economy Sedans <span class="material-symbols-outlined text-sm">directions_car</span>
+</button>
+</div>
+<!-- Main Interactive Map -->
+<div class="relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex-1 min-h-[500px]">
+<div class="absolute inset-0 z-0 bg-slate-200 dark:bg-slate-950 opacity-40 flex items-center justify-center" data-alt="Stylized heatmap map of Dhaka with red and yellow density clusters" data-location="Dhaka, Bangladesh" style="">
+<!-- Simulated Map Background -->
+<div class="w-full h-full bg-[url('https://placeholder.pics/svg/1000')] bg-cover bg-center"></div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute top-6 left-6 z-10 w-full max-w-xs">
+<div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-3 rounded-xl shadow-xl border border-white/20 dark:border-slate-700">
+<div class="flex items-center gap-3 px-3 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full" placeholder="Search Area (e.g. Dhanmondi)" type="text"/>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 right-6 z-10 flex flex-col gap-2">
+<button class="size-10 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="size-10 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="size-10 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Legend -->
+<div class="absolute bottom-6 left-6 z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 dark:border-slate-700">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">Demand Density</p>
+<div class="flex items-center gap-3">
+<div class="flex-1 h-2 w-32 rounded-full bg-gradient-to-r from-green-500 via-yellow-400 to-red-600"></div>
+<span class="text-[10px] font-bold">Low → High</span>
+</div>
+<div class="mt-3 grid grid-cols-2 gap-2">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-red-600"></div>
+<span class="text-xs font-medium">Critical (Gulshan)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-yellow-400"></div>
+<span class="text-xs font-medium">Moderate</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Data Analysis -->
+<div class="w-full lg:w-1/4 flex flex-col gap-6">
+<!-- Demand vs Supply Analysis -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col h-full min-h-[300px]">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4">Demand vs. Supply</h3>
+<div class="flex-1 flex flex-col gap-4">
+<!-- Compact Chart Visualizer -->
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span>Economy Sedans</span>
+<span class="text-red-500">Gap: -340 units</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 45%;"></div>
+<div class="h-full bg-slate-300 dark:bg-slate-600" style="width: 20%;"></div>
+</div>
+<div class="flex justify-between mt-1 text-[10px] text-slate-500">
+<span>Demand: 820</span>
+<span>Supply: 480</span>
+</div>
+</div>
+<div class="p-3 bg-primary/5 rounded-lg border border-primary/20">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+<span class="text-xs font-bold text-primary">GOLDEN OPPORTUNITY</span>
+</div>
+<p class="text-[11px] font-bold leading-none mb-1">Crossover SUVs (25-35L)</p>
+<p class="text-[10px] text-slate-500 leading-tight">Supply is only meeting 18% of the search volume. Immediate inventory restock recommended.</p>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span>Luxury Sedans</span>
+<span class="text-green-500">Surplus: +12 units</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 20%;"></div>
+<div class="h-full bg-slate-300 dark:bg-slate-600" style="width: 25%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Price Band Popularity -->
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4">Price Band Volume</h3>
+<div class="flex items-end justify-between h-40 pt-4 px-2">
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-6 bg-slate-200 dark:bg-slate-800 rounded-t-sm h-[30%] group-hover:bg-primary/40 transition-colors"></div>
+<span class="text-[9px] font-bold rotate-45 mt-2">&lt;15L</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-6 bg-primary rounded-t-sm h-[85%] group-hover:bg-primary/80 transition-colors"></div>
+<span class="text-[9px] font-bold rotate-45 mt-2">15-25L</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-6 bg-primary rounded-t-sm h-[60%] group-hover:bg-primary/80 transition-colors"></div>
+<span class="text-[9px] font-bold rotate-45 mt-2">25-40L</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-6 bg-slate-200 dark:bg-slate-800 rounded-t-sm h-[45%] group-hover:bg-primary/40 transition-colors"></div>
+<span class="text-[9px] font-bold rotate-45 mt-2">40-60L</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full group">
+<div class="w-6 bg-slate-200 dark:bg-slate-800 rounded-t-sm h-[20%] group-hover:bg-primary/40 transition-colors"></div>
+<span class="text-[9px] font-bold rotate-45 mt-2">60L+</span>
+</div>
+</div>
+<p class="text-[10px] text-slate-500 text-center mt-8">Search &amp; Audit Volume Index</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

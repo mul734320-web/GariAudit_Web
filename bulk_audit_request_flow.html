@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "accent": "#F59E0B",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .step-active { color: #240066; border-color: #240066; }
+        .step-inactive { color: #94a3b8; border-color: #e2e8f0; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-6 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">directions_car</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary">GariAudit</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-semibold hover:text-primary" href="#">Inventory</a>
+<a class="text-sm font-semibold text-primary border-b-2 border-primary" href="#">Audits</a>
+<a class="text-sm font-semibold hover:text-primary" href="#">Reports</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="h-full w-full object-cover" data-alt="User profile avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCicKDXIgIIzdv7dcmzMSxH2yYVL6lCupXKUFusOyoIZODCEQjI-cXS8Y_epX3r8_rpK0fm6kaAxj0W8vdFPBP3aOvZJxbZXnjpQhf76GxMO3vmTH-oeBYfJsed2xMpVwyMb_GMsywhEtPBE2r8MByVpbek84UKO9m2Ux7k-uPp9pNNxPP9ePp3jm3BlshIXGptA65C94J5HmejD36GAkTU6VcmW1ay6Y9-t81KgF3A3ALAY0uUZjrqsXnNsqAr3XAURjGJsY4nfz0"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Flow Header -->
+<div class="mb-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+<div>
+<h2 class="text-3xl font-black text-slate-900 dark:text-white leading-tight">Request Bulk Audit</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Dealer Fleet Management Segment • Q3 Portfolio Refresh</p>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col gap-2">
+<div class="h-1.5 w-full bg-primary rounded-full"></div>
+<div class="flex items-center gap-2 text-primary">
+<span class="text-xs font-bold uppercase tracking-wider">Step 1</span>
+<span class="text-sm font-bold">Upload Inventory</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+<div class="flex items-center gap-2 text-slate-400">
+<span class="text-xs font-bold uppercase tracking-wider">Step 2</span>
+<span class="text-sm font-bold">Configure Batch</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+<div class="flex items-center gap-2 text-slate-400">
+<span class="text-xs font-bold uppercase tracking-wider">Step 3</span>
+<span class="text-sm font-bold">Schedule Visit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Side: Main Form Area -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Section 1: Upload Inventory -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_upload</span>
+                            1. Upload Inventory
+                        </h3>
+</div>
+<div class="p-6 space-y-6">
+<!-- Drag & Drop Zone -->
+<div class="border-2 border-dashed border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors rounded-xl p-10 flex flex-col items-center justify-center text-center group cursor-pointer">
+<div class="bg-primary/20 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl leading-none">upload_file</span>
+</div>
+<h4 class="text-lg font-bold text-slate-900 dark:text-white">Drag &amp; Drop Fleet File</h4>
+<p class="text-slate-500 text-sm mt-1 mb-6">Support for CSV, XLSX (Maximum 10MB per file)</p>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+                                Browse Local Files
+                            </button>
+</div>
+<div class="relative flex items-center">
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+<span class="flex-shrink mx-4 text-xs font-bold text-slate-400 uppercase tracking-widest">OR</span>
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+</div>
+<!-- Manual Paste Area -->
+<div class="space-y-3">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Paste Asset Identifiers</label>
+<textarea class="w-full h-32 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg p-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Enter VIN numbers or marketplace links (one per line)...
+e.g. https://bikroy.com/bn/ad/toyota-corolla...
+e.g. JTDKN3DU000123456"></textarea>
+<div class="flex items-center justify-between">
+<p class="text-xs text-slate-500 italic">Individual assets will be cross-referenced with Bangladesh road transport databases.</p>
+<button class="flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-lg font-bold text-sm hover:brightness-110">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                                    Scan &amp; Validate
+                                </button>
+</div>
+</div>
+<!-- Real-time Progress Simulation (Visible after Scan) -->
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-4 border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tight">Identifying Vehicles...</span>
+<span class="text-xs font-bold text-primary">65%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]" style="width: 65%;"></div>
+</div>
+<div class="mt-3 flex items-center gap-3">
+<span class="text-[10px] px-2 py-0.5 bg-green-100 text-green-700 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> 12 Validated
+                                </span>
+<span class="text-[10px] px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">sync</span> 4 Pending
+                                </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Batch Configuration -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden opacity-50 pointer-events-none">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 flex items-center justify-between">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+                            2. Batch Configuration
+                        </h3>
+<div class="flex gap-2">
+<span class="text-xs font-medium px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded">Locked</span>
+</div>
+</div>
+<div class="p-6">
+<p class="text-slate-500 text-sm">Complete Step 1 to configure vehicle packages and pricing.</p>
+</div>
+</section>
+<!-- Section 3: Site Coordination -->
+<section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden opacity-50 pointer-events-none">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                            3. Site Coordination
+                        </h3>
+</div>
+<div class="p-6">
+<p class="text-slate-500 text-sm">Requires inventory validation.</p>
+</div>
+</section>
+</div>
+<!-- Right Side: Sidebar Review -->
+<aside class="space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden sticky top-24">
+<div class="p-6 bg-primary text-white">
+<h4 class="text-lg font-bold">Summary Review</h4>
+<p class="text-primary/70 text-sm">Bulk Order #BA-2023-094</p>
+</div>
+<div class="p-6 space-y-6">
+<!-- Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+<p class="text-xs text-slate-500 uppercase font-bold">Total Cars</p>
+<p class="text-2xl font-black text-primary">16</p>
+</div>
+<div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+<p class="text-xs text-slate-500 uppercase font-bold">Est. Time</p>
+<p class="text-2xl font-black text-primary">2 Days</p>
+</div>
+</div>
+<!-- Price Detail -->
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Subtotal (16x Basic)</span>
+<span class="font-bold">48,000 BDT</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Service Fee</span>
+<span class="font-bold">1,200 BDT</span>
+</div>
+<div class="flex justify-between items-center bg-green-50 dark:bg-green-900/20 p-2 rounded border border-green-100 dark:border-green-900/30">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-green-600">Volume Discount (15%)</span>
+<span class="text-[10px] text-green-500">Tier 2: 10+ Vehicles</span>
+</div>
+<span class="font-bold text-green-600">-7,200 BDT</span>
+</div>
+<div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-end">
+<span class="text-base font-bold text-slate-900 dark:text-white">Total Amount</span>
+<div class="text-right">
+<span class="block text-[10px] text-slate-400 line-through">49,200 BDT</span>
+<span class="text-2xl font-black text-primary">42,000 BDT</span>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-primary text-white py-4 rounded-xl font-black text-base shadow-xl shadow-primary/30 hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2 disabled:opacity-50" disabled="">
+                                Submit Bulk Request
+                                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] text-slate-400 px-4">By clicking submit, you agree to our Fleet Service Agreement and Auditor On-site Access policy.</p>
+</div>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-accent/20 rounded-full">
+<span class="material-symbols-outlined text-accent text-sm">support_agent</span>
+</div>
+<div>
+<p class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Need Bulk Pricing Help?</p>
+<a class="text-[11px] text-primary font-bold underline" href="#">Contact Key Account Manager</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Support Card -->
+<div class="bg-accent/10 rounded-xl border border-accent/20 p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-accent">info</span>
+<div>
+<h5 class="text-sm font-bold text-accent-700">Audit Requirements</h5>
+<p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                            For batches over 10 cars, we require a designated staging area with at least 4ft clearance around each vehicle.
+                        </p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Context Footer for Help -->
+<footer class="max-w-7xl mx-auto px-6 py-12 mt-12 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-4 opacity-50 grayscale">
+<div class="bg-primary p-1 rounded text-white">
+<span class="material-symbols-outlined text-sm">directions_car</span>
+</div>
+<span class="text-sm font-bold tracking-tight">GariAudit Enterprise</span>
+</div>
+<p class="text-sm text-slate-500 max-w-sm">The most trusted vehicle inspection platform for dealerships and corporate fleet owners across Bangladesh.</p>
+</div>
+<div>
+<h6 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Support</h6>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Inspection Guidelines</a></li>
+<li><a class="hover:text-primary" href="#">API Documentation</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Legal</h6>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

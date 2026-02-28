@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "accent-orange": "#FF6B00",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Bulk Audit Confirmation | GariAudit</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white px-6 md:px-10 py-3">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">directions_car</span>
+</div>
+<h2 class="text-primary text-xl font-bold leading-tight tracking-tight">GariAudit</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden md:flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/5 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/5 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full bg-primary/20 border border-primary/10 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Corporate user profile photo headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIxLl6TpET6-EyYcjMPpn8P9hYwVUtSIrzKjVU5qmZaEuk2SVa43et2OhDAQws79k49XnOM5w4-kY4pAO5sfyx9maVJzs1kUMlbKwa8I6MX3voYjUrIThC-hPQt4kg4kmcMRWrNjLAuvkXH3MFCkOKWGqfgngEvi93o7s6YG8uYP-zPc6jbFioJ5GgCOehP63V6rMt-LoJl2XBa6fkBAUQ8o8sVfqCAC8xmc10SxCau1QsoLiFo5vFBhPwl5DrmHkcraTM9wW408o"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-8 px-4 md:px-10">
+<div class="layout-content-container flex flex-col max-w-[1024px] w-full gap-8">
+<!-- Success Header -->
+<div class="flex flex-col items-center text-center gap-4 py-6">
+<div class="size-20 rounded-full bg-green-100 flex items-center justify-center border-4 border-green-50">
+<span class="material-symbols-outlined text-green-600 text-5xl">check_circle</span>
+</div>
+<div class="space-y-2">
+<h1 class="text-primary text-3xl md:text-4xl font-extrabold tracking-tight">Bulk Audit Batch Successfully Scheduled</h1>
+<p class="text-slate-500 max-w-xl mx-auto">Your inspection request has been confirmed. Our team of certified auditors will proceed according to the scheduled timeline.</p>
+</div>
+</div>
+<!-- Main Overview Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Batch Overview Card -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-white rounded-xl shadow-sm border border-primary/5 overflow-hidden">
+<div class="p-6 border-b border-primary/5 flex justify-between items-center bg-primary/[0.02]">
+<h3 class="font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+                                    Batch Details
+                                </h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Confirmed</span>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div>
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Batch Identifier</p>
+<p class="text-xl font-bold text-primary">GA-BATCH-2024-089</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 bg-accent-orange/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-orange">calendar_today</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-medium">Scheduled Date</p>
+<p class="font-bold">Thursday, Oct 24th, 2024</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-medium">Total Vehicles</p>
+<p class="font-bold text-lg">16 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-medium">Location</p>
+<p class="font-bold">City Motors Main Lot, Dhaka</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Logistics & Auditor -->
+<div class="bg-white rounded-xl shadow-sm border border-primary/5 p-6">
+<h3 class="font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">badge</span>
+                                Audit Logistics
+                            </h3>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1 space-y-4 w-full">
+<div class="flex justify-between border-b border-slate-100 pb-3">
+<span class="text-slate-500">Lead Auditor</span>
+<span class="font-semibold text-primary">Senior Inspector Tanvir Ahmed</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-3">
+<span class="text-slate-500">Team Size</span>
+<span class="font-semibold text-primary">4 Specialists</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-3">
+<span class="text-slate-500">Estimated Duration</span>
+<span class="font-semibold text-primary">6 - 8 Hours</span>
+</div>
+</div>
+<div class="w-full md:w-48 h-32 rounded-lg bg-slate-100 overflow-hidden relative" data-location="Dhaka, Bangladesh" style="">
+<div class="absolute inset-0 bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30 text-4xl">map</span>
+</div>
+<img alt="Location Map" class="w-full h-full object-cover" data-alt="Simplified map view of Dhaka city motors area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3uiyrpyLyJVftlfpdbJrk4FQ43jWLNy2wOZsXM3N1RqIwly3w87qzu-SVxJXxYpHCedKYwIyp0wYoaJ9dEDjIarI3ZQnbwgBwhdJKhOD8YybX0v8SoPTaUJPGARGgkL1JOCdxj9X9Tkw54KWkRiQ8UjpzkV4SNRGwfDo_MWqXbyAk42jQ-bqzbgpQ9DfSohfG4mndKzwjul7pD-Grz5aJSANy8a-WrHqGb9AaunPL9FIPewzNeVNeW7ws_RkfN2BtW1lRQ34x3PA"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial & Actions Sidebar -->
+<div class="space-y-6">
+<!-- Financial Summary -->
+<div class="bg-primary text-white rounded-xl shadow-lg p-6">
+<h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-orange">account_balance_wallet</span>
+                                Financial Summary
+                            </h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between opacity-80">
+<span>Base Audit Fee</span>
+<span>$1,280.00</span>
+</div>
+<div class="flex justify-between text-accent-orange font-bold">
+<span>Tier 2 Discount (15%)</span>
+<span>-$192.00</span>
+</div>
+<div class="flex justify-between opacity-80 pb-2 border-b border-white/10">
+<span>Service Tax</span>
+<span>$54.40</span>
+</div>
+<div class="flex justify-between text-xl font-bold pt-2">
+<span>Total Paid</span>
+<span>$1,142.40</span>
+</div>
+</div>
+<div class="mt-4 bg-white/10 rounded p-2 text-[10px] flex items-center gap-2 italic">
+<span class="material-symbols-outlined text-sm">lock</span>
+                                Payment processed via Enterprise Billing
+                            </div>
+</div>
+<!-- Quick Actions -->
+<div class="bg-white rounded-xl shadow-sm border border-primary/5 p-4 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+                                View Fleet Dashboard
+                            </button>
+<button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">download</span>
+                                Download Batch Receipt
+                            </button>
+<button class="w-full border-2 border-primary/10 hover:border-primary/30 text-primary font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">print</span>
+                                Print Audit Labels
+                            </button>
+</div>
+</div>
+</div>
+<!-- Next Steps -->
+<div class="bg-white rounded-xl shadow-sm border border-primary/5 p-8 mb-12">
+<h3 class="text-primary text-xl font-bold mb-8">What Happens Next?</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<div class="flex flex-col gap-4 relative z-10">
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl ring-8 ring-primary/5">1</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Auditor Team Arrival</h4>
+<p class="text-sm text-slate-500">The team will arrive at 09:00 AM sharp with all necessary scanning equipment.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 relative z-10">
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl ring-8 ring-primary/5">2</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Inspection &amp; OBD Scan</h4>
+<p class="text-sm text-slate-500">Full physical check + engine diagnostics for each vehicle in the batch.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 relative z-10">
+<div class="size-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl ring-8 ring-primary/5">3</div>
+<div>
+<h4 class="font-bold text-slate-800 mb-1">Real-time Reports</h4>
+<p class="text-sm text-slate-500">Reports are generated instantly and available on your portal as they finish.</p>
+</div>
+</div>
+<!-- Connector Lines (Desktop Only) -->
+<div class="hidden md:block absolute top-6 left-12 right-12 h-0.5 bg-slate-100 -z-0"></div>
+</div>
+</div>
+<!-- Help Footer -->
+<div class="text-center py-6 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Need assistance? Contact our Support Concierge</span>
+</div>
+<div class="flex gap-6">
+<a class="hover:text-primary underline" href="#">Modify Schedule</a>
+<a class="hover:text-primary underline" href="#">Audit Guidelines</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

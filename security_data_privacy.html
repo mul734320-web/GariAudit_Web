@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-primary/10 px-6 py-4 lg:px-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<a href="landing%20page.html" class="flex items-center gap-2 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined text-3xl font-bold">verified_user</span>
+<h2 class="text-xl font-black leading-tight tracking-tight">GariAudit</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="my_audits_list.html">Reports</a>
+<a class="text-sm font-semibold text-primary" href="security_data_privacy.html">Security</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="gariaudit_pro_membership.html">Pricing</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="contact_support_hub.html">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-10 px-6 items-center justify-center rounded-lg bg-primary text-white text-sm font-bold tracking-wide hover:bg-primary/90 transition-all">
+                    Sign In
+                </button>
+<div class="size-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative px-6 py-16 lg:px-20 lg:py-24 overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-0 w-72 h-72 bg-primary rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">shield</span> Enterprise Grade Security
+                        </div>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 leading-[1.1] tracking-tight">
+                            Your Trust is Our <span class="text-primary">Greatest Asset.</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                            Protecting user data and vehicle integrity with multi-layered security protocols. GariAudit ensures every report is authentic, every transaction is encrypted, and your privacy is never compromised.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="h-14 px-8 rounded-xl bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">
+                                View Security Whitepaper
+                            </button>
+<button class="h-14 px-8 rounded-xl border-2 border-primary/20 font-bold hover:bg-primary/5 transition-all">
+                                Documentation
+                            </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl group-hover:bg-primary/10 transition-all duration-500"></div>
+<div class="relative aspect-video rounded-2xl bg-slate-200 dark:bg-slate-800 border border-primary/10 shadow-2xl overflow-hidden" data-alt="Digital abstract security node network visualization" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5d6ecgo5XuO-puW03PHLzTGHjYixNBNtU5CXY9OHPEvdCwW4Ug6j3KEx8d4cKZaUg3rB5g6bfjV8u0uQ_6MyjWRiib8BCbpuUVF09xMQtg1T8BpMik3LH5KsIK7Io3K2yBvz4_R4XQwaurhkXCjlIFUU-pSy5yHhj-KjXJ_ob3h4eRoBOQusYFMUG0iG2JZ4w43hcctUn2ARLjBRqaMuNHjplzigp3BM_6PRXUDskJ2cpEQ_JTP4vVdvlvjHcSXWQysY0UqVGCPI'); background-size: cover; background-position: center;">
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 lg:px-20 bg-white dark:bg-background-dark/50">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center lg:text-left">
+<h2 class="text-3xl font-black text-slate-900 dark:text-slate-100 mb-4 tracking-tight">The Security Stack</h2>
+<p class="text-slate-600 dark:text-slate-400">Advanced measures to safeguard the integrity of every vehicle audit.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-8 rounded-2xl border border-primary/10 bg-background-light dark:bg-slate-900/50 hover:border-primary transition-colors group">
+<div class="size-12 rounded-xl bg-primary text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<h3 class="text-xl font-bold mb-3">256-bit Encryption</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                AES-256 grade encryption for all user communications and financial transactions, ensuring end-to-end data safety.
+                            </p>
+</div>
+<div class="p-8 rounded-2xl border border-primary/10 bg-background-light dark:bg-slate-900/50 hover:border-primary transition-colors group">
+<div class="size-12 rounded-xl bg-primary text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">database</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Data Sovereignty</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Localized data storage solutions compliant with regional privacy laws and international regulatory frameworks.
+                            </p>
+</div>
+<div class="p-8 rounded-2xl border border-primary/10 bg-background-light dark:bg-slate-900/50 hover:border-primary transition-colors group">
+<div class="size-12 rounded-xl bg-primary text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">security_update_good</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Anti-Fraud Protocols</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Real-time monitoring and verification systems that prevent unauthorized tampering with GariScore digital reports.
+                            </p>
+</div>
+<div class="p-8 rounded-2xl border border-primary/10 bg-background-light dark:bg-slate-900/50 hover:border-primary transition-colors group">
+<div class="size-12 rounded-xl bg-primary text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">rule</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Regular Audits</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Quarterly third-party penetration tests and security assessments to identify and mitigate potential vulnerabilities.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-24 lg:px-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-black text-slate-900 dark:text-slate-100 mb-4 tracking-tight">Data Privacy Principles</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">We believe your data belongs to you. Our privacy framework is built on three core pillars.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center">
+<div class="size-16 rounded-full bg-primary/5 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Transparency</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                We are clear about what data we collect and why. No hidden trackers, no opaque algorithms—just clear, concise privacy disclosures.
+                            </p>
+</div>
+<div class="flex flex-col items-center">
+<div class="size-16 rounded-full bg-primary/5 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">settings_accessibility</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Control</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                You own your data. GariAudit provides comprehensive tools to export, manage, or permanently delete your information at any time.
+                            </p>
+</div>
+<div class="flex flex-col items-center">
+<div class="size-16 rounded-full bg-primary/5 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">target</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Purpose</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Data is collected solely to enhance your experience. Your personal details are <strong>never</strong> sold to third parties for advertising.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 lg:px-20 bg-primary text-white">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+<div class="lg:w-1/2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-widest mb-6">
+                            Verification Engine
+                        </div>
+<h2 class="text-4xl font-black mb-6 tracking-tight">Report Integrity System</h2>
+<p class="text-white/80 text-lg mb-8 leading-relaxed">
+                            Static PDFs are easy to fake. GariAudit uses a unique 'Verified Report' link system. Every digital report includes a cryptographic hash that connects back to our live database, preventing fraudulent modifications and ensuring buyers see the truth.
+                        </p>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-white/10 border border-white/20">
+<span class="material-symbols-outlined text-3xl shrink-0">qr_code_2</span>
+<div>
+<h4 class="font-bold mb-1 text-white">Live Verification</h4>
+<p class="text-sm text-white/70">Scan or click to verify report authenticity against our master records instantly.</p>
+</div>
+</div>
+</div>
+<div class="lg:w-1/3 w-full">
+<div class="bg-white p-8 rounded-2xl text-slate-900 shadow-2xl relative">
+<div class="absolute -top-4 -right-4 size-16 bg-green-500 rounded-full flex items-center justify-center text-white border-4 border-white">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</div>
+<div class="border-b border-slate-100 pb-4 mb-4">
+<p class="text-xs uppercase font-bold text-slate-400 tracking-wider">Audit Result</p>
+<p class="text-2xl font-black text-primary">Report #GA-9921</p>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+<div class="flex justify-between items-center text-sm font-bold">
+<span>Integrity Score</span>
+<span class="text-primary">92/100</span>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+</div>
+<p class="text-[10px] font-mono text-slate-500 truncate">sha256:7f8d9a1b2c3d4e5f6g7h8i9j0k</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-16 lg:px-20 border-y border-primary/5 bg-white dark:bg-background-dark/30">
+<div class="max-w-7xl mx-auto flex flex-col items-center">
+<p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">Compliance &amp; Certifications</p>
+<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">verified</span>
+<span class="font-black text-xl">ISO 27001</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">gavel</span>
+<span class="font-black text-xl">GDPR Ready</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">security</span>
+<span class="font-black text-xl">SOC2 Type II</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl">account_balance</span>
+<span class="font-black text-xl">Gov-Audit Compliant</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-24 lg:px-20 text-center">
+<div class="max-w-3xl mx-auto bg-primary/5 p-12 lg:p-20 rounded-[2rem] border border-primary/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-9xl">help_center</span>
+</div>
+<h2 class="text-4xl font-black text-slate-900 dark:text-slate-100 mb-6 tracking-tight relative z-10">Have Security Questions?</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-10 text-lg leading-relaxed relative z-10">
+                        Our dedicated Data Protection Officer (DPO) and security team are here to help you understand how we protect your information.
+                    </p>
+<button class="h-14 px-10 rounded-xl bg-primary text-white font-bold hover:shadow-xl hover:shadow-primary/30 transition-all relative z-10">
+                        Contact our DPO
+                    </button>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark text-slate-400 px-6 py-16 lg:px-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 text-white mb-6">
+<span class="material-symbols-outlined text-2xl font-bold">verified_user</span>
+<h2 class="text-xl font-black">GariAudit</h2>
+</div>
+<p class="max-w-sm leading-relaxed mb-6">
+                        Setting the global standard for vehicle audit integrity and data privacy through innovative technology and uncompromising ethics.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white transition-all" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="size-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white transition-all" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="size-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Platform</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Reports</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Developer API</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Security</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="text-white" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Security Whitepaper</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Compliance Status</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-white/5 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+<p>© 2024 GariAudit Platform. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Legal</a>
+<a class="hover:text-white" href="#">Cookies</a>
+<a class="hover:text-white" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

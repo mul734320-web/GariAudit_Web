@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fleet Performance Analytics - GariAudit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-primary/10 px-6 py-3 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary dark:text-primary/90">
+<span class="material-symbols-outlined text-3xl">shield_with_heart</span>
+<h2 class="text-xl font-black tracking-tight">GariAudit <span class="font-normal text-slate-500">Fleet</span></h2>
+</div>
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-transparent focus-within:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-slate-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-slate-500" placeholder="Search VIN, Model or Audit ID..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-semibold text-primary border-b-2 border-primary pb-1" href="#">Analytics</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Inventory</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary" href="#">Reports</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold" data-alt="User profile avatar placeholder">
+                        JD
+                    </div>
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 max-w-[1600px] mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Fleet Performance Analytics</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Real-time inventory health and profitability insights across all locations.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm hover:bg-slate-50">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                        Last 30 Days
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<!-- Sidebar Column: Actionable Insights -->
+<aside class="col-span-12 lg:col-span-3 space-y-6 order-last lg:order-none">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="font-bold text-slate-900 dark:text-white">AI Insights</h3>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-primary/5 dark:bg-primary/10 rounded-lg border-l-4 border-primary">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Inventory Optimization</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">Certify <span class="font-bold">5 more SUVs</span> to meet high market demand in the tri-state area.</p>
+</div>
+<div class="p-4 bg-amber-50 dark:bg-amber-900/10 rounded-lg border-l-4 border-amber-500">
+<p class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-1">Value Recovery</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">Address minor paint issues on <span class="font-bold">3 vehicles</span> to increase projected resale by 5% ($12,400).</p>
+</div>
+<div class="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-lg border-l-4 border-emerald-500">
+<p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Pricing Alert</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">GariScore 95+ vehicles are selling <span class="font-bold">14% faster</span> than predicted. Consider price adjustment.</p>
+</div>
+</div>
+<button class="w-full mt-6 text-primary text-sm font-bold flex items-center justify-center gap-1 hover:underline">
+                            View All Recommendations <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Top/Bottom Performers Small Cards -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-slate-900 dark:text-white mb-4">Asset Status</h3>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-slate-500 uppercase">High-Trust Assets</span>
+<span class="text-xs font-bold text-emerald-600">Top 10%</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-sm font-bold">2022 BMW X5</p>
+<p class="text-xs text-slate-500">GariScore: 98 | 4 Days</p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-slate-500 uppercase">Risk Assets</span>
+<span class="text-xs font-bold text-rose-600">Bottom 5%</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-rose-100 flex items-center justify-center text-rose-600">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="text-sm font-bold">2019 Ford F-150</p>
+<p class="text-xs text-slate-500">GariScore: 62 | 45 Days</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Column -->
+<div class="col-span-12 lg:col-span-9 space-y-6">
+<!-- Executive Summary Tiles -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 text-sm font-medium">Inventory Health</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h4 class="text-2xl font-black text-slate-900 dark:text-white">82% <span class="text-sm font-normal text-slate-400">Certified</span></h4>
+</div>
+<div class="mt-3 flex items-center gap-1 text-emerald-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span> +5.2% from last month
+                            </div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 text-sm font-medium">Avg. Days to Sell</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h4 class="text-2xl font-black text-slate-900 dark:text-white">18 <span class="text-sm font-normal text-slate-400">vs 34 Days</span></h4>
+</div>
+<div class="mt-3 flex items-center gap-1 text-emerald-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">speed</span> 47% Faster (Audited)
+                            </div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 text-sm font-medium">Certified Value</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h4 class="text-2xl font-black text-slate-900 dark:text-white">$4.2M</h4>
+</div>
+<div class="mt-3 flex items-center gap-1 text-emerald-600 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span> +8% increase in value
+                            </div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 text-sm font-medium">Resale Uplift</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h4 class="text-2xl font-black text-emerald-600">+12.4%</h4>
+</div>
+<div class="mt-3 flex items-center gap-1 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-sm">insights</span> Projected $520k margin gain
+                            </div>
+</div>
+</div>
+<!-- Visual Analytics Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- GariScore Distribution -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white">GariScore Distribution</h3>
+<span class="text-xs font-medium text-slate-400">Units per Tier</span>
+</div>
+<div class="h-48 flex items-end gap-2 px-2">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[20%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">12</div>
+</div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t h-[35%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">28</div>
+</div>
+<div class="flex-1 bg-primary/40 rounded-t h-[65%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">54</div>
+</div>
+<div class="flex-1 bg-primary/70 rounded-t h-[85%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">72</div>
+</div>
+<div class="flex-1 bg-primary rounded-t h-[55%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">45</div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>60-69</span>
+<span>70-79</span>
+<span>80-89</span>
+<span>90-95</span>
+<span>96-100</span>
+</div>
+</div>
+<!-- Profitability Correlation -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-slate-900 dark:text-white">Score vs Profit Margin</h3>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[10px] text-slate-400 uppercase font-bold">
+<div class="h-2 w-2 rounded-full bg-primary"></div> Margin
+                                    </span>
+</div>
+</div>
+<div class="h-48 relative overflow-hidden flex items-end">
+<!-- Mock Scatter/Trend Line Graph -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary opacity-30" d="M0,80 Q25,75 50,50 T100,20" fill="none" stroke="currentColor" stroke-width="2"></path>
+<circle class="fill-primary/40" cx="10" cy="85" r="1.5"></circle>
+<circle class="fill-primary/40" cx="25" cy="78" r="1.5"></circle>
+<circle class="fill-primary/60" cx="40" cy="65" r="1.5"></circle>
+<circle class="fill-primary/80" cx="55" cy="55" r="2"></circle>
+<circle class="fill-primary" cx="70" cy="40" r="2.5"></circle>
+<circle class="fill-primary" cx="85" cy="25" r="3"></circle>
+<circle class="fill-primary" cx="95" cy="15" r="3.5"></circle>
+</svg>
+<div class="absolute inset-0 border-l border-b border-slate-100 dark:border-slate-800"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>Low GariScore</span>
+<span>High GariScore</span>
+</div>
+</div>
+</div>
+<!-- Category Breakdown Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white">Performance by Category</h3>
+<button class="text-xs font-bold text-primary hover:underline uppercase tracking-wider">Download Detailed View</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Car Type</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-center">Avg. GariScore</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-center">Market Demand</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-center">Avg. Margin</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Inventory Count</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">directions_car</span>
+<span class="font-bold text-sm">SUVs &amp; Crossovers</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">92.4</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<div class="w-16 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[85%]"></div>
+</div>
+<span class="text-[10px] font-bold">High</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-bold text-slate-700 dark:text-slate-300">+$2,840</td>
+<td class="px-6 py-4 text-right text-sm text-slate-500 font-medium">142 units</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">directions_car</span>
+<span class="font-bold text-sm">Sedans &amp; Coupes</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2.5 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold">84.1</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<div class="w-16 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-amber-400 h-full w-[45%]"></div>
+</div>
+<span class="text-[10px] font-bold">Med</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-bold text-slate-700 dark:text-slate-300">+$1,450</td>
+<td class="px-6 py-4 text-right text-sm text-slate-500 font-medium">89 units</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">diamond</span>
+<span class="font-bold text-sm">Luxury Performance</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold">95.8</span>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex items-center justify-center gap-1">
+<div class="w-16 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[92%]"></div>
+</div>
+<span class="text-[10px] font-bold">High</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-sm font-bold text-slate-700 dark:text-slate-300">+$5,120</td>
+<td class="px-6 py-4 text-right text-sm text-slate-500 font-medium">34 units</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-8 px-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm">shield_with_heart</span>
+<span class="text-xs font-bold tracking-tight uppercase">GariAudit Enterprise</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-primary" href="#">System Status</a>
+<a class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-primary" href="#">Security</a>
+<a class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-primary" href="#">Support</a>
+</div>
+<div class="text-xs text-slate-400 font-medium">
+                    © 2024 GariAudit Fleet Solutions. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

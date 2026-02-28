@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invoice INV-9021 - GariAudit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">GariAudit</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Fleets</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Audits</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Invoices</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1024px] w-full px-6 gap-6">
+<!-- Breadcrumbs & Actions -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm font-medium">
+<a class="hover:text-primary" href="#">Invoices</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100">INV-9021</span>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-bold hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span> Email Accounting
+                        </button>
+<button class="flex items-center gap-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-bold hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">print</span> Print
+                        </button>
+<button class="flex items-center gap-2 rounded-lg bg-primary text-white px-4 py-2 text-sm font-bold shadow-md hover:bg-opacity-90 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> Download PDF
+                        </button>
+</div>
+</div>
+<!-- Invoice Content -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<!-- Header Section -->
+<div class="p-8 border-b border-slate-100 dark:border-slate-800 flex justify-between items-start">
+<div class="flex flex-col gap-2">
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/20 px-2 py-1 text-xs font-bold text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">PAID</span>
+<h1 class="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Invoice INV-9021</h1>
+<p class="text-slate-500 text-sm">Issued: Oct 24, 2024 • Due: Nov 07, 2024</p>
+</div>
+<div class="text-right">
+<p class="text-slate-400 text-xs font-bold uppercase tracking-wider mb-1">Total Amount</p>
+<p class="text-3xl font-black text-primary tracking-tight">৳ 124,500.00</p>
+</div>
+</div>
+<!-- Billing Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="flex gap-4">
+<div class="bg-primary/10 p-3 rounded-lg h-fit text-primary">
+<span class="material-symbols-outlined">business</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 uppercase tracking-wide">Billed To</h3>
+<p class="text-slate-900 dark:text-slate-100 font-bold">Elite Motors Ltd.</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    Dhaka South Dealer HQ<br/>
+                                    42/A Gulshan Avenue, Road 12<br/>
+                                    Dhaka - 1212, Bangladesh<br/>
+                                    BIN: 001234567-0203
+                                </p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary/10 p-3 rounded-lg h-fit text-primary">
+<span class="material-symbols-outlined">corporate_fare</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 uppercase tracking-wide">From</h3>
+<p class="text-slate-900 dark:text-slate-100 font-bold">GariAudit HQ</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    Navana Tower, Floor 14<br/>
+                                    Banani C/A, Dhaka - 1213<br/>
+                                    Bangladesh<br/>
+                                    VAT Reg: 1290334882
+                                </p>
+</div>
+</div>
+</div>
+<!-- Batch Reference Bar -->
+<div class="px-8 py-4 bg-primary text-white flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/70">inventory_2</span>
+<span class="text-sm font-medium">Batch Reference: <span class="font-bold">GA-BATCH-2024-089</span></span>
+</div>
+<div class="text-sm">Total Units: <span class="font-bold">12 Vehicles</span></div>
+</div>
+<!-- Line Items Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-8 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Vehicle Details (VIN)</th>
+<th class="px-4 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Audit Package</th>
+<th class="px-4 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-8 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Base Fee</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-slate-100 font-semibold">2022 Toyota Land Cruiser Prado</span>
+<span class="text-slate-500 text-xs font-mono">VIN: JTEBH31J80209483</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm text-slate-600 dark:text-slate-400">Premium Diagnostic</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-600"></span> Completed
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right font-medium">৳ 12,000.00</td>
+</tr>
+<tr>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-slate-100 font-semibold">2023 Mercedes-Benz GLS 450</span>
+<span class="text-slate-500 text-xs font-mono">VIN: WDC1671591A55432</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm text-slate-600 dark:text-slate-400">Premium Diagnostic</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-600"></span> Completed
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right font-medium">৳ 12,000.00</td>
+</tr>
+<tr>
+<td class="px-8 py-5">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-slate-100 font-semibold">2021 BMW 530i M Sport</span>
+<span class="text-slate-500 text-xs font-mono">VIN: WBA51BJ0XLC34921</span>
+</div>
+</td>
+<td class="px-4 py-5 text-sm text-slate-600 dark:text-slate-400">Standard Audit</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-600"></span> Completed
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right font-medium">৳ 8,500.00</td>
+</tr>
+<tr class="bg-slate-50/30 dark:bg-slate-800/10">
+<td class="px-8 py-4 text-sm text-slate-500 italic" colspan="3">... and 9 other vehicles in this batch</td>
+<td class="px-8 py-4 text-right font-medium">৳ 102,500.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Financial Summary & Payment Info -->
+<div class="p-8 flex flex-col md:flex-row gap-10">
+<!-- Payment Method Section -->
+<div class="flex-1">
+<h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4 uppercase tracking-wide">Payment Details</h3>
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-5 border border-slate-200 dark:border-slate-700">
+<div class="flex justify-between mb-3">
+<span class="text-slate-500 text-sm">Payment Method</span>
+<span class="text-slate-900 dark:text-slate-100 text-sm font-bold flex items-center gap-2">
+                                        Enterprise Wallet - bKash
+                                    </span>
+</div>
+<div class="flex justify-between mb-3">
+<span class="text-slate-500 text-sm">Transaction ID</span>
+<span class="text-slate-900 dark:text-slate-100 text-sm font-mono">TXN-882901124AX</span>
+</div>
+<div class="flex justify-between">
+<span class="text-slate-500 text-sm">Processed Date</span>
+<span class="text-slate-900 dark:text-slate-100 text-sm">Oct 26, 2024 • 14:32</span>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/10 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    This invoice has been settled via the Enterprise Digital Wallet system. A copy has been dispatched to Elite Motors Accounting portal.
+                                </p>
+</div>
+</div>
+<!-- Totals Section -->
+<div class="w-full md:w-80">
+<div class="space-y-3">
+<div class="flex justify-between text-sm text-slate-600 dark:text-slate-400">
+<span>Subtotal</span>
+<span>৳ 135,000.00</span>
+</div>
+<div class="flex justify-between text-sm font-medium text-green-600">
+<span>Enterprise Discount (15% Tier 2)</span>
+<span>- ৳ 20,250.00</span>
+</div>
+<div class="flex justify-between text-sm text-slate-600 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800 pb-3">
+<span>Service Tax (15%)</span>
+<span>৳ 9,750.00</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="text-lg font-bold text-slate-900 dark:text-slate-100">Total Paid</span>
+<span class="text-2xl font-black text-primary">৳ 124,500.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-8 border-t border-slate-100 dark:border-slate-800 text-center">
+<p class="text-slate-400 text-xs">
+                            Thank you for choosing GariAudit. For any billing inquiries, please contact <a class="text-primary font-medium" href="mailto:billing@gariaudit.com">billing@gariaudit.com</a>.
+                            <br/>
+                            This is a computer-generated document and requires no physical signature.
+                        </p>
+</div>
+</div>
+<!-- Related Batch Preview -->
+<div class="flex flex-col gap-4">
+<h2 class="text-lg font-bold">Audit Reports from this Invoice</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Report-80209483</span>
+<span class="text-xs text-slate-500">LC Prado • Grade 4.5/5</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Report-1A55432</span>
+<span class="text-xs text-slate-500">GLS 450 • Grade 5/5</span>
+</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400">View All 12 Reports</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Page Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10">
+<div class="max-w-[1024px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 text-slate-400">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-sm">© 2024 GariAudit Platform. All rights reserved.</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Security</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

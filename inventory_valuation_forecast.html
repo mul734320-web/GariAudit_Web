@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>GariAudit | Inventory Valuation Forecast</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block text-2xl">analytics</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">GariAudit</h2>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-sm font-bold">Valuation Forecast</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-sm font-medium">Market Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img alt="Profile" data-alt="User profile photo of a fleet manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-92bcaS0lYhcMnscUGmP1h9QFtUA0X13O53-18ZnKoDvmqmp4BO3VGFAWGqkag_-prBsLDVZ97JiLFA4ySytloP43bu4o_sTTAjXpFd1UgHze9k5Vc2LQC6LYy9OHCk9XHJFKhNpP3E7FgNo3FDjL-tWIZuw3pAA0eqEbsFF7pDol2wXUINMQkk-wLLCuBTCRLrIaxp3LkuMmENwhxs_dFG2aB6MY7UxFXI3vOe8rJSi-x4DegKIIbDdDaXCjiKDth2ZPB9bF-_4"/>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold truncate">Alex Sterling</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Fleet Director</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-8">
+<!-- Top Nav / Header Area -->
+<header class="flex justify-between items-center mb-8">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight">Inventory Valuation &amp; Exit Strategy</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Enterprise-level predictive ROI and asset liquidation intelligence.</p>
+</div>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 outline-none w-64" placeholder="Search fleet assets..." type="text"/>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-lg">download</span> Export Data
+                    </button>
+</div>
+</header>
+<!-- Key Stats -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Total Fleet Value</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">$12,482,900</span>
+<span class="text-emerald-500 text-sm font-bold flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span> 1.4%</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Current mark-to-market valuation</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">90-Day Projected Delta</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold text-primary">-$342,000</span>
+<span class="text-primary text-sm font-bold flex items-center"><span class="material-symbols-outlined text-sm">trending_down</span> 2.7%</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Anticipated depreciation across all segments</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm border-l-4 border-l-emerald-500">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Liquidation Efficiency</p>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-bold">94.2%</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Realized value vs. initial ROI forecast</p>
+</div>
+</section>
+<!-- Main Analytics Area -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8">
+<!-- Forecast Chart -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-lg font-bold">Projected Value vs. Holding Time</h3>
+<p class="text-xs text-slate-500">12-month predictive valuation with 95% confidence intervals</p>
+</div>
+<select class="text-sm border-slate-200 dark:border-slate-700 rounded bg-transparent outline-none">
+<option>All Vehicles</option>
+<option>EV Segment</option>
+<option>Light Trucks</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-1 group">
+<!-- Simplified Visualization of a Line Graph with Confidence Interval -->
+<div class="relative w-full h-full bg-slate-50 dark:bg-slate-900/50 rounded-lg overflow-hidden flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+<!-- Mocking the graph lines using a SVG -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<!-- Confidence Interval Area -->
+<path d="M0,40 Q25,35 50,55 T100,75 L100,95 T50,85 Q25,55 0,60 Z" fill="#ec5b13" fill-opacity="0.1"></path>
+<!-- Main Trend Line -->
+<path d="M0,50 Q25,45 50,65 T100,85" fill="none" stroke="#ec5b13" stroke-width="2"></path>
+</svg>
+<div class="flex justify-between px-4 pb-2 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+<span>Jan 24</span>
+<span>Mar 24</span>
+<span>Jun 24</span>
+<span>Sep 24</span>
+<span>Dec 24</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scenario Planner -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span> Scenario Planner
+                    </h3>
+<div class="space-y-6">
+<div class="space-y-3">
+<div class="flex justify-between">
+<label class="text-sm font-medium">Fuel Price Volatility</label>
+<span class="text-xs font-bold text-primary">+15%</span>
+</div>
+<input class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<label class="text-sm font-medium">Interest Rates (Fed)</label>
+<span class="text-xs font-bold text-primary">+0.5%</span>
+</div>
+<input class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<label class="text-sm font-medium">Supply Chain Constraint</label>
+<span class="text-xs font-bold text-primary">High</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1 px-2 border border-slate-200 dark:border-slate-700 rounded text-[10px] font-bold">LOW</button>
+<button class="flex-1 py-1 px-2 border border-slate-200 dark:border-slate-700 rounded text-[10px] font-bold">MID</button>
+<button class="flex-1 py-1 px-2 bg-primary text-white border border-primary rounded text-[10px] font-bold">HIGH</button>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-xs text-slate-500 mb-2 italic">Impact analysis:</p>
+<p class="text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+                                Projected ROI could shift by <span class="text-primary">-4.2%</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- Market Demand Heatmap -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<h3 class="text-lg font-bold mb-6">Market Demand Heatmap</h3>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/30">
+<p class="text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400">Rising Demand</p>
+<p class="text-base font-bold">Mid-size Hybrids</p>
+<p class="text-xs text-slate-500 mt-1">+12.4% avg secondary price</p>
+</div>
+<div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700">
+<p class="text-[10px] uppercase font-black text-slate-500">Stable</p>
+<p class="text-base font-bold">Heavy Duty Trucks</p>
+<p class="text-xs text-slate-500 mt-1">-0.2% variance</p>
+</div>
+<div class="p-4 rounded-lg bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20">
+<p class="text-[10px] uppercase font-black text-primary">Cooling</p>
+<p class="text-base font-bold">Premium EVs</p>
+<p class="text-xs text-slate-500 mt-1">-8.7% volatility spike</p>
+</div>
+<div class="p-4 rounded-lg bg-amber-50 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900/30">
+<p class="text-[10px] uppercase font-black text-amber-600 dark:text-amber-400">High Turnover</p>
+<p class="text-base font-bold">Commercial Vans</p>
+<p class="text-xs text-slate-500 mt-1">14 day avg turn time</p>
+</div>
+</div>
+<div class="mt-4 p-4 border border-dashed border-slate-300 dark:border-slate-700 rounded-lg text-center text-xs text-slate-400">
+                            View Category Deep-Dive Metrics
+                        </div>
+</div>
+</div>
+<!-- Optimal Exit Signals -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold">Optimal Exit Signals</h3>
+<span class="bg-primary/20 text-primary px-2 py-1 rounded text-[10px] font-black uppercase tracking-tighter">AI Analysis Active</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead>
+<tr class="text-left border-b border-slate-100 dark:border-slate-700">
+<th class="pb-3 text-[10px] font-black uppercase tracking-wider text-slate-400">Asset</th>
+<th class="pb-3 text-[10px] font-black uppercase tracking-wider text-slate-400">Peak Value</th>
+<th class="pb-3 text-[10px] font-black uppercase tracking-wider text-slate-400">Depreciation Risk</th>
+<th class="pb-3 text-[10px] font-black uppercase tracking-wider text-slate-400">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-700/50">
+<tr>
+<td class="py-4">
+<p class="text-sm font-bold">Ford F-150 (2021)</p>
+<p class="text-[10px] text-slate-400 italic">ID: #FL-9204</p>
+</td>
+<td class="py-4">
+<p class="text-sm">$42,500</p>
+<p class="text-[10px] text-primary">Now (98% of peak)</p>
+</td>
+<td class="py-4">
+<div class="w-16 bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full">
+<div class="bg-red-500 w-[85%] h-full rounded-full"></div>
+</div>
+</td>
+<td class="py-4 text-right">
+<button class="bg-primary text-white text-[10px] font-bold py-1.5 px-3 rounded hover:opacity-90 transition-opacity">SELL NOW</button>
+</td>
+</tr>
+<tr>
+<td class="py-4">
+<p class="text-sm">Tesla Model 3 (2022)</p>
+<p class="text-[10px] text-slate-400 italic">ID: #FL-1182</p>
+</td>
+<td class="py-4">
+<p class="text-sm">$31,200</p>
+<p class="text-[10px] text-slate-400">Peak in 15 days</p>
+</td>
+<td class="py-4">
+<div class="w-16 bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full">
+<div class="bg-amber-500 w-[60%] h-full rounded-full"></div>
+</div>
+</td>
+<td class="py-4 text-right">
+<button class="border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-[10px] font-bold py-1.5 px-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">WATCHLIST</button>
+</td>
+</tr>
+<tr>
+<td class="py-4">
+<p class="text-sm">Mercedes Sprinter (2020)</p>
+<p class="text-[10px] text-slate-400 italic">ID: #FL-5521</p>
+</td>
+<td class="py-4">
+<p class="text-sm">$38,900</p>
+<p class="text-[10px] text-emerald-500">Hold 45-60 days</p>
+</td>
+<td class="py-4">
+<div class="w-16 bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full">
+<div class="bg-emerald-500 w-[20%] h-full rounded-full"></div>
+</div>
+</td>
+<td class="py-4 text-right">
+<button class="border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-[10px] font-bold py-1.5 px-3 rounded hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">PLAN EXIT</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

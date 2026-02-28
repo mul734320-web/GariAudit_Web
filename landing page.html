@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>GariAudit | Professional Vehicle Inspection</title>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .nav-dropdown .dropdown-panel { opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; }
+        .nav-dropdown:hover .dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+        .nav-dropdown:hover .nav-trigger .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform 0.2s ease; }
+        .mobile-nav[aria-hidden="true"] { display: none; }
+        .mobile-nav[aria-hidden="false"] { display: block; }
+        .mobile-submenu[aria-hidden="true"] { display: none; }
+        .mobile-submenu[aria-hidden="false"] { display: block; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        @keyframes pulse-soft { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        .pulse-anim { animation: pulse-soft 2s infinite; }
+    </style></head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Professional Header: Main Nav + Dropdown Subpages -->
+<header class="sticky top-0 z-50 border-b border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md relative">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30 text-primary">
+<picture><source srcset="Wave.avif" type="image/avif"/><img src="wave.svg" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></picture>
+</div>
+<div class="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-10">
+<a href="landing%20page.html" class="flex shrink-0 items-center gap-3">
+<div class="size-9 rounded-lg bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined text-xl">analytics</span></div>
+<div class="flex flex-col leading-tight">
+<span class="text-base font-bold tracking-tight text-slate-900 dark:text-white sm:text-lg">GariAudit</span>
+<span class="text-[10px] font-semibold uppercase tracking-widest text-primary/80">Vehicle Truth Layer</span>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-0.5" aria-label="Main">
+<div class="nav-dropdown relative">
+<button type="button" class="nav-trigger flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" aria-haspopup="true">Consumer <span class="chevron material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="dropdown-panel absolute left-0 top-full z-50 mt-0 min-w-[240px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 shadow-xl">
+<p class="px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-400">Buyer Experience</p>
+<a href="how_gariaudit_works.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">How GariAudit Works</a>
+<a href="why_gariaudit_case_study.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Why GariAudit (Case Study)</a>
+<a href="start_new_audit_flow.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Start Audit Flow</a>
+<a href="my_audits_list.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">My Audits &amp; Reports</a>
+<a href="verified_report_animated.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Verified Report</a>
+<a href="vehicle_history_deep_dive.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Vehicle History</a>
+<a href="gariaudit_pro_membership.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Pro Membership</a>
+<a href="user_profile_dashboard.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">User Dashboard</a>
+</div>
+</div>
+<div class="nav-dropdown relative">
+<button type="button" class="nav-trigger flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" aria-haspopup="true">Auditor <span class="chevron material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="dropdown-panel absolute left-0 top-full z-50 mt-0 min-w-[240px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 shadow-xl">
+<p class="px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-400">Field Network</p>
+<a href="auditor_dashboard_active_gigs.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Auditor Dashboard &amp; Gigs</a>
+<a href="certified_auditor_profile.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Certified Auditor Profile</a>
+<a href="careers_at_gariaudit.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Careers &amp; Onboarding</a>
+</div>
+</div>
+<div class="nav-dropdown relative">
+<button type="button" class="nav-trigger flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" aria-haspopup="true">Enterprise <span class="chevron material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="dropdown-panel absolute left-0 top-full z-50 mt-0 min-w-[240px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 shadow-xl">
+<p class="px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-400">Dealers, Banks &amp; Insurers</p>
+<a href="b2b_partner_portal.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">B2B Partner Portal</a>
+<a href="dealer_fleet_management_dashboard.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Dealer Fleet Management</a>
+<a href="bulk_audit_request_flow.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Bulk Audit Requests</a>
+<a href="fleet_financials_invoicing.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Fleet Financials &amp; Invoicing</a>
+<a href="fleet_performance_analytics.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Fleet Analytics</a>
+<a href="inventory_valuation_forecast.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Inventory Valuation</a>
+<a href="market_demand_heatmap_deep_dive.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Market Demand Heatmap</a>
+<a href="dealer_performance_benchmarking.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Dealer Benchmarking</a>
+</div>
+</div>
+<div class="nav-dropdown relative">
+<button type="button" class="nav-trigger flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" aria-haspopup="true">Platform &amp; Trust <span class="chevron material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="dropdown-panel absolute left-0 top-full z-50 mt-0 min-w-[240px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 shadow-xl">
+<p class="px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-400">Governance &amp; Story</p>
+<a href="about_gariaudit.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">About GariAudit</a>
+<a href="legal_compliance_center.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Legal &amp; Compliance Center</a>
+<a href="security_data_privacy.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Security &amp; Data Privacy</a>
+<a href="faq_community_wall.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">FAQ &amp; Community Wall</a>
+<a href="contact_support_hub.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Contact &amp; Support</a>
+<a href="site%20architecture.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Site Architecture</a>
+</div>
+</div>
+<div class="nav-dropdown relative">
+<button type="button" class="nav-trigger flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" aria-haspopup="true">Growth <span class="chevron material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="dropdown-panel absolute left-0 top-full z-50 mt-0 min-w-[240px] rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2 shadow-xl">
+<p class="px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-slate-400">Distribution &amp; Loyalty</p>
+<a href="referral_program.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Referral Program</a>
+<a href="sell_faster_with_trust_badge.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Sell Faster with Trust Badge</a>
+<a href="gariaudit_pro_membership.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">GariAudit Pro Membership</a>
+<a href="media_press_kit.html" class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-primary/5 hover:text-primary">Media &amp; Press Kit</a>
+</div>
+</div>
+</nav>
+<div class="flex shrink-0 items-center gap-2 sm:gap-3">
+<a href="start_new_audit_flow.html" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors"><span class="material-symbols-outlined text-lg">directions_car</span> Book an Audit</a>
+<button type="button" id="mobileMenuBtn" class="flex size-10 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+<div id="mobileNav" class="mobile-nav lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900" aria-hidden="true">
+<div class="mx-auto max-w-7xl px-4 py-4 space-y-1">
+<div><button type="button" class="mobile-nav-trigger flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-white bg-slate-50 dark:bg-slate-800/50" data-submenu="mobileConsumer">Consumer</button>
+<div id="mobileConsumer" class="mobile-submenu pl-4 pt-1 pb-2" aria-hidden="true">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Buyer Experience</p>
+<a href="how_gariaudit_works.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">How GariAudit Works</a>
+<a href="why_gariaudit_case_study.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Why GariAudit (Case Study)</a>
+<a href="start_new_audit_flow.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Start Audit Flow</a>
+<a href="my_audits_list.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">My Audits &amp; Reports</a>
+</div></div>
+<div><button type="button" class="mobile-nav-trigger flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-white bg-slate-50 dark:bg-slate-800/50" data-submenu="mobileAuditor">Auditor</button>
+<div id="mobileAuditor" class="mobile-submenu pl-4 pt-1 pb-2" aria-hidden="true">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Field Network</p>
+<a href="auditor_dashboard_active_gigs.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Auditor Dashboard &amp; Gigs</a>
+<a href="certified_auditor_profile.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Certified Auditor Profile</a>
+<a href="careers_at_gariaudit.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Careers &amp; Onboarding</a>
+</div></div>
+<div><button type="button" class="mobile-nav-trigger flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-white bg-slate-50 dark:bg-slate-800/50" data-submenu="mobileEnterprise">Enterprise</button>
+<div id="mobileEnterprise" class="mobile-submenu pl-4 pt-1 pb-2" aria-hidden="true">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Dealers, Banks &amp; Insurers</p>
+<a href="b2b_partner_portal.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">B2B Partner Portal</a>
+<a href="dealer_fleet_management_dashboard.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Dealer Fleet Management</a>
+<a href="bulk_audit_request_flow.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Bulk Audit Requests</a>
+<a href="fleet_financials_invoicing.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Fleet Financials &amp; Invoicing</a>
+</div></div>
+<div><button type="button" class="mobile-nav-trigger flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-white bg-slate-50 dark:bg-slate-800/50" data-submenu="mobileTrust">Platform &amp; Trust</button>
+<div id="mobileTrust" class="mobile-submenu pl-4 pt-1 pb-2" aria-hidden="true">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Governance &amp; Story</p>
+<a href="about_gariaudit.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">About GariAudit</a>
+<a href="legal_compliance_center.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Legal &amp; Compliance Center</a>
+<a href="security_data_privacy.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Security &amp; Data Privacy</a>
+<a href="faq_community_wall.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">FAQ &amp; Community Wall</a>
+<a href="contact_support_hub.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Contact &amp; Support</a>
+</div></div>
+<div><button type="button" class="mobile-nav-trigger flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-white bg-slate-50 dark:bg-slate-800/50" data-submenu="mobileGrowth">Growth</button>
+<div id="mobileGrowth" class="mobile-submenu pl-4 pt-1 pb-2" aria-hidden="true">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Distribution &amp; Loyalty</p>
+<a href="referral_program.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Referral Program</a>
+<a href="sell_faster_with_trust_badge.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Sell Faster with Trust Badge</a>
+<a href="gariaudit_pro_membership.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">GariAudit Pro Membership</a>
+<a href="media_press_kit.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">Media &amp; Press Kit</a>
+</div></div>
+<div class="pt-2"><a href="start_new_audit_flow.html" class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 text-sm font-bold text-white">Book an Audit</a></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="px-6 lg:px-40 py-12 lg:py-20 bg-white dark:bg-background-dark reveal">
+<div class="max-w-[1200px] mx-auto @container">
+<div class="flex flex-col gap-10 @[864px]:flex-row @[864px]:items-center">
+<div class="flex flex-col gap-8 flex-1">
+<div class="flex flex-col gap-4 text-left">
+<p class="text-primary font-bold tracking-widest uppercase text-sm mb-2">Trust-as-a-Service Platform</p><h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl" style="">
+                                        Don't Buy a Lemon. Get it <span class="text-primary" style="">GariAudited</span> First.
+                                    </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg @[480px]:text-xl max-w-[540px]" style="">
+                                        Professional 150-point vehicle inspections for peace of mind. Paste your listing link to start.
+                                    </p>
+</div>
+<div class="flex flex-col gap-3 w-full max-w-[560px]">
+<label class="flex items-stretch rounded-xl h-14 @[480px]:h-16 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-primary/50 transition-all" style="">
+<div class="flex items-center justify-center pl-4 text-slate-400">
+<span class="material-symbols-outlined" style="">search</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 px-4 text-base placeholder:text-slate-400" placeholder="Paste Bikroy or Facebook Marketplace link..."/>
+<div class="p-2">
+<a href="start_new_audit_flow.html" class="h-full px-6 bg-primary text-white rounded-lg font-bold text-sm @[480px]:text-base hover:opacity-90 transition-opacity flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(36,0,102,0.4)] inline-flex items-center justify-center">
+                                                Audit Now
+                                            </a>
+</div>
+</label>
+<p class="text-xs text-slate-500 px-1" style="">Example: bikroy.com/ads/toyota-corolla-for-sale...</p>
+</div>
+</div>
+<div class="flex-1 w-full relative float-anim">
+<div class="w-full aspect-video bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700 bg-cover bg-center" data-alt="Modern silver car being inspected by professional mechanic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcKxiqu6PNQAKE2ppFvygpJuMZX3e2MrmvESJYmggJ0W8_jPeqvbirmRnRov1ys4c5ffQgpFDkjWQkJTLxyUxvFxJUgMd6QXQ9_YAkZBYZoPob45FxPzXhAgLHAi7PomF2rllWgZX_spbvNzU72EIYqxlfbT5lpBuxtU5os_tRY41m4ceZ6_DdvuIObONR0Y0cyahZcLYdgJRdlDMkIiJgl2RT9l8IShZdfxWbSxIKoJAnDejaAdqQwPGAkwuxdJr5DcoKSPM41IA");'>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 hidden lg:flex items-center gap-4 pulse-anim">
+<div class="size-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined" style="">verified_user</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100" style="">150+ Points Checked</p>
+<p class="text-xs text-slate-500" style="">Full Engine &amp; Body Scan</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><section class="px-6 lg:px-40 py-24 bg-slate-50 dark:bg-slate-900/30 reveal">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">The Transparency Gap</h2>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black">The Dark Side vs. GariAudit Light</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="p-10 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border-t-4 border-red-500">
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-red-500">error</span> The Old Way</h3>
+<ul class="space-y-4 text-slate-600 dark:text-slate-400">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-red-500 text-sm">close</span> Asymmetric information favoring scammers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-red-500 text-sm">close</span> Odometer fraud and hidden structural damage</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-red-500 text-sm">close</span> Fragmented, unreliable manual inspections</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-red-500 text-sm">close</span> Weeks of wasted time and lost deposits</li>
+</ul>
+</div>
+<div class="p-10 rounded-3xl bg-white dark:bg-slate-800 shadow-xl border-t-4 border-primary">
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="material-symbols-outlined text-primary">verified</span> The GariAudit Way</h3>
+<ul class="space-y-4 text-slate-600 dark:text-slate-400">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Institutional-grade data for every buyer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> OBD-II forensic scanning &amp; paint thickness checks</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Standardized AI-powered health scoring</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Instant trust, 2x faster transaction speed</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Ticker -->
+<div class="px-6 lg:px-40 py-6 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 reveal">
+<div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3 overflow-hidden">
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiW2O0OhWcwCTxaAWv4cAVtIm9BtztEMKg3DF0iCbQ0XzDWQ9DCvMeUd5wETXo785Fd2zVEl8WLWxW69lfu9FQ0nFMUr97fIAXVs0imnZQvjHrUwGe-nU5wwZEACTLqBZCGLPyDz8koV2vfb6-2U7ePfOvLC6SJTS5Um9wqv48Yemj_2DWK9v2xgw3EcFQmzOtX6gOtY4-LMolQGIUtHrzqb68kwDmYKjcRrhYrnXDcOV310WUald-zZ8shKgbik9uZtGdU5TEYXU" style=""/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj8cFJ5Yzj0Xw1d6CsJfZis_o96jKpnL8M6YsucswY2m_wuJgMW8In323vqzaR_F7C6fRw9V7M8g3YFMzD3cd946UAOpywif3MbTO2F9PQeJ_pGEEyNga3a7eNeNXtlcx5TnDNzbOQQyMLTzI58jBQ7qT811rDt5wljnl2bwejCgwIj4gUnVjol7J2iVl5UloydRQFKKsLfW7sEXj3oXjSJo4C12yDTCR58fWnLYQwAD7otHM6uhl0YeQu9ZNsYVjufsaUl7fxv5E" style=""/>
+<img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqGvjfwTp1N3XWK6a--AmbniFzkNK18YOxrsl7aa0itakgkyseBelKa2s98fji3WnqfzIelBB9afqa-UR91w8c-ycNNxu6qGRBRjttq020ZEGUHtF6OUTsp20YkIZ1Nzqsj2W9iDr7P0OXR8LQp3U506-NIE78ljFm_5MRWu6zytP7WJOEyfUdNzHamBjmzIPIqVt8ylgo9wdSAYJ00rxnUkdxzmKZL0sMRpprSOLCQEAXBMYGWpqnQWyR_2K6_AsdXJQPOnMXGXI" style=""/>
+</div>
+<p class="text-slate-600 dark:text-slate-400 font-medium" style="">
+<span class="text-primary font-bold" style="">12 Audits</span> completed in <span class="font-bold underline decoration-primary/30" style="">Dhaka</span> today
+                            </p>
+</div>
+<div class="flex items-center gap-8 opacity-80">
+<span class="text-sm font-bold uppercase tracking-widest text-slate-400" style="">Trusted Partners</span>
+<div class="flex items-center gap-8 flex-wrap">
+<img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=120&h=32&fit=crop" alt="Auto Partner" class="h-8 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"/>
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=120&h=32&fit=crop" alt="Fleet Partner" class="h-8 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"/>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=120&h=32&fit=crop" alt="Dealer Partner" class="h-8 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"/>
+</div>
+</div>
+</div>
+</div>
+<!-- How it Works Section -->
+<div class="px-6 lg:px-40 py-24 bg-white dark:bg-background-dark reveal" id="ecosystem">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">The Ecosystem</h2>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black">Four Pillars of GariAudit</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"><div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group hover:border-primary transition-all transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6"><span class="material-symbols-outlined text-3xl">person</span></div>
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">For Buyers</h3>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+<li class="flex gap-2"><span class="text-primary font-bold">•</span> Negotiate with hard data</li>
+<li class="flex gap-2"><span class="text-primary font-bold">•</span> 12-month maintenance forecasts</li>
+<li class="flex gap-2"><span class="text-primary font-bold">•</span> Fraud-proof ownership verification</li>
+</ul>
+</div>
+<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group hover:border-orange-500 transition-all transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<div class="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6"><span class="material-symbols-outlined text-3xl">sell</span></div>
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">For Sellers</h3>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+<li class="flex gap-2"><span class="text-orange-500 font-bold">•</span> Premium 'GariCertified' listing badge</li>
+<li class="flex gap-2"><span class="text-orange-500 font-bold">•</span> Justify higher market premiums</li>
+<li class="flex gap-2"><span class="text-orange-500 font-bold">•</span> Eliminate tire-kickers &amp; low-ballers</li>
+</ul>
+</div>
+<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group hover:border-green-500 transition-all transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center text-green-600 mb-6"><span class="material-symbols-outlined text-3xl">engineering</span></div>
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">For Auditors</h3>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+<li class="flex gap-2"><span class="text-green-500 font-bold">•</span> Specialized SaaS inspection toolkit</li>
+<li class="flex gap-2"><span class="text-green-500 font-bold">•</span> Guaranteed high-volume lead flow</li>
+<li class="flex gap-2"><span class="text-green-500 font-bold">•</span> Quality-based earning incentives</li>
+</ul>
+</div>
+<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group hover:border-blue-500 transition-all transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6"><span class="material-symbols-outlined text-3xl">business</span></div>
+<h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">For Enterprises</h3>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+<li class="flex gap-2"><span class="text-blue-500 font-bold">•</span> Fleet-wide health monitoring</li>
+<li class="flex gap-2"><span class="text-blue-500 font-bold">•</span> Bulk valuation for loan portfolios</li>
+<li class="flex gap-2"><span class="text-blue-500 font-bold">•</span> API-first insurance underwriting</li>
+</ul>
+</div></div>
+</div>
+</div><section class="px-6 lg:px-40 py-24 bg-primary text-white overflow-hidden relative reveal">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="text-white/60 text-sm font-bold uppercase tracking-[0.2em] mb-6">Deep Tech Stack</h2>
+<h1 class="text-4xl md:text-5xl font-black mb-8">The GariScore Engine: Forensic Precision</h1>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center font-bold">01</div>
+<div>
+<h4 class="text-xl font-bold mb-2">OBD-II Forensic Link</h4>
+<p class="text-white/70">Direct interface with the vehicle's ECU to pull historical error codes, actual mileage, and sensor performance data.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center font-bold">02</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Spectral Body Scan</h4>
+<p class="text-white/70">Digital coating thickness measurement to identify hidden structural repairs and resprays invisible to the naked eye.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center font-bold">03</div>
+<div>
+<h4 class="text-xl font-bold mb-2">AI Health Modeling</h4>
+<p class="text-white/70">Our proprietary algorithm benchmarks car health against thousands of identical models to predict future failure rates.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-full border border-white/10 flex items-center justify-center p-12"><svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="rgba(255,255,255,0.1)" stroke-width="2"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="white" stroke-dasharray="283" stroke-dashoffset="283" stroke-width="4" style="transition: stroke-dashoffset 2s ease-out; stroke-dashoffset: 70;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white text-primary p-8 rounded-3xl shadow-2xl text-center transform hover:scale-110 transition-transform duration-500">
+<div class="text-4xl font-black mb-1">84.2</div>
+<div class="text-xs font-bold uppercase tracking-widest">GariScore™</div>
+</div>
+</div></div>
+</div>
+</div>
+</section><div class="px-6 lg:px-40 py-24 bg-slate-50 dark:bg-background-dark/20 reveal">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Product Showcase</h2>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black">Our Comprehensive Suite</h1>
+</div>
+<div class="flex gap-2 mb-2">
+<button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">precision_manufacturing</span>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">The Auditor App</h4>
+<p class="text-sm text-slate-500 mb-6">A step-by-step workflow for engineers with cloud-synced diagnostic tools and automated reporting.</p>
+<img alt="Auditor App Interface" class="rounded-xl shadow-inner bg-slate-100 w-full h-40 object-cover" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=240&fit=crop"/>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<span class="material-symbols-outlined text-orange-500 text-4xl mb-4">analytics</span>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Dealer Dashboard</h4>
+<p class="text-sm text-slate-500 mb-6">Manage inventory health, track inspection statuses, and generate 'Trust Reports' for listings in bulk.</p>
+<img alt="Dealer Dashboard" class="rounded-xl shadow-inner bg-slate-100 w-full h-40 object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop"/>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<span class="material-symbols-outlined text-green-500 text-4xl mb-4">description</span>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">The Public Report</h4>
+<p class="text-sm text-slate-500 mb-6">Consumer-facing interactive web report with high-res photos, health charts, and verified history.</p>
+<img alt="Public Report" class="rounded-xl shadow-inner bg-slate-100 w-full h-40 object-cover" src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=240&fit=crop"/>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<span class="material-symbols-outlined text-blue-500 text-4xl mb-4">hub</span>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Enterprise API</h4>
+<p class="text-sm text-slate-500 mb-6">Direct data feed for financial institutions to automate vehicle valuation and risk scoring.</p>
+<img alt="API Documentation" class="rounded-xl shadow-inner bg-slate-100 w-full h-40 object-cover" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=240&fit=crop"/>
+</div></div>
+</div>
+</div>
+<!-- Benefits Section -->
+<div class="px-6 lg:px-40 py-16 bg-primary reveal">
+<div class="max-w-[1200px] mx-auto">
+<h2 class="text-center text-white/60 text-sm font-bold uppercase tracking-[0.3em] mb-12">Platform Traction &amp; Market Impact</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+<div class="flex flex-col gap-2">
+<span class="text-4xl lg:text-5xl font-black text-white">15k+</span>
+<span class="text-white/70 text-sm">Certified Audits</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-4xl lg:text-5xl font-black text-white">500+</span>
+<span class="text-white/70 text-sm">Professional Auditors</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-4xl lg:text-5xl font-black text-white">120+</span>
+<span class="text-white/70 text-sm">Partner Dealerships</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-4xl lg:text-5xl font-black text-white">30%</span>
+<span class="text-white/70 text-sm">Faster Sale Speed</span>
+</div>
+</div>
+</div>
+</div><div class="px-6 lg:px-40 py-24 bg-white dark:bg-background-dark reveal" id="monetization">
+<div class="max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<div>
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Growth &amp; Revenue</h2>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight">Multi-tier Ecosystem Monetization</h1>
+<p class="mt-4 text-slate-600 dark:text-slate-400 text-lg">A scalable revenue model designed for consumer-to-consumer trust and enterprise-level intelligence.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-6 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<div class="p-3 rounded-xl bg-primary/10 text-primary font-black">01</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 text-lg mb-1">Basic Audit</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Transaction-based fee for individual buyers and sellers on major marketplaces.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 border-l-4 border-l-primary">
+<div class="p-3 rounded-xl bg-primary/10 text-primary font-black">02</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 text-lg mb-1">GariScore Pro</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Subscription model for professional car dealers and high-volume sellers.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<div class="p-3 rounded-xl bg-primary/10 text-primary font-black">03</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 text-lg mb-1">Enterprise SaaS</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">API access and data-driven intelligence for banks, insurance, and fleet owners.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center p-12">
+<div class="text-center">
+<div class="text-primary font-black text-6xl mb-4">3x</div>
+<div class="text-slate-900 dark:text-slate-100 font-bold text-xl uppercase tracking-widest">TAM Expansion</div>
+<p class="text-slate-500 text-sm mt-4">Scaling from local inspections to national automotive data infrastructure.</p>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 bg-orange-500 text-white px-6 py-3 rounded-2xl shadow-xl font-bold animate-bounce">Series A Pipeline</div>
+</div>
+</div>
+</div>
+</div><section class="px-6 lg:px-40 py-24 bg-white dark:bg-background-dark reveal">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Testimonials</h2>
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl font-black">Wall of Love</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<p class="text-slate-600 dark:text-slate-400 italic mb-6">"Saved me from a car that had serious flood damage hidden under a new carpet. Best money I ever spent."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm text-slate-900 dark:text-slate-100">Ahsan Habib</p>
+<p class="text-xs text-slate-500">First-time Buyer</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<p class="text-slate-600 dark:text-slate-400 italic mb-6">"As a dealer, showing the GariAudit report closes the deal instantly. No more haggling for hours."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm text-slate-900 dark:text-slate-100">Zahir Motors</p>
+<p class="text-xs text-slate-500">Premium Dealership</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<p class="text-slate-600 dark:text-slate-400 italic mb-6">"The data accuracy is on par with what we use in Western markets. A game changer for Bangladesh."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm text-slate-900 dark:text-slate-100">Sarah Mitchell</p>
+<p class="text-xs text-slate-500">Automotive Analyst</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="px-6 lg:px-40 py-24 bg-slate-900 text-white reveal">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-center gap-12">
+<div class="max-w-xl text-center lg:text-left">
+<h2 class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-4">Investor Relations</h2>
+<h1 class="text-4xl font-black mb-6">Join the Automotive Data Revolution</h1>
+<p class="text-slate-400 text-lg">We are building the trust layer for the $50B emerging market automotive sector. Our data is the new gold standard.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full lg:w-auto">
+<div class="p-8 bg-white/5 rounded-3xl border border-white/10">
+<p class="text-slate-400 text-sm mb-1">TAM</p>
+<p class="text-3xl font-bold">$2.4B</p>
+</div>
+<div class="p-8 bg-white/5 rounded-3xl border border-white/10">
+<p class="text-slate-400 text-sm mb-1">CAGR</p>
+<p class="text-3xl font-bold">24%</p>
+</div>
+<div class="p-8 bg-white/5 rounded-3xl border border-white/10">
+<p class="text-slate-400 text-sm mb-1">Gross Margin</p>
+<p class="text-3xl font-bold">72%</p>
+</div>
+<div class="p-8 bg-white/5 rounded-3xl border border-white/10">
+<p class="text-slate-400 text-sm mb-1">Market Share</p>
+<p class="text-3xl font-bold">85%</p>
+</div>
+</div>
+</div>
+</div>
+</section><div class="px-6 lg:px-40 py-20 bg-primary reveal">
+<div class="max-w-[1000px] mx-auto text-center flex flex-col items-center gap-8">
+<h2 class="text-3xl md:text-5xl font-black text-white leading-tight" style="">Ready to scale the future of vehicle trust?</h2>
+<p class="text-primary/10 text-lg text-white/80 max-w-[600px]" style="">Join thousands of smart buyers in Dhaka. Get a professional inspection today and avoid costly surprises.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<input class="w-full sm:max-w-[400px] px-6 py-4 rounded-xl border-none focus:ring-4 focus:ring-white/20 text-slate-900" placeholder="Paste listing link here..."/>
+<a href="start_new_audit_flow.html" class="bg-white text-primary px-10 py-4 rounded-xl font-black hover:bg-slate-100 transition-colors transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(36,0,102,0.4)] inline-block">Start Audit</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="px-6 lg:px-40 py-12 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="font-bold text-slate-900 dark:text-slate-100" style="">GariAudit</span>
+</div>
+<p class="text-slate-500 text-sm max-w-[280px]" style="">Making used car buying transparent and safe in Bangladesh through data-driven inspections.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full lg:w-auto">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">The Platform</h4>
+<a class="text-sm text-slate-500 hover:text-primary" href="how_gariaudit_works.html">For Car Buyers</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="sell_faster_with_trust_badge.html">For Car Sellers</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="dealer_fleet_management_dashboard.html">For Dealerships</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="b2b_partner_portal.html">For Enterprises</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Ecosystem</h4>
+<a class="text-sm text-slate-500 hover:text-primary" href="why_gariaudit_case_study.html">GariScore Engine</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="auditor_dashboard_active_gigs.html">Auditor Network</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="certified_auditor_profile.html">Partner Shops</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="b2b_partner_portal.html">API Docs</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Resources</h4>
+<a class="text-sm text-slate-500 hover:text-primary" href="vehicle_history_deep_dive.html">Market Reports</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="faq_community_wall.html">Help Center</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="media_press_kit.html">Blog</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="security_data_privacy.html">Safety Tips</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Company</h4>
+<a class="text-sm text-slate-500 hover:text-primary" href="about_gariaudit.html">About Us</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="careers_at_gariaudit.html">Careers</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="legal_compliance_center.html">Legal</a>
+<a class="text-sm text-slate-500 hover:text-primary" href="contact_support_hub.html">Contact</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400" style="">© 2024 GariAudit. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" style="">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" style="">camera</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer" style="">alternate_email</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+            var menuBtn = document.getElementById('mobileMenuBtn');
+            var mobileNav = document.getElementById('mobileNav');
+            if (menuBtn && mobileNav) {
+                menuBtn.addEventListener('click', function() {
+                    var open = mobileNav.getAttribute('aria-hidden') !== 'true';
+                    mobileNav.setAttribute('aria-hidden', open ? 'true' : 'false');
+                    menuBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+                    menuBtn.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+                    menuBtn.querySelector('.material-symbols-outlined').textContent = open ? 'menu' : 'close';
+                });
+            }
+            document.querySelectorAll('.mobile-nav-trigger').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var id = btn.getAttribute('data-submenu');
+                    var sub = id && document.getElementById(id);
+                    if (sub) {
+                        var hidden = sub.getAttribute('aria-hidden') === 'true';
+                        sub.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+                    }
+                });
+            });
+        });
+    </script></body></html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .verified-stamp {
+            transform: rotate(-12deg) scale(2);
+            border: 4px solid #b91c1c;
+            color: #b91c1c;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+            opacity: 0;
+            pointer-events: none;
+            animation: stamp-animation 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes stamp-animation {
+            0% { transform: rotate(-12deg) scale(3); opacity: 0; }
+            100% { transform: rotate(-12deg) scale(1); opacity: 0.8; }
+        }
+
+        .circular-progress {
+            background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                        conic-gradient(#240066 0%, #dfdae7 0);
+            animation: progress-load 1.5s ease-out forwards;
+        }
+
+        @keyframes progress-load {
+            to { background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(#240066 85%, #dfdae7 0); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        button {
+            transition: all 0.2s ease-in-out !important;
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark px-6 md:px-10 py-3 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<a href="landing%20page.html" class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">GariAudit</h2>
+</a>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-3 hover:bg-primary/20 transition-colors hover:shadow-md hover:brightness-110">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-3 hover:bg-primary/20 transition-colors hover:shadow-md hover:brightness-110">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="hidden md:flex items-center justify-center rounded-lg h-10 bg-primary text-white px-5 text-sm font-bold tracking-tight hover:shadow-md hover:brightness-110">
+                        Print Certificate
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<div class="w-full max-w-[1200px] px-4 py-8 md:px-10 lg:grid lg:grid-cols-12 lg:gap-8">
+<!-- Left Column: Report Details -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Hero & Title Section -->
+<section class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-primary/5 relative">
+<!-- Verified Stamp Overlay -->
+<div class="absolute top-8 right-8 z-10">
+<div class="verified-stamp border-4 inline-block text-2xl px-4 py-1 rounded">
+                                    Verified
+                                </div>
+</div>
+<div class="aspect-video w-full bg-slate-200 relative overflow-hidden">
+<img alt="Toyota Land Cruiser 2022 front view" class="w-full h-full object-cover" data-alt="Toyota Land Cruiser 2022 pristine front exterior view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCipZKGqukKWWIuVz-zKxmLUN2wr_K0xycjyWeFJUaE62sL7r1YBE1dDllArSwLuL0c7y2Ryvt4gll-mxy3DJtucwq_jUEpW3C0du9GBkRRA5foKaugzYO2pmsB-881s7JphlZmudCQ1_Gtq9uHPsx09a95bskzkcrMizFT_MQ4aKJDQfbwj6ZrQffdVEtTbsUmOm1_wU6VtjFaMmyME3Up3ludBHGeuJuadEAft2EqlVlylG45hg6XSZGQdkElWJ1A8hI-8Lppz2o"/>
+</div>
+<div class="p-8">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-semibold text-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                        Report #GA-88291
+                                    </div>
+<h1 class="text-4xl font-black text-slate-900 dark:text-slate-100 leading-tight">Toyota Land Cruiser 300 VXR</h1>
+<div class="flex flex-wrap items-center gap-4 text-slate-500 dark:text-slate-400 text-sm mt-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> Oct 24, 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">badge</span> Auditor: Sarah Jenkins</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Nairobi Inspection Center</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Score Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm flex flex-col items-center text-center">
+<div class="w-24 h-24 circular-progress rounded-full flex items-center justify-center mb-4 relative">
+<span class="text-2xl font-black text-primary">85</span>
+<span class="text-[10px] font-bold text-primary/60 absolute bottom-5">/100</span>
+</div>
+<h3 class="font-bold text-slate-900 dark:text-slate-100">Overall Health</h3>
+<p class="text-xs text-green-600 font-semibold uppercase mt-1">Excellent Condition</p>
+</div>
+<div class="md:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm grid grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Mechanical</span>
+<span class="text-primary">92%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 92%;"></div>
+</div>
+<p class="text-[10px] text-slate-500">Engine, Transmission, Suspension</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Body &amp; Paint</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%;"></div>
+</div>
+<p class="text-[10px] text-slate-500">Exterior Panels, Frame, Minor Scratches</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Interior</span>
+<span class="text-primary">88%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 88%;"></div>
+</div>
+<p class="text-[10px] text-slate-500">Seats, Dash, Electronics, AC</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Documentation</span>
+<span class="text-primary">100%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%;"></div>
+</div>
+<p class="text-[10px] text-slate-500">Service Logs, Ownership, Taxes</p>
+</div>
+</div>
+</section>
+<!-- Auditor's Gallery -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">Inspection Gallery</h2>
+<span class="text-sm text-primary font-medium">12 Photos Captured</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<div class="aspect-square rounded-lg overflow-hidden border border-slate-200 fade-in-up stagger-1">
+<img alt="Engine bay" class="w-full h-full object-cover" data-alt="Close up high resolution photo of car engine bay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA34tgpoR4t96sZuSWQwoUpiWVAlLH0QDzbI1X947saqW4YMTiKYeU6DwSwzMvM94meMJSVKrxdNu4Z4foc-la-_3ki5y0uYojIx_-q1iUVR7NlS4kZLEfBSxFTvwRfmdVUkIzdBlU8PcTEGNDkIgKUwQ8iaZIFjM1uOwOsRD-xdctG45p456VfShibfaeXYHkOg-HIiQBTCzmBJ3izYKppc4DT4E6pNinFFFnLIVUwdKKXkUV7lTrqUqhM6tT4Ks0EJa8dR7kGFXA"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-slate-200 fade-in-up stagger-2">
+<img alt="Interior dash" class="w-full h-full object-cover" data-alt="High quality shot of the car dashboard and infotainment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk1a_VUGfSzWXpOjt-ZfZOwhMIXj3Q4sbH0Gawo_UrdZz0Yu-cjOwtyGnB6shD02dRMdChZOmOo0nhZ_c-Ca3mni17GqzLyZP4gksOkQlFFB7ZWdn171pymshPh4kMnEZ66uL3b-w51aNgo9k0Y3Wtn4lixEarm8JefYqLrhr0DnkbM6o3BBiEGctQNEKkylKbMrmXAgCkmO93vZGfVNceL8bLNyQv-FYfZpzp6KTVUtXftE049mUFiOnnpZuGxq80INWIaCEyyag"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-slate-200 fade-in-up stagger-3">
+<img alt="Wheel detail" class="w-full h-full object-cover" data-alt="Close up of alloy wheels and tire tread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6KMrT1o1PH7tI11G4MSMP6ade7tEKFFy2XdtozXBFWMBElln49QMk5QW-XXlha6HL3s6CngsPdH_2JsHBdYKIcPAoCdZA74y3QWVr7meIZVnCtqXxDEQwKKR8WOuroIeUfiuDTxvMxgTtD1oRNaKEkoKwEaTbO3q4iilEl5IuVBtXif2YmWKdEkECUKqzsNR0-bdu_RR_tUUV36BzkbbNAzTRTaxN-5aOtvFNPfO4--l7MmXqrNrxNPYiqRtqI8WZV7hw2lISKGM"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-slate-200 relative group cursor-pointer fade-in-up stagger-4">
+<img alt="Undercarriage" class="w-full h-full object-cover opacity-50" data-alt="Undercarriage view showing suspension and frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu-qF1P_hiN526MYNVyjYWWUDS-tIsXrv98ylKlRdx27WAHVm5x-xXJL53UAT9jOHUWL2K-_lwkEeLrVCDo7_t9TnohTOcJntuHPL0hiUtAstKuaQ5uJg6PcMaFVzsvXFM16dd1pGuO62DJWb5SjOWOPOZjA3nnHUHXoKJcDG0P9Q2ZQKPJUiEat3ZhDDIFJFHnyelTtUI7ifaxaQ0C-z8n20Ky0Xa4vr2EW_4SGGeA6_zYPnQPhmCp1jmLqbLxG63q7bwh175HaU"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+<span class="text-white font-bold text-lg">+8 More</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Shareability -->
+<section class="bg-primary/5 p-8 rounded-xl flex flex-col items-center text-center gap-6 border border-primary/10">
+<div>
+<h3 class="text-xl font-bold text-primary">Share this Report</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Found the perfect car? Send the proof to your bank or family.</p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-bold shadow-sm hover:shadow-md hover:brightness-110">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+                                </button>
+<button class="flex items-center gap-2 bg-[#1877F2] text-white px-6 py-3 rounded-lg font-bold shadow-sm hover:shadow-md hover:brightness-110">
+<span class="material-symbols-outlined">social_leaderboard</span> Facebook
+                                </button>
+<button class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg font-bold shadow-sm hover:shadow-md hover:brightness-110">
+<span class="material-symbols-outlined">link</span> Copy Link
+                                </button>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="lg:col-span-4 mt-8 lg:mt-0 flex flex-col gap-6">
+<!-- Next Steps / Actions -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-primary/10 shadow-sm slide-in-right">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Recommended Actions
+                            </h3>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">REPAIR QUOTE</span>
+<span class="text-sm font-black text-slate-900 dark:text-slate-100">$450.00</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400">Front brake pads and minor paint correction on rear bumper.</p>
+<button class="w-full mt-3 py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors hover:shadow-md hover:brightness-110">Book Repair</button>
+</div>
+<div class="p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">FINANCING</span>
+<span class="text-sm font-black text-slate-900 dark:text-slate-100">$1,240/mo</span>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400">Estimated monthly payment based on GariScore (7.2% APR).</p>
+<button class="w-full mt-3 py-2 text-xs font-bold border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors hover:shadow-md hover:brightness-110">Get Pre-Approved</button>
+</div>
+</div>
+</div>
+<!-- Car Specs Summary -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-primary/10 shadow-sm">
+<h3 class="text-lg font-bold mb-4">Quick Specs</h3>
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800 fade-in-up stagger-1">
+<span class="text-slate-500">VIN</span>
+<span class="font-bold font-mono">JT7FR12J3K...</span>
+</li>
+<li class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800 fade-in-up stagger-2">
+<span class="text-slate-500">Mileage</span>
+<span class="font-bold">24,500 km</span>
+</li>
+<li class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800 fade-in-up stagger-3">
+<span class="text-slate-500">Engine</span>
+<span class="font-bold">3.5L V6 Turbo</span>
+</li>
+<li class="flex justify-between text-sm py-2 border-b border-slate-100 dark:border-slate-800 fade-in-up stagger-4">
+<span class="text-slate-500">Transmission</span>
+<span class="font-bold">10-Speed Auto</span>
+</li>
+<li class="flex justify-between text-sm py-2 fade-in-up stagger-5">
+<span class="text-slate-500">Color</span>
+<div class="flex items-center gap-2">
+<span class="font-bold">Pearl White</span>
+<div class="w-3 h-3 rounded-full bg-slate-100 border border-slate-300"></div>
+</div>
+</li>
+</ul>
+</div>
+<!-- Location Information -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-primary/10 shadow-sm overflow-hidden">
+<h3 class="text-lg font-bold mb-4">Inspection Location</h3>
+<div class="w-full h-32 bg-slate-100 rounded-lg mb-4 overflow-hidden relative">
+<img alt="Map location" class="w-full h-full object-cover grayscale opacity-60" data-alt="Map view showing the location of the inspection center" data-location="Nairobi, Kenya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHwAFTaRxhMj53mxnmYF6HXzj5v60oNoP1UkPodXdlempMxmFg2Te8nEFDf18BbrKjJopaKGgiuHAWLMXYF8aYcfTPty1UfJ0oGkVpEB6uzNpDi7WZDX8gboNQwzlBYyWUcq-K-D4Za5pzwfMU0yzq0asM2czEq8no0MGjBYA477eE17K09a9IriQer2vM897D6olSiJT-2lrHnLNWSJO8RPExhxJ9Lbbt7E8mHf5kVvYW1Qp39aSfUYbd3IepbyjFMFPvnSTh7CI"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">location_on</span>
+</div>
+</div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">GariAudit Center Westlands</p>
+<p class="text-xs text-slate-500">Waiyaki Way, Nairobi, Kenya</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-12 py-12 px-6 border-t border-primary/10 bg-white dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-primary/50 grayscale">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="font-bold tracking-tight">GariAudit Authority</span>
+</div>
+<div class="text-xs text-slate-400">
+                        © 2023 GariAudit. This is an official verified report. Authenticity can be verified at gariaudit.com/verify
+                    </div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">info</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">help</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer">description</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

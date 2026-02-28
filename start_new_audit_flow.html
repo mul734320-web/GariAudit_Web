@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Start New Audit - GariAudit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<a href="landing%20page.html" class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary">GariAudit</h1>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="user_profile_dashboard.html">Dashboard</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="my_audits_list.html">My Audits</a>
+<div class="flex items-center gap-3 pl-4 border-l border-primary/10">
+<button class="p-2 rounded-full hover:bg-primary/5 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/5 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-8">
+<!-- Progress Stepper -->
+<div class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60">Step 1 of 4</span>
+<span class="text-xs font-bold text-primary">25% Complete</span>
+</div>
+<div class="h-2 w-full bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 25%"></div>
+</div>
+<div class="grid grid-cols-4 mt-4 text-center">
+<div class="text-[10px] font-bold text-primary">VEHICLE</div>
+<div class="text-[10px] font-bold text-slate-400">PACKAGE</div>
+<div class="text-[10px] font-bold text-slate-400">LOCATION</div>
+<div class="text-[10px] font-bold text-slate-400">SUMMARY</div>
+</div>
+</div>
+<!-- Multi-Step Form Container -->
+<div class="space-y-12">
+<!-- STEP 1: VEHICLE LINK & DETAILS -->
+<section class="bg-white dark:bg-background-dark/50 border border-primary/5 rounded-xl p-8 shadow-sm">
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Vehicle Details</h2>
+<p class="text-slate-500 dark:text-slate-400">Paste a listing URL to auto-fill details, or enter them manually.</p>
+</div>
+<!-- URL Import -->
+<div class="mb-10 p-6 bg-primary/5 rounded-xl border border-dashed border-primary/20">
+<label class="block text-sm font-bold text-primary mb-3">Bikroy or Facebook Marketplace Link</label>
+<div class="relative group">
+<input class="w-full bg-white dark:bg-slate-900 border-primary/20 rounded-lg py-4 pl-4 pr-32 focus:ring-primary focus:border-primary" placeholder="https://bikroy.com/bn/ad/toyota-corolla-for-sale..." type="text"/>
+<button class="absolute right-2 top-2 bottom-2 px-4 bg-primary text-white rounded-md text-sm font-bold flex items-center gap-2 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-sm">magic_button</span>
+                            Fetch Details
+                        </button>
+</div>
+<!-- AI Fetching State Mockup (Hidden by default) -->
+<div class="mt-4 flex items-center gap-3 text-xs text-primary/70 animate-pulse">
+<span class="material-symbols-outlined text-sm">sync</span>
+                        AI is analyzing listing images and description...
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold">Manufacturing Year</label>
+<select class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3">
+<option>Select Year</option>
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">Make</label>
+<input class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3" placeholder="e.g. Toyota" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">Model</label>
+<input class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3" placeholder="e.g. Corolla Cross" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">VIN <span class="text-slate-400 font-normal">(Optional)</span></label>
+<input class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3" placeholder="17-digit Chassis Number" type="text"/>
+</div>
+</div>
+</section>
+<!-- STEP 2: PACKAGE SELECTION -->
+<section class="space-y-6">
+<div class="text-center mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Choose Inspection Package</h2>
+<p class="text-slate-500">Professional insights for every budget level</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Basic Package -->
+<div class="relative bg-white dark:bg-background-dark/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col hover:border-primary/40 transition-all cursor-pointer group">
+<div class="mb-4">
+<span class="text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-slate-600">Standard</span>
+<h3 class="text-xl font-bold mt-2">Basic Physical</h3>
+<p class="text-3xl font-black mt-2">৳4,500</p>
+</div>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> 150+ Point Exterior Check
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Engine &amp; Transmission Listen
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Interior Condition Audit
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-300">
+<span class="material-symbols-outlined text-lg">cancel</span> OBD Computer Scanning
+                            </li>
+</ul>
+<button class="w-full py-3 border-2 border-primary text-primary font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all">Select Basic</button>
+</div>
+<!-- Premium Package -->
+<div class="relative bg-white dark:bg-background-dark/50 border-2 border-primary rounded-xl p-6 flex flex-col shadow-xl shadow-primary/5">
+<div class="absolute -top-3 right-6 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Recommended</div>
+<div class="mb-4">
+<span class="text-xs font-bold uppercase bg-primary/10 px-2 py-1 rounded text-primary">Comprehensive</span>
+<h3 class="text-xl font-bold mt-2">Premium Diagnostic</h3>
+<p class="text-3xl font-black mt-2">৳8,500</p>
+</div>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 font-medium">
+<span class="material-symbols-outlined text-primary text-lg">verified</span> Everything in Basic
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 font-medium">
+<span class="material-symbols-outlined text-primary text-lg">verified</span> OBD-II Deep Engine Scan
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 font-medium">
+<span class="material-symbols-outlined text-primary text-lg">verified</span> Paint Thickness Digital Test
+                            </li>
+<li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 font-medium">
+<span class="material-symbols-outlined text-primary text-lg">verified</span> Full Ownership History Report
+                            </li>
+</ul>
+<button class="w-full py-3 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20">Select Premium</button>
+</div>
+</div>
+<div class="flex justify-center gap-8 mt-4">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="text-[11px] font-bold uppercase">Certified Inspectors</span>
+</div>
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-primary">workspace_premium</span>
+<span class="text-[11px] font-bold uppercase">Money-Back Guarantee</span>
+</div>
+</div>
+</section>
+<!-- STEP 3: LOCATION & SCHEDULING -->
+<section class="bg-white dark:bg-background-dark/50 border border-primary/5 rounded-xl p-8 shadow-sm">
+<div class="grid md:grid-cols-2 gap-10">
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                Vehicle Location
+                            </h3>
+<div class="space-y-4">
+<label class="block text-sm font-semibold">Street Address / Area</label>
+<textarea class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3" placeholder="e.g. House 42, Road 18, Block A, Banani, Dhaka" rows="3"></textarea>
+</div>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400">info</span>
+<p class="text-xs text-slate-500">We currently serve Dhaka, Chittagong, and Sylhet metropolitan areas.</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+                                Preferred Schedule
+                            </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-slate-400">Date</label>
+<input class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-slate-400">Time Window</label>
+<select class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg p-3">
+<option>Morning (9AM-12PM)</option>
+<option>Afternoon (1PM-4PM)</option>
+<option>Evening (5PM-8PM)</option>
+</select>
+</div>
+</div>
+</div>
+<div class="p-4 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-100 dark:border-yellow-900/30 rounded-lg">
+<p class="text-xs text-yellow-800 dark:text-yellow-600 font-medium">Note: The inspector will call 30 minutes before arrival to confirm the car is available.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- STEP 4: PAYMENT SUMMARY (PRE-CHECKOUT) -->
+<section class="bg-primary text-white rounded-xl p-8 shadow-2xl relative overflow-hidden">
+<!-- Abstract Pattern Background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,0 L100,0 L100,100 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between gap-12">
+<div class="flex-1">
+<h2 class="text-2xl font-bold mb-6">Booking Summary</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-2 rounded-lg">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<p class="text-sm text-white/60 font-medium">Vehicle to Audit</p>
+<p class="font-bold">2021 Toyota Corolla Cross</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-2 rounded-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-sm text-white/60 font-medium">Selected Package</p>
+<p class="font-bold">Premium Diagnostic Audit</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-80 bg-white text-slate-900 rounded-xl p-6 shadow-xl">
+<h4 class="font-bold border-b pb-4 mb-4">Pricing Breakdown</h4>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Service Fee</span>
+<span class="font-semibold">৳8,000</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Conveyance (Dhaka)</span>
+<span class="font-semibold">৳500</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Govt. VAT (5%)</span>
+<span class="font-semibold">৳425</span>
+</div>
+<div class="border-t pt-3 flex justify-between">
+<span class="font-bold text-lg">Total</span>
+<span class="font-black text-lg text-primary">৳8,925</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-lg flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all">
+                            Proceed to Payment
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-[10px] text-center text-slate-400 mt-4 uppercase font-bold tracking-tight">Secured by SSLCommerz</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Actions -->
+<div class="mt-12 flex justify-between items-center py-6 border-t border-slate-200 dark:border-slate-800">
+<button class="flex items-center gap-2 text-slate-500 font-bold hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                Save Draft
+            </button>
+<div class="flex items-center gap-4 text-xs text-slate-400">
+<span class="material-symbols-outlined text-sm">lock</span>
+                Your data is encrypted and secure
+            </div>
+</div>
+</main>
+</body></html>

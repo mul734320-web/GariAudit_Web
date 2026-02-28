@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "accent": "#FFD700",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>My Audits - GariAudit</title>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-primary/10 bg-white dark:bg-background-dark flex flex-col fixed h-full">
+<div class="p-6 flex flex-col gap-8 h-full">
+<a href="landing%20page.html" class="flex items-center gap-3">
+<div class="bg-primary rounded-lg size-10 flex items-center justify-center text-accent">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h1 class="text-primary dark:text-slate-100 text-lg font-bold leading-none">GariAudit</h1>
+<p class="text-primary/60 dark:text-slate-400 text-xs mt-1">Premium Vehicle Inspection</p>
+</div>
+</a>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="user_profile_dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary text-white rounded-lg shadow-md shadow-primary/20" href="my_audits_list.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">My Audits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="verified_report_animated.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="user_profile_dashboard.html">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-primary/5 rounded-lg transition-colors" href="user_profile_dashboard.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a href="start_new_audit_flow.html" class="block w-full py-3 bg-primary text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-accent">add_circle</span>
+                        Start New Audit
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col">
+<!-- Top Header -->
+<header class="h-16 border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-8 flex items-center justify-between sticky top-0 z-10 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-12 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/40 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-primary/5 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-primary/30" placeholder="Search by VIN, model, or status..." type="text"/>
+</div>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<button class="p-2 text-primary/60 hover:bg-primary/5 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-accent rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-[1px] bg-primary/10"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-primary">Alex Rivera</p>
+<p class="text-[10px] text-primary/60">Premium Member</p>
+</div>
+<div class="size-10 rounded-full bg-primary/10 border-2 border-white overflow-hidden shadow-sm" data-alt="User profile photo avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT6pOGQ95UEOSgVYwV9tmnkilItbiQqXbLMDgeHqN8sdWP49pgY0YzRIkAN6JNUYFCOk0mH6USSk_mOl5J2H5zxCrK-_PJT8tISXqrfdD-4oEZcfR8qyGGPMeUiwaeIxL66ape1xJvY4CPdyRP4Gfxsz6n6GE7l-jxqqCuPtT3leyJbimKOPbJd2YXaMJZO5xQ20cjJUkcgWXP1KS7lCACJnA6WYk0dZUVUTRzpLGKqf4zwljoTJeoEHMYoEa_T4cmLcY8Hv_E1Qo')"></div>
+</div>
+</div>
+</header>
+<!-- Page Body -->
+<div class="p-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-black text-primary dark:text-slate-100 tracking-tight">My Audits</h2>
+<p class="text-primary/60 dark:text-slate-400 mt-1">Manage and track your 12 active vehicle inspections</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-primary/10 rounded-lg text-sm font-bold flex items-center gap-2 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-primary/10 rounded-lg text-sm font-bold flex items-center gap-2 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined text-lg">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Audit List Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 dark:bg-primary/10">
+<th class="px-6 py-4 text-xs font-bold text-primary/60 uppercase tracking-wider">Vehicle Details</th>
+<th class="px-6 py-4 text-xs font-bold text-primary/60 uppercase tracking-wider">Audit Date</th>
+<th class="px-6 py-4 text-xs font-bold text-primary/60 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-primary/60 uppercase tracking-wider text-center">GariScore</th>
+<th class="px-6 py-4 text-xs font-bold text-primary/60 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<!-- Row 1: Completed -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-20 h-14 rounded-lg bg-slate-100 overflow-hidden relative" data-alt="Side profile of a luxury sedan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWL-hoYm_Hw0CzFP2yi1pQZ3_evhVB31TgEDRuSA1sDqelwJZkMnNescG7_ulkuG1l0EMuePJoKnjp-c9gOLdNAWGS0S7MqttZqwS2ivANrrdR9ef1bYfCkXGArhyWhyAQsKPNatQCbu2ERsFmRwY51cGxpIRKIiUFtxn4JejAKG6427gss9LGhCF96fWb1g6Q46Duz4Vq8K-4lD0RYTVLsHFkH6OKyoQJenh0vUZ-SJn6nYFmOrO6Cnu8XRIIDEgW6kTgg7K3idw')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<div>
+<p class="font-bold text-primary dark:text-slate-200">2022 Porsche 911 Carrera</p>
+<p class="text-xs text-primary/50 font-mono mt-0.5">WP0AB2A92NS2XXXXX</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium">Oct 12, 2023</p>
+<p class="text-[10px] text-primary/40 uppercase font-bold">Inspection Finished</p>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-500 mr-2"></span>
+                                        Completed
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="text-xl font-black text-primary dark:text-accent">94</span>
+<span class="text-[8px] font-bold text-primary/40 uppercase">Excellent</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary/90 transition-all">View Report</button>
+</td>
+</tr>
+<!-- Row 2: In Progress -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-20 h-14 rounded-lg bg-slate-100 overflow-hidden relative" data-alt="Front view of a white SUV" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCU-K2mRR6KfZEF3NN8QvMSyJwvYBjasQLLIt2m98QQ68l4GIaEX0DCAslh6kWe8XqUVT5DijokI6udMy36oDM-wtzLVEMmfOjJIjMU33MKlRVPxrhnli3iLSNweziACBTlVILah2BW7d5nMSrYqpvsUu35FZHXbwwKjVYifuauxkRuVW8Umo9q87AAbqMomHMsVZFXguCI0JK7dfKiLuP1lA3g8Cm2C10NXrgjzePJu4UnmoO6hsI2nlZUEUI24Jp4uklC23GwP9Q')">
+</div>
+<div>
+<p class="font-bold text-primary dark:text-slate-200">2023 Tesla Model Y</p>
+<p class="text-xs text-primary/50 font-mono mt-0.5">7SAYGDEE9PF1XXXXX</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium">Oct 14, 2023</p>
+<p class="text-[10px] text-primary/40 uppercase font-bold">Under Review</p>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-2">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 w-fit">
+<span class="size-1.5 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
+                                            In Progress
+                                        </span>
+<div class="w-32 h-1.5 bg-blue-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 66%"></div>
+</div>
+<p class="text-[10px] font-bold text-primary/40">Inspection Live</p>
+</div>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="material-symbols-outlined text-primary/20">hourglass_empty</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="px-4 py-2 bg-primary/10 text-primary dark:text-slate-200 rounded-lg text-xs font-bold hover:bg-primary/20 transition-all">Track Status</button>
+</td>
+</tr>
+<!-- Row 3: Pending -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-20 h-14 rounded-lg bg-slate-100 overflow-hidden relative" data-alt="Blue luxury coupe parked" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHBiEl-Rf_0j8Uh9YszOvb9l_S8_vuz8zR_lbbVHg9TwHdHvZQqICQVMFy1gxyfqJXdovJk50czjDwoJqe1_bks6yUZf6JW_IlW4pb2r0RzMBDAqy1w4KQhsFsIWNRos6QhvfZZ21IRlhcbgzg89lSz_EWPZRaw2F2zl3c-Qr-DWkcpQHXkIwFXgwSsc9CTLpIl__mgyksEDKpiw0fBlmSzgZP8vpmgZ2ataDg36mZWaAuFsuwKnX_d40jZ0FE1IYxU9fJNqGch5s')">
+</div>
+<div>
+<p class="font-bold text-primary dark:text-slate-200">2021 BMW M4</p>
+<p class="text-xs text-primary/50 font-mono mt-0.5">WBS53AZ05MCFXXXXX</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium">Oct 15, 2023</p>
+<p class="text-[10px] text-primary/40 uppercase font-bold">Scheduling</p>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">
+<span class="size-1.5 rounded-full bg-amber-500 mr-2"></span>
+                                        Pending
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="material-symbols-outlined text-primary/20">schedule</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="px-4 py-2 bg-primary/10 text-primary dark:text-slate-200 rounded-lg text-xs font-bold hover:bg-primary/20 transition-all">Review Auditor</button>
+</td>
+</tr>
+<!-- Row 4: Cancelled -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-20 h-14 rounded-lg bg-slate-100 overflow-hidden grayscale relative" data-alt="Frontal view of a vintage car" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA86Ib1F52BY-4I2B93rT4hL6lfbCUJ9cxocx3zX2X7V1DqEs9ryYHG0wFZQ4MUlaShZQ4ydY2bRwrsfnolyoo4KrI3GGFN33qew4l9-LkrDdXyIJZG2Y3MmCWpOtrGVjZHfZ-XZgOlvyH_2KvdhnPgJim16ZSxYxng41Y5MthlWTqdpZNFATXIbj9rqj0WJKV-rTE5Fk5OYXvsI7Ib8xscj_7_lhbve_A4pf24XV1jpOWp68N-c3EfD5qHnqYJaCH6SVXNaKIYkVg')">
+</div>
+<div>
+<p class="font-bold text-primary/50 dark:text-slate-400">1967 Ford Mustang</p>
+<p class="text-xs text-primary/30 font-mono mt-0.5">7R02C12XXXXX</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="text-sm font-medium text-primary/40">Oct 08, 2023</p>
+<p class="text-[10px] text-primary/20 uppercase font-bold">User Cancelled</p>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+<span class="size-1.5 rounded-full bg-slate-400 mr-2"></span>
+                                        Cancelled
+                                    </span>
+</td>
+<td class="px-6 py-5 text-center">
+<span class="material-symbols-outlined text-primary/10 text-slate-300">block</span>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="px-4 py-2 bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 rounded-lg text-xs font-bold hover:bg-slate-200 transition-all">Re-order</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Step Indicator Detail Example (For Active Audit) -->
+<div class="mt-12">
+<h3 class="text-lg font-bold text-primary dark:text-slate-200 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">query_stats</span>
+                        Live Audit Tracking: Tesla Model Y
+                    </h3>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between relative">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-8 right-8 h-1 bg-primary/10 dark:bg-primary/20 -z-10"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-5 left-8 w-[66%] h-1 bg-primary -z-10"></div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-sm">person_check</span>
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-primary dark:text-slate-200">Auditor Assigned</p>
+<p class="text-[10px] text-primary/60">Oct 14, 09:00 AM</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 ring-4 ring-primary/10">
+<span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-primary dark:text-slate-200">Inspection Live</p>
+<p class="text-[10px] text-primary/60">Started 2h ago</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-primary/20 flex items-center justify-center text-primary/20">
+<span class="material-symbols-outlined text-sm">rate_review</span>
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-primary/40">Report Review</p>
+<p class="text-[10px] text-primary/20">Pending</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-white dark:bg-slate-800 border-2 border-primary/20 flex items-center justify-center text-primary/20">
+<span class="material-symbols-outlined text-sm">flag</span>
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-primary/40">Final Certificate</p>
+<p class="text-[10px] text-primary/20">Estimated Oct 15</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Hidden (kept for structure) -->
+<!-- 
+                <div class="flex flex-col items-center justify-center py-20 text-center bg-white dark:bg-slate-900 rounded-xl border-2 border-dashed border-primary/10 mt-8">
+                    <div class="size-20 bg-primary/5 rounded-full flex items-center justify-center text-primary/30 mb-6">
+                        <span class="material-symbols-outlined text-5xl">search_off</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary">No Audits Found</h3>
+                    <p class="text-primary/60 max-w-sm mx-auto mt-2">You haven't requested any vehicle inspections yet. Start your first audit to get a comprehensive health report for your car.</p>
+                    <button class="mt-8 px-6 py-3 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Start New Audit</button>
+                </div>
+                -->
+</div>
+<!-- Footer Stats -->
+<footer class="mt-auto p-8 border-t border-primary/5 grid grid-cols-4 gap-6 bg-white/50 dark:bg-background-dark/50">
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Lifetime Audits</p>
+<p class="text-2xl font-black text-primary dark:text-slate-100">142</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Average GariScore</p>
+<p class="text-2xl font-black text-primary dark:text-slate-100">88.4</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Pending Inspections</p>
+<p class="text-2xl font-black text-primary dark:text-slate-100">3</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Savings Generated</p>
+<p class="text-2xl font-black text-accent">$12,450</p>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

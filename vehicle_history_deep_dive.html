@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GariAudit | Vehicle History Deep-Dive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-10 py-3 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<a href="landing%20page.html" class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">GariAudit</h2>
+</a>
+<div class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="user_profile_dashboard.html">Dashboard</a>
+<a class="text-primary text-sm font-semibold" href="my_audits_list.html">Reports</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="vehicle_history_deep_dive.html">VIN Search</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-xl h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-3 hover:bg-slate-200 transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 bg-primary text-white px-4 gap-2 text-sm font-bold tracking-tight shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download PDF</span>
+</button>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgfTJthzX-LOPiXHGvayaiCTSXqt7P8cKMxB1fQBEQ1NKybPm_4JuTSeSyg0bwqAMC9FLA6Rxzt739IHYeZIHUQL4V2KiByYtOvEkYBKYhSKtTYbrlL3cg3ZrgYb3Vy59eLtzMnxBVMlnGYSvMO8Rd_d_vyc4GZikWizgEZzQp4NcmAGsOwO6NYVR8RprIPm3ZEotmhmUlqQ_YTRcv9oqHeQei7gdP_W-pEoHVQYYJN8eQIaPfkCg4onRXbAH_bBwcEMVZLKVyMZM"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto w-full px-4 md:px-10 py-8">
+<!-- Hero Vehicle Summary -->
+<div class="flex flex-col md:flex-row gap-8 bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800 mb-8 items-start md:items-center">
+<div class="w-full md:w-64 h-44 rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Front view of a silver sedan car" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVwiFpc6DXMuuREnU5xwIEuhMYdrkaT_WK3Id19ZtWZ19OGNAti-iTkOG7rb74pxpO80gPttwZOY0dpcEY7yQ0ixnhHNPBRO6x169wAG86q-BhGpnvKSzFF-LQzMCVaja5Xe5c5B7sm2iZGD7x6TN4qci6_L9nH9Gz4JJBnfx4iyOa9Xo0Tf0gg7dSBvdCbrOG-zwudyU6_tjv-wA3kfFwqat0v6dMqtAf_IOnarJrO_033x2duCMJjJzWQLiOuMfGPDruRNlp4nE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">High Resolution</span>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">2022 Toyota Corolla Altis</h1>
+<span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 border border-emerald-200 dark:border-emerald-800">
+<span class="material-symbols-outlined text-sm">verified</span> VERIFIED HISTORY
+                        </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+<div>
+<p class="text-xs uppercase text-slate-500 font-bold tracking-widest">VIN Number</p>
+<p class="font-mono text-slate-700 dark:text-slate-300 font-medium">5YJ3E1EB6LF78XXXX</p>
+</div>
+<div>
+<p class="text-xs uppercase text-slate-500 font-bold tracking-widest">Report ID</p>
+<p class="text-slate-700 dark:text-slate-300 font-medium">GA-992834-022</p>
+</div>
+<div>
+<p class="text-xs uppercase text-slate-500 font-bold tracking-widest">Registration</p>
+<p class="text-slate-700 dark:text-slate-300 font-medium">Dhaka Metro-GA-12-3456</p>
+</div>
+<div>
+<p class="text-xs uppercase text-slate-500 font-bold tracking-widest">Odometer</p>
+<p class="text-slate-700 dark:text-slate-300 font-medium">24,500 KM (Verified)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-slate-500 text-sm font-semibold">Total Owners</p>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<p class="text-3xl font-bold">2</p>
+<p class="text-emerald-600 text-xs font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check_circle</span> Normal turnover
+                    </p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-slate-500 text-sm font-semibold">Service Records</p>
+<span class="material-symbols-outlined text-primary">home_repair_service</span>
+</div>
+<p class="text-3xl font-bold">14</p>
+<p class="text-emerald-600 text-xs font-medium mt-1">Last seen 2 months ago</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-slate-500 text-sm font-semibold">Accident Flags</p>
+<span class="material-symbols-outlined text-emerald-500">gpp_good</span>
+</div>
+<p class="text-3xl font-bold text-emerald-600">0</p>
+<p class="text-slate-500 text-xs font-medium mt-1">No reported incidents</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-slate-500 text-sm font-semibold">Title Status</p>
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<p class="text-3xl font-bold text-primary">CLEAN</p>
+<p class="text-emerald-600 text-xs font-medium mt-1">Fully marketable</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Content (2/3) -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Timeline View -->
+<section class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+<h3 class="text-xl font-bold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span> Vehicle Life Events
+                        </h3>
+<div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary/50 before:via-slate-200 before:to-slate-200">
+<!-- Event 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-primary text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-slate-900 dark:text-white">Initial Sale</div>
+<time class="font-display text-xs font-medium text-primary">Jan 2022</time>
+</div>
+<div class="text-slate-600 dark:text-slate-400 text-sm">Vehicle sold at Toyota Central. First owner registered in Dhaka.</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 text-slate-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">build</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800/30">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-slate-900 dark:text-white">Service Interval</div>
+<time class="font-display text-xs font-medium text-slate-500">Aug 2022</time>
+</div>
+<div class="text-slate-600 dark:text-slate-400 text-sm">10,000 KM service performed at Toyota Authorized Center. No issues noted.</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-slate-200 dark:bg-slate-700 text-slate-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">person_add</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800/30">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-slate-900 dark:text-white">Ownership Change</div>
+<time class="font-display text-xs font-medium text-slate-500">Mar 2023</time>
+</div>
+<div class="text-slate-600 dark:text-slate-400 text-sm">Title transferred to 2nd owner. Odometer verified at 18,200 KM.</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-emerald-500 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-emerald-50/50 dark:bg-emerald-900/10">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-emerald-900 dark:text-emerald-400">Latest Inspection</div>
+<time class="font-display text-xs font-medium text-emerald-600">Nov 2023</time>
+</div>
+<div class="text-slate-600 dark:text-slate-400 text-sm">Full digital audit completed by GariAudit partner garage. 100% clean record.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Odometer & Maintenance Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">speed</span> Odometer Consistency
+                            </h4>
+<div class="h-40 w-full bg-slate-50 dark:bg-slate-800 rounded-lg flex items-end justify-between px-4 pb-4 gap-2 border border-slate-100 dark:border-slate-800/50 relative">
+<!-- Abstract Bar Chart representing odometer growth -->
+<div class="w-full bg-primary/20 rounded-t h-[20%]"></div>
+<div class="w-full bg-primary/30 rounded-t h-[35%]"></div>
+<div class="w-full bg-primary/40 rounded-t h-[55%]"></div>
+<div class="w-full bg-primary/60 rounded-t h-[75%]"></div>
+<div class="w-full bg-primary rounded-t h-[95%]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Linear Growth Verified</span>
+</div>
+</div>
+<p class="text-xs text-slate-500 mt-4 leading-relaxed italic">The mileage progression follows a standard driving pattern of ~1,000 KM per month.</p>
+</section>
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">engineering</span> Major Repairs
+                            </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<div class="text-sm">
+<p class="font-semibold">Brake Pad Replacement</p>
+<p class="text-slate-500">22,100 KM • Jan 2023</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<div class="text-sm">
+<p class="font-semibold">Wheel Alignment &amp; Balance</p>
+<p class="text-slate-500">15,000 KM • Aug 2022</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<div class="text-sm">
+<p class="font-semibold">Battery Replacement</p>
+<p class="text-slate-500">0 KM • Pre-delivery</p>
+</div>
+</li>
+</ul>
+</section>
+</div>
+<!-- Damage History -->
+<section class="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden relative">
+<div class="absolute top-4 right-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">car_crash</span>
+</div>
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-emerald-600">
+<span class="material-symbols-outlined">health_and_safety</span> Damage &amp; Accident Summary
+                        </h3>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3 aspect-square max-w-[200px] border-4 border-emerald-500/20 rounded-full flex flex-col items-center justify-center text-center p-4">
+<span class="material-symbols-outlined text-emerald-500 text-5xl mb-2">check_circle</span>
+<span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">No Claims Found</span>
+</div>
+<div class="flex-1 space-y-4">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    We have checked our extensive database of insurance claims, police accident reports, and partner repair shop logs. 
+                                    <strong>No structural damage, minor collisions, or water damage incidents</strong> have been reported for this VIN.
+                                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded border border-slate-100 dark:border-slate-800/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500 text-sm">shield</span>
+<span class="text-xs font-semibold">Flood Checked</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded border border-slate-100 dark:border-slate-800/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500 text-sm">shield</span>
+<span class="text-xs font-semibold">Frame Checked</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded border border-slate-100 dark:border-slate-800/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500 text-sm">shield</span>
+<span class="text-xs font-semibold">Fire Checked</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded border border-slate-100 dark:border-slate-800/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500 text-sm">shield</span>
+<span class="text-xs font-semibold">Salvage Checked</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar (1/3) -->
+<aside class="space-y-6">
+<!-- Why Trust Section -->
+<div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl border border-primary/20">
+<h4 class="font-bold text-primary mb-4 flex items-center gap-2 uppercase text-xs tracking-widest">
+<span class="material-symbols-outlined text-lg">info</span> Why trust this data?
+                        </h4>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="mt-1 bg-primary/20 rounded-full p-1 h-fit">
+<span class="material-symbols-outlined text-primary text-sm">account_balance</span>
+</div>
+<div>
+<p class="text-sm font-bold">BRTA Integrated</p>
+<p class="text-xs text-slate-500 leading-normal">Direct feeds from official government registration databases.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1 bg-primary/20 rounded-full p-1 h-fit">
+<span class="material-symbols-outlined text-primary text-sm">assured_workload</span>
+</div>
+<div>
+<p class="text-sm font-bold">Insurance Network</p>
+<p class="text-xs text-slate-500 leading-normal">Claims data shared by top national insurance providers.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1 bg-primary/20 rounded-full p-1 h-fit">
+<span class="material-symbols-outlined text-primary text-sm">home_repair_service</span>
+</div>
+<div>
+<p class="text-sm font-bold">1,200+ Workshops</p>
+<p class="text-xs text-slate-500 leading-normal">Maintenance logs from authorized and independent garages.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Ownership Map -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span> Ownership History
+                        </h4>
+<div class="space-y-4">
+<div class="relative h-32 rounded-lg bg-slate-200 overflow-hidden mb-4">
+<img class="w-full h-full object-cover opacity-60" data-alt="Stylized map showing city locations" data-location="Dhaka, Bangladesh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYGBk5eoZT8BHSZU-2dDxzPf7-B8M2c0fxpafksMxomID4zlkzRAjgqL8Pq3HRP5duBWVNDwt6gEw3Gc8oPVoZVDPiPUn_VHsfrFCVcS6Sh4tVzciWs3rB8TAMHWlk0WpJnUKtgg35UeX1XZQfZFT39xUQLb8uioTBNwXyNng6u4bzjrHa5o03XV4hapJOxd-8LPwDCyWQgoSPCYiHOYFJJSp-SZr9eEX6BShJSxkT272C3GIlg1BKCFjzGzLqC6UfAuckiideQ3w"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl animate-bounce">location_on</span>
+</div>
+</div>
+<div class="border-l-2 border-primary pl-4 py-1 space-y-1">
+<p class="text-xs font-bold text-slate-400 uppercase">Current City</p>
+<p class="text-sm font-bold">Dhaka, Bangladesh</p>
+<p class="text-xs text-slate-500">Since March 2023</p>
+</div>
+<div class="border-l-2 border-slate-200 pl-4 py-1 space-y-1">
+<p class="text-xs font-bold text-slate-400 uppercase">Previous City</p>
+<p class="text-sm font-bold">Chittagong, Bangladesh</p>
+<p class="text-xs text-slate-500">Jan 2022 - Mar 2023</p>
+</div>
+</div>
+</div>
+<!-- Call to Action Sidebar -->
+<div class="bg-slate-900 p-6 rounded-xl shadow-2xl relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px] text-white">description</span>
+</div>
+<h4 class="text-white font-bold mb-2">Need a physical copy?</h4>
+<p class="text-slate-400 text-xs mb-4">Get the certified PDF report with official GariAudit seal for legal or resale purposes.</p>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm hover:bg-orange-600 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                            Download Full Report
+                        </button>
+</div>
+</aside>
+</div>
+<!-- Disclaimer -->
+<footer class="mt-12 py-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-slate-400 text-[10px] leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter">
+                    Disclaimer: This report is based on information reported to GariAudit and its partners. While we strive for 100% accuracy, some events may not have been reported or may contain errors from the source. This report should be used as one of several tools to evaluate a vehicle's history. © 2024 GariAudit Intelligence Systems.
+                </p>
+</footer>
+</main>
+</div>
+</body></html>

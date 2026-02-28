@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dealer Performance Benchmarking | GariAudit Enterprise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/10 bg-white dark:bg-slate-900 px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">GariAudit Enterprise</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Benchmarks</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-slate-400 flex items-center justify-center bg-slate-100 dark:bg-slate-800 px-3">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full text-sm border-none bg-slate-100 dark:bg-slate-800 focus:ring-0 placeholder:text-slate-500" placeholder="Search market data..."/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="rounded-full size-10 border border-primary/20 bg-cover bg-center" data-alt="Professional dealership account manager avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCNxe252iMsi_2cBk_MY5s1UVGuk-CnNRYcccUTr4RysERs3fHeDmXYFy-QCPdPAzh_wc6F6wRK2w59hPFPGgqRUsCouOj89MKQQ2qktGxP-4zzjt-2_lRywnz_kCraEg-jnpui6-cye9_rsq3zmRONofNaRRrM-dBWl-1rR-E3Z1LGXTh93_-6QOxiueMZqVqf05Dfum76vN5ApX8t7XxfcSxKULITQVQy6rvj0eFbJOjwjxvwjNLaVrl5ITKxHZg4qbex7WQN_U')"></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-primary/5 bg-white dark:bg-slate-900 hidden lg:flex flex-col p-4 shrink-0">
+<div class="space-y-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Overview</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary cursor-pointer">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-sm font-bold">Performance Benchmarks</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="text-sm font-medium">Inventory Health</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Market Trends</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-sm font-medium">AI Recommendations</span>
+</div>
+</div>
+<div class="mt-auto p-4 bg-primary rounded-xl text-white">
+<p class="text-xs font-semibold uppercase tracking-wider opacity-80 mb-2">Enterprise Plan</p>
+<p class="text-sm font-medium mb-4">Unlimited market data comparison enabled.</p>
+<button class="w-full py-2 bg-white text-primary text-xs font-bold rounded shadow-sm">VIEW UPGRADE</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-10 space-y-8">
+<!-- Page Title Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight leading-none mb-2">Dealer Performance Benchmarking</h1>
+<p class="text-slate-500 dark:text-slate-400 max-w-xl">Deep-dive analysis of your market standing, inventory velocity, and the direct impact of GariAudit on your bottom line.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Export Strategic Report
+                </button>
+</div>
+<!-- Market Comparison Header -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-primary/10 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Average GariScore Comparison</h3>
+<p class="text-sm text-slate-500">Your performance vs. local market competitors</p>
+</div>
+<span class="px-2.5 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Top 5% in Region
+                        </span>
+</div>
+<div class="flex flex-col gap-8">
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="font-semibold text-primary">Your Average GariScore</span>
+<span class="font-bold text-2xl text-primary">842 <span class="text-sm font-medium opacity-60">/ 1000</span></span>
+</div>
+<div class="w-full h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full shadow-inner" style="width: 84.2%"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="font-semibold text-slate-500">Local Market Average</span>
+<span class="font-bold text-2xl text-slate-400">715 <span class="text-sm font-medium opacity-60">/ 1000</span></span>
+</div>
+<div class="w-full h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-slate-300 dark:bg-slate-600 rounded-full" style="width: 71.5%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6 relative overflow-hidden flex flex-col">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined">verified</span>
+<h3 class="font-bold uppercase tracking-wider text-xs">Certification Advantage</h3>
+</div>
+<div class="mt-2">
+<p class="text-4xl font-black text-primary">+18.4%</p>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Faster Inventory Turnaround</p>
+<p class="text-xs text-slate-500 mt-4 leading-relaxed">Audited vehicles are currently selling 6.2 days faster than non-audited peers in the <span class="font-bold text-slate-700 dark:text-slate-300">San Francisco Bay Area</span>.</p>
+</div>
+<!-- Abstract graphic decoration -->
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[180px]">auto_graph</span>
+</div>
+</div>
+</section>
+<!-- Peer Ranking & Leaderboard -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden">
+<div class="p-6 border-b border-primary/5 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">handshake</span>
+                            Trust Score Ranking
+                        </h3>
+<span class="text-xs text-slate-500">Global Rank: #42</span>
+</div>
+<div class="p-0">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-left">
+<tr>
+<th class="px-6 py-3 font-semibold">Rank</th>
+<th class="px-6 py-3 font-semibold">Dealer Name</th>
+<th class="px-6 py-3 font-semibold text-right">Score</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">1</td>
+<td class="px-6 py-4">Elite Motors Group</td>
+<td class="px-6 py-4 text-right font-bold text-green-600">988</td>
+</tr>
+<tr class="bg-primary/5">
+<td class="px-6 py-4 font-bold text-primary">2</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Your Dealership <span class="ml-2 text-[10px] bg-primary text-white px-1.5 rounded">YOU</span></td>
+<td class="px-6 py-4 text-right font-black text-primary">972</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">3</td>
+<td class="px-6 py-4">Premier Auto Plaza</td>
+<td class="px-6 py-4 text-right font-bold">965</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">4</td>
+<td class="px-6 py-4">Midtown Luxury Cars</td>
+<td class="px-6 py-4 text-right font-bold">941</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 overflow-hidden">
+<div class="p-6 border-b border-primary/5 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">speed</span>
+                            Inventory Velocity
+                        </h3>
+<span class="text-xs text-slate-500">Region: West Coast</span>
+</div>
+<div class="p-0">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-left">
+<tr>
+<th class="px-6 py-3 font-semibold">Rank</th>
+<th class="px-6 py-3 font-semibold">Dealer Name</th>
+<th class="px-6 py-3 font-semibold text-right">Avg. Turn</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">1</td>
+<td class="px-6 py-4">High-Octane Used Cars</td>
+<td class="px-6 py-4 text-right font-bold">12.4 Days</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">2</td>
+<td class="px-6 py-4">Regional Toyota Outlet</td>
+<td class="px-6 py-4 text-right font-bold">14.1 Days</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+<td class="px-6 py-4 font-medium">3</td>
+<td class="px-6 py-4">Pacific Rim Exports</td>
+<td class="px-6 py-4 text-right font-bold">16.5 Days</td>
+</tr>
+<tr class="bg-primary/5">
+<td class="px-6 py-4 font-bold text-primary">4</td>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Your Dealership <span class="ml-2 text-[10px] bg-primary text-white px-1.5 rounded">YOU</span></td>
+<td class="px-6 py-4 text-right font-black text-primary">18.2 Days</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Metrics Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Days on Lot -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10">
+<div class="flex justify-between mb-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+</div>
+<h4 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Avg. Days on Lot</h4>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-black text-slate-900 dark:text-white">18.2</p>
+<p class="text-sm font-medium text-green-600">-4.2 vs non-audited</p>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-800 grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Audited</p>
+<p class="text-sm font-bold text-primary">14.5 Days</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Non-Audited</p>
+<p class="text-sm font-bold text-slate-600">22.4 Days</p>
+</div>
+</div>
+</div>
+<!-- Profit Margin Delta -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10">
+<div class="flex justify-between mb-4">
+<div class="size-10 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<h4 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Profit Margin Delta</h4>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-black text-slate-900 dark:text-white">+$1,420</p>
+<p class="text-sm font-medium text-primary">per unit premium</p>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-800">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs text-slate-500">Market Price Power</span>
+<span class="text-xs font-bold text-green-600">Strong</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-green-500" style="width: 78%"></div>
+</div>
+</div>
+</div>
+<!-- Audit Accuracy -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10">
+<div class="flex justify-between mb-4">
+<div class="size-10 rounded-lg bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+</div>
+<h4 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Audit Accuracy Rating</h4>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-black text-slate-900 dark:text-white">99.4%</p>
+<p class="text-sm font-medium text-slate-500">vs 92% market</p>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 dark:border-slate-800">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300" data-alt="User feedback avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVQlTmCUV3XDU9cA3BgIiMO6gkvxVZn_PEqGiy_XUE2qJbzaUOGHrHOASQ4U_f2cwJpizplRNvv6uB2ISaTWWiojk0NlZh7GQncoAPV2Q7dFhkLRnxrKoXpjLs6dE78Fqk-jK2_joUUz5wEBwpgPYInK7ouz4PmJi3zgSrkq87Re9BaEu8rMF1-Sl351_NB-dOLh4OeoxV_ZogGSN7RBOlm49QkH4X7CQa6QdL9eUqxmd4RiCYUNWiwQK7naiO6LWxvPTA1pyb1Tg')"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-400" data-alt="User feedback avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3K60OLij-j-BxCh7j7_zDK9IpDUREBeXk4XpmcCipcgfXDrCBONwr_cZkn2ZZ-Vf79EoYtc0wlXepYQDl4ANDt514WqiMnVGFwdrEAum8SpXsEXLBmiVZ-9VOIwNLvVqh4ywfYslSeAvRdJ8gmPxv8NIddReDL9kgm9UCEPc-o2EvjtOAFOjssWZjFBcLdeXIeLsEE6CBkXaZEB5Er2_-dymRJ9uAQHPvF27tGb1ft0FTGfgKkuf5w3xnItUGufZdEt0XXxsUEVU')"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-500" data-alt="User feedback avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBE2V_fVSuUkp2UW5FPj9z9-oXMpcieg5YUmsDvlUL9bi4I8Cs7a5vDu84nFuKqC6yzDOyuA-ypAqEy0IMgCICRgKpn3pon4ALlv3K3A8IkVtSi_VYOpktMBRG3jOkxbb96kBLOJSUlCcMINLhePvFhkgej9J46oDIuzMwaFyuPRJQohaGIZXqgtQQ_zKO9tx1DOuq-MAYdIvZC5gB4uoiXpAvCwwN7Sw9yIQfHg5bt_ngk0fBthvP7JfC3UgvAf9gkyCad_xXX_A')"></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-600">+800</div>
+</div>
+<p class="text-[10px] text-slate-400 font-bold uppercase mt-2">Verified by 2.4k buyers</p>
+</div>
+</div>
+</section>
+<!-- AI Driven Recommendations -->
+<section class="bg-slate-900 text-white rounded-2xl p-8 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<h3 class="text-xl font-bold">Actionable Strategic Insights</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-5 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-amber-400 shrink-0">warning</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Inventory Performance Gap</h4>
+<p class="text-xs text-slate-300 leading-relaxed">Your <span class="font-bold text-white">Toyota</span> inventory has 12% lower GariScores than the city average. Consider more detailed inspections to build trust and increase turn rates by up to 3 days.</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-5 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-green-400 shrink-0">ads_click</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Pricing Opportunity</h4>
+<p class="text-xs text-slate-300 leading-relaxed">Audited Luxury SUVs are commanding a <span class="font-bold text-white">$2,800 premium</span> in your zip code. You are currently priced $400 below the potential ceiling. Adjusting could net $12k/month.</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-5 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-blue-400 shrink-0">groups</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Market Sentiment</h4>
+<p class="text-xs text-slate-300 leading-relaxed">Buyers are specifically searching for <span class="font-bold text-white">"Certified GariAudit EV"</span> in your area. Increase your focus on EV auditing to capture 40% more inbound leads.</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm border border-white/10 p-5 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-primary-200 shrink-0">insights</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Velocity Alert</h4>
+<p class="text-xs text-slate-300 leading-relaxed">Audi A4 models on your lot are at 35 days. Run a "Verified Highlight" campaign to reduce time on lot by an estimated 20%.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Background decoration -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/30 to-transparent"></div>
+<div class="absolute -bottom-12 -right-12 size-64 bg-primary/20 rounded-full blur-3xl"></div>
+</section>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Referral Program - GariAudit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-20 py-3 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<a href="landing%20page.html" class="flex items-center gap-4 text-primary dark:text-slate-100">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">GariAudit</h2>
+</a>
+<div class="flex gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
+<div class="text-center mb-16">
+<span class="inline-block px-4 py-1.5 mb-4 text-sm font-semibold tracking-wide uppercase bg-primary/10 text-primary dark:text-primary/80 rounded-full">
+                        Refer &amp; Earn
+                    </span>
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
+                        Share the Trust, Get Rewarded.
+                    </h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        Help your friends buy cars with confidence and earn <span class="text-primary font-bold">BDT 500</span> for every successful audit you refer.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 relative">
+<div class="flex flex-col items-center text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="size-16 rounded-full bg-primary text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">share</span>
+</div>
+<h3 class="text-xl font-bold mb-2">1. Share your link</h3>
+<p class="text-slate-600 dark:text-slate-400">Send your unique referral link to friends via WhatsApp or social media.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="size-16 rounded-full bg-primary text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">fact_check</span>
+</div>
+<h3 class="text-xl font-bold mb-2">2. They Audit</h3>
+<p class="text-slate-600 dark:text-slate-400">Your friend schedules and completes their first professional car audit with us.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="size-16 rounded-full bg-primary text-white flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-bold mb-2">3. You Get Paid</h3>
+<p class="text-slate-600 dark:text-slate-400">Receive BDT 500 directly to your digital wallet as soon as the audit is verified.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 shadow-xl border border-primary/10 mb-16">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+<div>
+<h2 class="text-2xl font-bold mb-2">Your Referral Stats</h2>
+<p class="text-slate-500">Track your earnings and invitations in real-time.</p>
+</div>
+<div class="bg-primary/5 px-4 py-2 rounded-lg border border-primary/10">
+<p class="text-sm font-medium text-primary">Member Since Jan 2024</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-sm font-medium mb-1">Total Earned</p>
+<h4 class="text-3xl font-bold text-primary">BDT 2,500</h4>
+</div>
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-sm font-medium mb-1">Total Referrals</p>
+<h4 class="text-3xl font-bold">5</h4>
+</div>
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 text-sm font-medium mb-1">Pending Referrals</p>
+<h4 class="text-3xl font-bold text-amber-600">2</h4>
+</div>
+</div>
+<div class="space-y-6">
+<p class="text-center font-semibold text-slate-700 dark:text-slate-300">Share your unique link</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<div class="flex-1 relative">
+<input class="w-full pl-4 pr-12 py-4 bg-slate-100 dark:bg-slate-800 border-none rounded-xl font-medium text-slate-600 dark:text-slate-300" readonly="" type="text" value="gariaudit.com/ref/user7742"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:text-primary/80 transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 sm:flex-none px-6 py-4 bg-[#25D366] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">chat</span> WhatsApp
+                                </button>
+<button class="flex-1 sm:flex-none px-6 py-4 bg-[#1877F2] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">social_leaderboard</span> Facebook
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-3xl mx-auto space-y-8">
+<h2 class="text-2xl font-bold text-center">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold mb-2">When do I get paid?</h4>
+<p class="text-slate-600 dark:text-slate-400">Rewards are credited to your GariAudit wallet within 48 hours after your friend's car audit report is officially generated and finalized.</p>
+</div>
+<div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold mb-2">Is there a limit to how many people I can refer?</h4>
+<p class="text-slate-600 dark:text-slate-400">Absolutely not! You can refer as many friends as you like. The more you share, the more you earn.</p>
+</div>
+<div class="p-6 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold mb-2">Can I withdraw the money to my bank account?</h4>
+<p class="text-slate-600 dark:text-slate-400">Yes, wallet balances above BDT 1,000 can be transferred directly to your Bkash, Nagad, or linked bank account.</p>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-500">
+                        * Terms &amp; Conditions apply. Referral bonus only applicable for the first audit completed by a new user. 
+                        GariAudit reserves the right to modify or terminate the program at any time.
+                    </p>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 px-6">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-primary dark:text-slate-200 opacity-80">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="font-bold">GariAudit Professional Services</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-sm text-slate-400">© 2024 GariAudit. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

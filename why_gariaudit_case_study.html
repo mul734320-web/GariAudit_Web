@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<div class="flex items-center gap-3 text-primary dark:text-slate-100">
+<a href="landing%20page.html" class="flex items-center gap-3">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">GariAudit</h2>
+</a>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="why_gariaudit_case_study.html">Case Studies</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="how_gariaudit_works.html">How it Works</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="gariaudit_pro_membership.html">Pricing</a>
+</nav>
+<a href="start_new_audit_flow.html" class="bg-primary text-white text-sm font-bold px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                        Get Inspected
+                    </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto px-6 py-12 md:py-24">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="relative">
+<div class="aspect-video bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-2xl" data-alt="Close up of mechanic inspecting luxury car engine" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUJJwmSZGPBf3vGse5GruCw9xqvJnlqJ-8845oXTooxuIBHIHzk0JAn_3nbEsNxZHulmzJunY8x1J1fAd08jQc3MVfJ2DxbW4wbXlevbrNXSP2VWCNamtiuWGVOo3G_hqd5AeJHDgI5cspmanJzJOxb0dE0ccj07phCccOGUgMYVHKsw_WFBYrcZ7ZhsEBMCj-SQ_3BWZ0kXgezCkVkNzT5SGo5lyEnrkEPmEA1-bp0pfxK9qXshYy2EIRbbMfFrhIYN_W8S_xku4'); background-size: cover;">
+</div>
+<div class="absolute -bottom-6 -right-6 bg-red-600 text-white p-6 rounded-xl shadow-xl max-w-[200px]">
+<p class="text-3xl font-black">-$3,500</p>
+<p class="text-xs uppercase font-bold tracking-wider">Average loss on unaudited deals</p>
+</div>
+</div>
+<div class="space-y-6">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary dark:text-primary/50 text-xs font-bold uppercase tracking-widest rounded">Risk Analysis Report</span>
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tighter">
+                                The Hidden Cost of a Bad Deal
+                            </h1>
+<p class="text-lg text-slate-600 dark:text-slate-400">
+                                Buying a used car without a professional audit could cost you over $3,500 in hidden repairs. Don't let a 'bargain' become your biggest financial regret. Every minute you wait, another 'lemon' enters the market.
+                            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white h-14 px-8 rounded-lg font-bold text-lg hover:shadow-lg transition-all">
+                                    Avoid the Loss Now
+                                </button>
+<div class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-green-500">verified_user</span>
+<span class="text-sm font-medium">10,000+ Audits Completed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="bg-white dark:bg-slate-900 py-20">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">The Cost of Ignorance vs. The Value of Truth</h2>
+<p class="text-slate-500 max-w-2xl mx-auto">One decision separates a dream drive from a financial nightmare. See the difference our inspection makes.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Scammed Car -->
+<div class="group border-2 border-red-100 dark:border-red-900/30 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow bg-background-light dark:bg-background-dark">
+<div class="aspect-video relative overflow-hidden">
+<div class="absolute inset-0 bg-red-600/20 mix-blend-overlay"></div>
+<img alt="Damaged car parts" class="w-full h-full object-cover" data-alt="Rusty car chassis and engine leaks close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBStwanVuSxCzdqvmjKgnrgQFwYc8uKpXpcFtvX2en9AcEzxX2a5MPDnaoWhma5-lUSjquEbrOJOrDsjMfYtLa6TLqDzPT5jLXBrT3VZ0hV6p9Mb2h89HtbEstkr7kjDrJtQWEoizHc030BaywGD9prYaomqxMAgVeCMnge1pXHOg0AqfcSBw9mSejTYUyBd0LzOkhlXxdk61nd-f6FQkbXDnswMfF1tK5SqSeiPYHsWev0I6SsEDlJS4AQEzQnI9USrS1nYKhv8As"/>
+<div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded text-xs font-bold uppercase">The "Bargain" Scam</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600">report</span>
+                                        Marketplace "Deal"
+                                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 mt-1">cancel</span>
+<div>
+<p class="font-bold">Odometer Fraud</p>
+<p class="text-sm text-slate-500 italic">Actual mileage: 145k | Listed: 65k</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 mt-1">cancel</span>
+<div>
+<p class="font-bold">Structural Masking</p>
+<p class="text-sm text-slate-500">Accident damage hidden under fresh respray.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 border-t border-red-100 dark:border-red-900/30 pt-4 mt-4">
+<div>
+<p class="text-red-600 font-black text-xl">Estimated Repairs: $4,200+</p>
+<p class="text-xs uppercase text-slate-400">Buyer's regret: Instant</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Audited Car -->
+<div class="group border-2 border-primary/20 dark:border-primary/40 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow bg-background-light dark:bg-background-dark">
+<div class="aspect-video relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<img alt="Clean certified car" class="w-full h-full object-cover" data-alt="Modern certified used sedan in showroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbXlVjqo938L5ijb7rUjBsSbTsK5IbxDRfFKAS1b2Q3IN-4StdUVBshW8OSRHj-C7_3-6RGr75x4Sc_pJ_NDxYBaK_2UQAio1Bj7yVuhX02NuWY8sN6I2mbElNu_Fo2YtU8wAVyJuY03vvGf9DrW2dshzvQy_ugHpshvZhZ00Zi8VqkttEILilTtl_y3lKyeBkYYVjx7IOeWkjmXTyHkfhe5ljBHaX0zc8wRpuJnmmxIxwLzbpwX8H0fHYDmkW2OYBhSJK27c9WOo"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase">GariAudited Certified</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+                                        The Transparent Choice
+                                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+<div>
+<p class="font-bold">150-Point Digital Scan</p>
+<p class="text-sm text-slate-500">Full transparency on every mechanical component.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+<div>
+<p class="font-bold">Verified History</p>
+<p class="text-sm text-slate-500">Legal ownership and mileage authenticity guaranteed.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 border-t border-primary/10 pt-4 mt-4">
+<div>
+<p class="text-primary font-black text-xl">Certified Value: $12,500</p>
+<p class="text-xs uppercase text-slate-400">Peace of mind: Permanent</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- OBD Scan Section -->
+<section class="max-w-6xl mx-auto px-6 py-20">
+<div class="bg-primary rounded-3xl p-8 md:p-16 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 hidden lg:block">
+<img alt="Tech interface" class="w-full h-full object-cover" data-alt="Digital HUD interface with car diagnostics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP4wWnVUHumMC5pK7X2Nl5IGVUg2oa0vYpgMwA9bD--ZYXgGBwqqhFuhtnLdORMrFfo-cArbOxBC1udGXxbkzMvWltb5T4IVEd5xeLwTbdzxVjKMge9gYxPiSlzTgwcIZNkWyLAyxbp4nIDzlk2m6yRRmPTgDrzqBACShIHJkKvIDQLKQSf39-MSnivuEtYnfaXW6d8-oOLzn4sA3JF61re9pGfrfURRQY-FE8Z4xlpr4kZfc43gJgHzIHhY13VYqDv9G2OWe3dAo"/>
+</div>
+<div class="relative z-10 lg:w-3/5">
+<h2 class="text-3xl md:text-5xl font-black mb-6">The 'OBD Deep Scan' Advantage</h2>
+<p class="text-primary/30 bg-white/10 p-4 rounded-lg inline-block mb-8 text-white font-medium italic">
+                                "Local mechanics see what's broken today. Our scan sees what will break tomorrow."
+                            </p>
+<div class="grid sm:grid-cols-2 gap-8 mb-10">
+<div class="flex gap-4">
+<div class="size-12 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Predictive Analysis</h4>
+<p class="text-white/70 text-sm">Identifying wear patterns that signal imminent transmission failure.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-12 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">ECU Ghost Check</h4>
+<p class="text-white/70 text-sm">Recovering cleared error codes that sellers try to hide.</p>
+</div>
+</div>
+</div>
+<button class="bg-white text-primary h-12 px-8 rounded-lg font-bold hover:bg-slate-100 transition-colors">
+                                See Full Scan Details
+                            </button>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-6xl mx-auto px-6">
+<div class="mb-12">
+<h2 class="text-3xl font-bold">Real Stories: Avoided Lemons</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6 italic">"The car looked perfect on Facebook. GariAudit found a hairline crack in the engine block that would have cost me $5,000 in two months. They saved my savings."</p>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Portrait of a satisfied customer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOnox92wUXhEmIBfi4h23AIcyWhebKvbwoiVOuo3RO3ExTJaZ3BfiX_zWWFF6KVTwECaplPeI3baoFuTZ5q04_Znob6zzyG_itxeby8ZiiT9tvvmTf3HVr1y2mhocx6fiDb-l44XZ0m2GScC-WG1G4HojqTtLQXRx0rQKkF19MPGDcr91d658xQV1qplLMOI0J1btxIGDuiDR7LOu0VWgw_0sm5X5AwgBMuU4cLoJOJbhBJv8FsCU3q8W41P9kQ-8at0huV411S_M'); background-size: cover;"></div>
+<div>
+<p class="font-bold text-sm">James R.</p>
+<p class="text-xs text-slate-500">Saved $5,000</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6 italic">"I was about to pay cash for a 'low mileage' SUV. GariAudit's digital scan showed the dashboard was tampered with. It actually had double the miles. Don't buy without them!"</p>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Portrait of a male customer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApx-F4IjPZdHujun__VOAzlvDjrxzfa31BsE9b8mONgRFCZ7jNzS14k5c4NRC5osL6usbu6rne9JyUqsD__YDLV--ooKdWFXuJmACcWObgxKMGhPg4qHzGiwf1q71W88AkYIfM2KwaCNOuM7xYn5dIsTZu_7Af0sZGhFfgo13Zo_UzuQ59MI35_WKayxZDGSmd_8uh4XERvrkhjigWv-jLHewTe4cyLFirlVAbv1tqIJvepGMQiLeE5j8UdpUWyIsufbloTiBqrd0'); background-size: cover;"></div>
+<div>
+<p class="font-bold text-sm">Sarah L.</p>
+<p class="text-xs text-slate-500">Dodged Odometer Fraud</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-1 text-yellow-500 mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6 italic">"The inspection report was so detailed, I used it to negotiate $1,200 off the price because of upcoming brake work. The audit paid for itself 10x over."</p>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Portrait of a female customer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQp10qzPRrb0_IJWRzXAQqSlvGfwyzdv41xp0JaH8M8ju0QPk6OdYayW_OHB6HMdTUmP_GDTLSRsQzKoeRUb_X-v1pOmea4-Dy7_Een-wtHLcwKy55k0RsjKiSOkXjgDSWGN0OTTZky4Ilgz6v1gMBwCddhlmHMi7KXcXoGoNxldjIyw83-hTHyk7keozAPXMHLAnxfPcgt8T6hdYSzXxaLZ6JPfFRD4xsaUMPych01Uxyb4wO6zYECgc1D_ZwjXX9V9XIhWZc838'); background-size: cover;"></div>
+<div>
+<p class="font-bold text-sm">Michael K.</p>
+<p class="text-xs text-slate-500">Negotiated $1,200 Off</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 text-center px-6">
+<div class="max-w-3xl mx-auto space-y-8">
+<div class="inline-flex items-center gap-2 text-red-600 font-bold animate-pulse">
+<span class="material-symbols-outlined">warning</span>
+<span>Limited Inspection Slots Available This Week</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-black">Don't Get Scammed. Get GariAudited.</h2>
+<p class="text-xl text-slate-500">Every hour you wait is an hour closer to buying someone else's expensive problem. Protect your money today.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-white h-16 px-12 rounded-lg font-bold text-xl hover:scale-105 transition-transform">
+                                Book Your Audit Now
+                            </button>
+<button class="border-2 border-primary text-primary h-16 px-12 rounded-lg font-bold text-xl hover:bg-primary/5 transition-colors">
+                                View Sample Report
+                            </button>
+</div>
+<p class="text-sm text-slate-400">Trusted by over 10,000 smart buyers across the country.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-white py-12 px-6">
+<div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-xl font-bold">GariAudit</span>
+</div>
+<p class="text-slate-400 text-sm">The gold standard in vehicle transparency and risk mitigation.</p>
+</div>
+<div>
+<h5 class="font-bold mb-4">Services</h5>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-white" href="#">Pre-Purchase Audit</a></li>
+<li><a class="hover:text-white" href="#">OBD Deep Scan</a></li>
+<li><a class="hover:text-white" href="#">Ownership Verification</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4">Company</h5>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-white" href="#">Case Studies</a></li>
+<li><a class="hover:text-white" href="#">Our Experts</a></li>
+<li><a class="hover:text-white" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4">Legal</h5>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-white" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-6xl mx-auto border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-xs">
+                    © 2024 GariAudit. All rights reserved. Professional inspection services for peace of mind.
+                </div>
+</footer>
+</div>
+</div>
+</body></html>

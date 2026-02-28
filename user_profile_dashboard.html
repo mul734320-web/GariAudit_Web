@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "accent-gold": "#FFD700",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-primary/10 flex flex-col justify-between">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-10">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">security</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-primary dark:text-white">GariAudit</h2>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">car_repair</span>
+<span>My Audits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Referral Program</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span>Pro Membership</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<div class="p-6 border-t border-primary/10">
+<button class="w-full bg-primary text-white py-2.5 rounded-lg font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>New Audit</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto scroll-smooth">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-8 py-4 border-b border-primary/10 flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold">User Dashboard</h1>
+<p class="text-sm text-slate-500">Welcome back, Alex!</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-bold">Alex Gari</p>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-accent-gold/20 text-yellow-700 px-2 py-0.5 rounded-full border border-accent-gold/50">Pro Member</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="User profile photo of Alex Gari" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJpavFG0VDWY_SK4nBoxYYqkkXdJxiPbCq9MEYNbK48IhCXug9I8Jp8RzeY5VpZ48kif5Ch2VKAiz4q-v4Qv5GUDfRf0CJiWiJXy6h1UuwPXaJsuokismOuItWQ5yGoTwd0_aUE7alor1PyVb2JSE5J1PCoJ5HibiJ-AvpNrPOnqSgmBThTTSXQbjxyOarHVpcTN6ERqLbMoXAEG4xFvcvDhVdk5F-IpMyEeYSjvczBYJpgYH-5KllfKUP_iLgb4rVicwjdJUurog');"></div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Quick Stats Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary/10 text-primary rounded-lg material-symbols-outlined">directions_car</span>
+<span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Total Audits</p>
+<h3 class="text-3xl font-bold mt-1">42</h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-blue-100 text-blue-600 rounded-lg material-symbols-outlined">pending_actions</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Active Requests</p>
+<h3 class="text-3xl font-bold mt-1">03</h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-emerald-100 text-emerald-600 rounded-lg material-symbols-outlined">payments</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Total Earned</p>
+<h3 class="text-3xl font-bold mt-1">$1,240</h3>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-accent-gold/20 text-yellow-700 rounded-lg material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Avg GariScore</p>
+<h3 class="text-3xl font-bold mt-1">88%</h3>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Activity Table -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold">Recent Audits</h2>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 overflow-hidden shadow-sm">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Vehicle Details</th>
+<th class="px-6 py-4">Audit Status</th>
+<th class="px-6 py-4">GariScore</th>
+<th class="px-6 py-4">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+<td class="px-6 py-4">
+<div class="font-bold text-sm">Tesla Model 3 (2022)</div>
+<div class="text-xs text-slate-500">VIN: ...AB9238</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">Completed</span>
+</td>
+<td class="px-6 py-4 font-bold text-emerald-600">92/100</td>
+<td class="px-6 py-4">
+<a class="text-primary font-bold text-xs hover:text-primary/80" href="#">View Report</a>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+<td class="px-6 py-4">
+<div class="font-bold text-sm">Ford F-150 (2021)</div>
+<div class="text-xs text-slate-500">VIN: ...TY1293</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">In Progress</span>
+</td>
+<td class="px-6 py-4 font-bold text-slate-400">--</td>
+<td class="px-6 py-4">
+<span class="text-slate-300 font-bold text-xs">Tracking</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+<td class="px-6 py-4">
+<div class="font-bold text-sm">Toyota RAV4 (2023)</div>
+<div class="text-xs text-slate-500">VIN: ...NM4821</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Pending</span>
+</td>
+<td class="px-6 py-4 font-bold text-slate-400">--</td>
+<td class="px-6 py-4">
+<span class="text-slate-300 font-bold text-xs">Awaiting Data</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Subscription Sidebar -->
+<div class="space-y-6">
+<div class="bg-gradient-to-br from-primary to-[#4A00D1] rounded-xl p-6 text-white shadow-xl shadow-primary/20 relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-accent-gold/10 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-accent-gold">verified</span>
+<span class="text-sm font-bold uppercase tracking-widest text-accent-gold">Pro Plan Active</span>
+</div>
+<h3 class="text-2xl font-bold mb-1">Alex Gari</h3>
+<p class="text-primary-100 text-sm opacity-80 mb-6">Unlimited audits &amp; deep vehicle insights</p>
+<div class="space-y-3 pt-4 border-t border-white/20">
+<div class="flex justify-between text-xs">
+<span>Next Renewal:</span>
+<span class="font-bold">Oct 12, 2024</span>
+</div>
+<div class="w-full bg-white/20 h-2 rounded-full">
+<div class="bg-accent-gold h-full rounded-full w-3/4"></div>
+</div>
+</div>
+<button class="mt-6 w-full py-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg text-sm font-bold transition-all">Manage Subscription</button>
+</div>
+</div>
+<!-- Quick Action Card -->
+<div class="bg-white dark:bg-slate-900 border-2 border-dashed border-primary/20 rounded-xl p-6 flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">add_task</span>
+</div>
+<h4 class="font-bold mb-2">Ready for a new check?</h4>
+<p class="text-xs text-slate-500 mb-4 leading-relaxed">Instantly verify vehicle history and performance data with GariScore.</p>
+<button class="w-full py-2.5 bg-primary text-white rounded-lg font-bold text-sm shadow-md">Start New Audit</button>
+</div>
+</div>
+</div>
+<!-- My Reports Grid -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold">My Recent Reports</h2>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Report Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 overflow-hidden shadow-sm hover:ring-2 hover:ring-primary/20 transition-all group">
+<div class="h-32 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 relative flex items-center justify-center" data-alt="Abstract vehicle report thumbnail 1">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:scale-110 transition-transform">article</span>
+<div class="absolute bottom-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">PDF</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1 truncate">2022_Tesla_M3_Audit.pdf</h4>
+<p class="text-[10px] text-slate-500 mb-3">Generated on Sep 28, 2023</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary/5 hover:bg-primary/10 text-primary text-xs font-bold rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs">download</span> Download
+                                    </button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 rounded transition-colors">
+<span class="material-symbols-outlined text-xs">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Report Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 overflow-hidden shadow-sm hover:ring-2 hover:ring-primary/20 transition-all group">
+<div class="h-32 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 relative flex items-center justify-center" data-alt="Abstract vehicle report thumbnail 2">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:scale-110 transition-transform">article</span>
+<div class="absolute bottom-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">PDF</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1 truncate">BMW_X5_Inspection_Full.pdf</h4>
+<p class="text-[10px] text-slate-500 mb-3">Generated on Aug 15, 2023</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary/5 hover:bg-primary/10 text-primary text-xs font-bold rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs">download</span> Download
+                                    </button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 rounded transition-colors">
+<span class="material-symbols-outlined text-xs">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Report Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 overflow-hidden shadow-sm hover:ring-2 hover:ring-primary/20 transition-all group">
+<div class="h-32 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 relative flex items-center justify-center" data-alt="Abstract vehicle report thumbnail 3">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:scale-110 transition-transform">article</span>
+<div class="absolute bottom-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">PDF</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1 truncate">Monthly_Audit_Summary_Aug.pdf</h4>
+<p class="text-[10px] text-slate-500 mb-3">Generated on Aug 01, 2023</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary/5 hover:bg-primary/10 text-primary text-xs font-bold rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs">download</span> Download
+                                    </button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 rounded transition-colors">
+<span class="material-symbols-outlined text-xs">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Report Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/5 overflow-hidden shadow-sm hover:ring-2 hover:ring-primary/20 transition-all group">
+<div class="h-32 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700 relative flex items-center justify-center" data-alt="Abstract vehicle report thumbnail 4">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:scale-110 transition-transform">article</span>
+<div class="absolute bottom-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">PDF</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1 truncate">Referral_Bonus_Q3_Statement.pdf</h4>
+<p class="text-[10px] text-slate-500 mb-3">Generated on Jul 20, 2023</p>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-primary/5 hover:bg-primary/10 text-primary text-xs font-bold rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs">download</span> Download
+                                    </button>
+<button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 rounded transition-colors">
+<span class="material-symbols-outlined text-xs">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer/Legals -->
+<footer class="p-8 mt-12 border-t border-primary/5 flex flex-col md:flex-row items-center justify-between text-slate-400 text-xs gap-4">
+<p>© 2024 GariAudit Professional Services. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Support Center</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

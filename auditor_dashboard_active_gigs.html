@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>GariAudit | Professional Auditor Dashboard</title>
+</head>
+<body class="bg-background-light font-display text-slate-900">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white px-4 md:px-10 py-3 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<div class="flex items-center gap-4">
+<a href="landing%20page.html" class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h2 class="text-primary text-xl font-bold leading-tight tracking-tight">GariAudit</h2>
+</a>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-primary/5 border border-primary/10">
+<div class="text-primary/60 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-primary/40 px-4 pl-2 text-sm" placeholder="Search gigs..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/5 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 p-4 md:p-8">
+<!-- Left Sidebar: Profile & Motivation -->
+<aside class="lg:col-span-3 space-y-6">
+<div class="bg-white p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-4xl">engineering</span>
+</div>
+<h1 class="text-slate-900 text-lg font-bold">Rahat Chowdhury</h1>
+<div class="flex items-center gap-1 text-primary mt-1">
+<span class="material-symbols-outlined text-sm font-bold">verified</span>
+<p class="text-xs font-semibold uppercase tracking-wider">Level 2 Auditor</p>
+</div>
+</div>
+<nav class="mt-8 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-primary text-white" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-sm font-medium">My Gigs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+</nav>
+</div>
+<!-- Motivation Card -->
+<div class="bg-primary p-6 rounded-xl shadow-lg relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<p class="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Weekly Performance</p>
+<h3 class="text-white text-2xl font-bold">৳12,450 BDT</h3>
+<p class="text-white/60 text-xs mt-1">Total Earned this Week</p>
+</div>
+<div class="mt-6">
+<div class="w-full bg-white/20 rounded-full h-1.5 mb-2">
+<div class="bg-white h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-white/80 text-[10px] uppercase font-bold tracking-tight">75% of Weekly Goal (৳16k)</p>
+</div>
+</div>
+<!-- Abstract background pattern -->
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]">payments</span>
+</div>
+</div>
+</aside>
+<!-- Center Column: Active Inspection -->
+<section class="lg:col-span-5 space-y-6">
+<div class="bg-white rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-5 border-b border-primary/5 flex justify-between items-center bg-primary/5">
+<div>
+<h2 class="text-slate-900 font-bold">Active Inspection</h2>
+<p class="text-slate-500 text-xs font-medium">ID: #GA-9821 | Toyota Premio 2020</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-full uppercase">In Progress</span>
+</div>
+<div class="p-6 space-y-6">
+<!-- Exterior/Paint Section -->
+<div>
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 mb-3">
+<span class="material-symbols-outlined text-primary text-xl">camera_enhance</span>
+                            Exterior &amp; Paint Assessment
+                        </label>
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-square rounded-lg border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-primary/40 hover:bg-primary/5 hover:border-primary cursor-pointer transition-all">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span class="text-[10px] mt-1 font-bold">Front</span>
+</div>
+<div class="aspect-square rounded-lg relative overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of car side panel showing paint condition" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBk7qYri1Yjy7mIt9rUreKyhxzABUG2NaYbvYcCwLTt5sFy_vrQlGTBk-qIES7ksxtY4SkdtnDllBlm60EE83vA7R6wEuW4soAFwPdbwJ2HVYANkM830DP30sLdQObfmzY65UBxnfhmauzajmTfVZImAmC-TGMXuHaGsl0FMK_K6UzMCQR9tGH7tHYGFL55l6K6wtke9EhfiojWHpl2nEFnOgz9D4Vvb2OGvSj8amJAACnxux5vjW09e3I1B_lHzl88d6ckrn2ClpE')"></div>
+<button class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="aspect-square rounded-lg relative overflow-hidden group border border-primary/10">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up of car headlight and front bumper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRhAa0JMIP6m3RsRcxsan5g-F5HIK7vy7CE9eSaJTjHAwOJjnUpwhmaebBP98WjFQzIOAUw9ubQvaYjgeEJKSzXdf-xc95NJxMghXZ8DmN_EEKGYpOHbOykANESXvNkStJTJ5X5aLwSY8JJ_PjRxiFfwkP5f9Jc2Q4BbCXGDo9W18VTNuULiqpHmOANLr4nNJ9__bcaxYDTcBmm2u5LFmmw29HTdO228w3HtFsjY7Es9PeI6x2M-1z2-loWc7CmDTd6mrO_IvUvlg')"></div>
+<button class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- OBD II Scan -->
+<div>
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">settings_input_component</span>
+                            OBD II Diagnostic Scan
+                        </label>
+<input class="w-full rounded-lg border-primary/10 focus:border-primary focus:ring-primary/20 text-sm bg-background-light/50" placeholder="Enter Fault Codes (DTCs)..." type="text"/>
+<p class="text-[10px] text-slate-500 mt-1 italic">Scan reveals no active codes; check P0420 historical.</p>
+</div>
+<!-- Engine Health Dropdown -->
+<div>
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">vital_signs</span>
+                            Overall Engine Health
+                        </label>
+<select class="w-full rounded-lg border-primary/10 focus:border-primary focus:ring-primary/20 text-sm">
+<option>Excellent - No leaks or noises</option>
+<option>Good - Minor aging components</option>
+<option>Fair - Visible oil seepage detected</option>
+<option>Poor - Significant issues found</option>
+</select>
+</div>
+<!-- Test Drive Notes -->
+<div>
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 mb-2">
+<span class="material-symbols-outlined text-primary text-xl">directions_car</span>
+                            Test Drive Observations
+                        </label>
+<textarea class="w-full rounded-lg border-primary/10 focus:border-primary focus:ring-primary/20 text-sm bg-background-light/50" placeholder="Suspension noise? Gear shift smoothness?" rows="3"></textarea>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold text-sm hover:shadow-lg transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        Submit Audit Report
+                    </button>
+</div>
+</div>
+</section>
+<!-- Right Column: Nearby Gigs List -->
+<section class="lg:col-span-4 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-slate-900 font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">my_location</span>
+                    Gigs Near You
+                </h2>
+<button class="text-primary text-xs font-bold hover:underline">View Map</button>
+</div>
+<!-- Gig Card 1 -->
+<div class="bg-white p-4 rounded-xl border border-primary/10 shadow-sm hover:border-primary/40 transition-all group">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Side profile of a sleek gray modern sedan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVq74xpbbpO1PhLA075hz9WuPW9spFwZtwihPUPGt3IJl4UAB-1yHraSCLQ2idA3Ii8de6qFWO4rafjPFFyLuHVGW6o7rCyedmg5QtbHkhsRCYAR39hpl9nq083CUqbqYxjaifPnGUSGMEHkSxJsvT-GUlt-T8BUl41tsQmcQuURLnxLxLx1jXhmbthYIdsJyoK0pSGj7HP-ZjHvWmw5X0WNSRiY2_t1Or5ZMiVlKvylspUKtnFacnPo0BAlrc4LwayLS-wgzfwdM')"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h4 class="text-slate-900 text-sm font-bold leading-tight group-hover:text-primary transition-colors">Toyota Corolla 2018 - Pre-purchase</h4>
+<p class="text-slate-500 text-[10px] font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> Dhanmondi, Dhaka (2.4km)
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold text-sm">৳1,200 BDT</span>
+<button class="px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded hover:bg-primary hover:text-white transition-colors">ACCEPT</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Gig Card 2 -->
+<div class="bg-white p-4 rounded-xl border border-primary/10 shadow-sm hover:border-primary/40 transition-all group">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Compact white SUV parked in a showroom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACm4Yjh8ILfsOR0OM-Q6u_oqUmOExfzQo7ZBdNo44gdGX0bDe397VBrXHG4Eovsk-Wvr93IqKVd0XBPh9p-rc-Lsk-K_-jipeiCjqJBkaqp_Fl01_FIbW_43hv2J664rEXBv0fC4BcAQN3cyWme71TR7GjAOE11R4-Lrz8duxuOrYaXC1edYdFUySIZtldxv21ejldla4PxgBrWx-T6d1SiGMw5du2WogE_Lyxp9Dq_hYKZfOeInj4VpAQ4kuDHq5VevEqBy2ul5o')"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h4 class="text-slate-900 text-sm font-bold leading-tight group-hover:text-primary transition-colors">Honda HR-V 2021 - Full Audit</h4>
+<p class="text-slate-500 text-[10px] font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> Gulshan 1, Dhaka (4.1km)
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold text-sm">৳1,500 BDT</span>
+<button class="px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded hover:bg-primary hover:text-white transition-colors">ACCEPT</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Gig Card 3 -->
+<div class="bg-white p-4 rounded-xl border border-primary/10 shadow-sm hover:border-primary/40 transition-all group">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0" data-alt="Luxury European sports car with shiny finish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEQwsLlfFPi3greiGCLRi50QML9mC47v_5Yg66XcAIkHGqStmMGlmgP32uNrbZimbPg93pnPGkI_LAbegopSNzNQM8xq1rD6nGK1-MUMAqWj5W3uphpS_xBGeEwiPC8Zcl1DGhB_iinTq1IMh7E1oN4tzX7Sq_qSrF88USW6nuKVwpYopEMC7JnQrbnhWpyUxu4tFwElOOoazYT1n17Qrj6QG0RD0jIe4IcoJIQr7aK0TOACr7eqiXtHYya4Gvz1mFLlfrVzO579c')"></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h4 class="text-slate-900 text-sm font-bold leading-tight group-hover:text-primary transition-colors">BMW 320i 2016 - Paint Depth Check</h4>
+<p class="text-slate-500 text-[10px] font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px]">location_on</span> Banani, Dhaka (5.8km)
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-primary font-bold text-sm">৳900 BDT</span>
+<button class="px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded hover:bg-primary hover:text-white transition-colors">ACCEPT</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 rounded-xl p-4 border border-primary/10">
+<p class="text-[11px] text-primary/70 font-bold uppercase tracking-widest text-center">Safety Tip</p>
+<p class="text-xs text-slate-600 mt-1 text-center font-medium leading-relaxed">Always wear your GariAudit high-vis vest during on-site inspections.</p>
+</div>
+</section>
+</main>
+<!-- Map View Mini Trigger (Mobile only floating action) -->
+<div class="lg:hidden fixed bottom-6 right-6 z-50">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">map</span>
+</button>
+</div>
+</div>
+</body></html>

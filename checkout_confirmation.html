@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Subscription Confirmed | GariAudit Pro</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-4 lg:px-40 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-4 text-primary dark:text-slate-100">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<h2 class="text-primary dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">GariAudit Pro</h2>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary dark:bg-primary/20 dark:text-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary dark:bg-primary/20 dark:text-slate-100">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-10 px-4 lg:px-40">
+<div class="layout-content-container flex flex-col max-w-[640px] flex-1 gap-8">
+<!-- Success Hero Section -->
+<div class="flex flex-col items-center text-center gap-6 py-8 bg-white dark:bg-slate-900/50 rounded-xl shadow-sm border border-primary/5">
+<div class="relative">
+<div class="size-24 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-5xl">check_circle</span>
+</div>
+<div class="absolute -top-1 -right-1 bg-accent-gold text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+                                PRO
+                            </div>
+</div>
+<div class="flex flex-col gap-2 px-6">
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Welcome to the Inner Circle!</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base max-w-[420px] mx-auto">
+                                You're Now GariAudit Pro! Your subscription has been successfully activated and all premium features are now available.
+                            </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full px-10">
+<button class="flex-1 flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white font-bold hover:opacity-90 transition-all">
+<span>Start Your First Audit</span>
+</button>
+<button class="flex-1 flex items-center justify-center rounded-lg h-12 px-6 bg-primary/10 text-primary dark:bg-primary/20 dark:text-slate-100 font-bold hover:bg-primary/20 transition-all">
+<span>Go to Dashboard</span>
+</button>
+</div>
+</div>
+<!-- Order Summary Receipt Style -->
+<div class="bg-white dark:bg-slate-900/50 rounded-xl border border-primary/5 overflow-hidden">
+<div class="bg-primary/5 px-6 py-4 border-b border-primary/5">
+<h2 class="text-primary dark:text-slate-100 text-lg font-bold">Order Summary</h2>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Plan</span>
+<span class="text-slate-900 dark:text-white font-medium">Pro Unlimited (Yearly)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Amount Paid</span>
+<span class="text-primary dark:text-accent-gold font-bold">BDT 17,250 <span class="text-xs font-normal text-slate-400">(incl. VAT)</span></span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Transaction ID</span>
+<span class="text-slate-900 dark:text-white font-mono text-sm">#GA-PRO-88291</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Date</span>
+<span class="text-slate-900 dark:text-white text-sm">February 24, 2026</span>
+</div>
+</div>
+</div>
+<!-- Pro Benefits Quick-Start Grid -->
+<div class="flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold px-1">Your New Pro Powers</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 bg-white dark:bg-slate-900/50 rounded-lg border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary dark:text-accent-gold">speed</span>
+<p class="text-sm font-bold">Priority Dispatch</p>
+<span class="text-[10px] text-green-600 font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-900/50 rounded-lg border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary dark:text-accent-gold">query_stats</span>
+<p class="text-sm font-bold">AI Resale Predictor</p>
+<span class="text-[10px] text-green-600 font-bold uppercase tracking-wider">Unlocked</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-900/50 rounded-lg border border-primary/5 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary dark:text-accent-gold">support_agent</span>
+<p class="text-sm font-bold">Concierge Support</p>
+<span class="text-[10px] text-green-600 font-bold uppercase tracking-wider">24/7 Available</span>
+</div>
+</div>
+</div>
+<!-- Support Footer Note -->
+<div class="flex flex-col items-center gap-3 pt-4 pb-12">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-sm">mail</span>
+<p>A receipt has been sent to your email address.</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                            Need help? <a class="text-primary dark:text-accent-gold font-bold hover:underline" href="#">Contact Pro Support</a>
+</p>
+<!-- Mini Pattern/Divider -->
+<div class="mt-8 opacity-20 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

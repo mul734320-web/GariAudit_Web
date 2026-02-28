@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#240066",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#160f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header / Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark px-6 md:px-20 py-4 sticky top-0 z-50 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-16 pointer-events-none opacity-30"><img src="Wave.avif" alt="" class="w-full h-full object-cover object-bottom" aria-hidden="true"/></div>
+<div class="relative z-10 flex items-center justify-between w-full">
+<a href="landing%20page.html" class="flex items-center gap-3 text-primary dark:text-slate-100">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">GariAudit</h2>
+</a>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined">share</span>
+</button>
+<a href="careers_at_gariaudit.html" class="hidden md:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white font-bold text-sm">
+                    Find an Auditor
+                </a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Portrait of the logged in user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJZ2Hne1lpEWGY9Fk6WnhEKNTeWoCtrUE8tUk9o_wV0XXZvU3dUsxq4vEo869evexMiXui6QxvZcG0Z1C_-9mR92JWeTodcjMCBNRrqBjEgbQRgU9LBly4VY9czh0eFL_-xTwN1bFafX6hSkK4Wjrp_29UVHJE0L8iNEejTXKfW6TpbzShpU6FMElMwMb9fmCnRH7jqDqieLePLLH9RPC9bcNpSZVlzGM3bQsh1ZetbajMtdfsKfGXylJD0m3fbpQ0gR_b25J9ur4");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1024px] mx-auto w-full px-4 md:px-10 py-8">
+<!-- Profile Hero Section -->
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-2xl size-48 md:size-56 shadow-xl border-4 border-white dark:border-slate-800" data-alt="Professional auditor in official GariAudit uniform" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmG1HSVOqFhogfVK6fq5HOwOEg01s3MeHXD0T39bfcvu4tBNwYO4Zcbst6YONlu8uLiTM5lpIi3FpiF7dw9M8y22gUPO3oevqev24Lo3iRtDrqYnLC2PYe0H0p3z_G8SG2NPBH8xNfPL4UiXobmgK_3G1CGy-couY9DZCJaxA4Rq7K0_hnC_2tw-dRgGt4FbTIlCepvdkkkwkLDD7pfJ9mgkVeo1YvJBFTW9Q39Uq5dKK90zLLPbaxv-Ug1OESU_zuLpNcH784gCs");'></div>
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1 shadow-md whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">verified_user</span> Verified Expert
+                    </div>
+</div>
+<div class="flex flex-col flex-1 items-center md:items-start text-center md:text-left gap-2">
+<h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-slate-100">Anwar Hossain</h1>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary/10 text-primary dark:text-primary/30 dark:bg-primary/20 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Senior Certified Auditor</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">Member since 2014</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 max-w-lg mb-4 text-base leading-relaxed">
+                        With over a decade of hands-on experience in automotive forensics, I specialize in identifying hidden structural damage and mechanical failures in Japanese imports.
+                    </p>
+<div class="flex flex-wrap gap-3 justify-center md:justify-start">
+<button class="flex items-center justify-center rounded-xl h-12 px-8 bg-primary text-white font-bold text-base shadow-lg hover:opacity-90 transition-all">
+                            Book an Audit
+                        </button>
+<button class="flex items-center justify-center rounded-xl h-12 px-6 bg-white dark:bg-slate-800 border border-primary/20 text-slate-700 dark:text-slate-200 font-bold text-base shadow-sm">
+                            Message
+                        </button>
+</div>
+</div>
+</div>
+<!-- Trust Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">task_alt</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Audits</p>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">450+</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-yellow-500 mb-2 text-3xl">star_rate</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Average Rating</p>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">4.9/5</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-blue-500 mb-2 text-3xl">analytics</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Accuracy Score</p>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">99%</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Certs and Tools -->
+<div class="lg:col-span-1 flex flex-col gap-8">
+<!-- Expertise Section -->
+<section>
+<h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">workspace_premium</span> Expertise
+                        </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5">
+<span class="material-symbols-outlined text-primary">verified</span>
+<span class="text-sm font-semibold">ASE Master Technician</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5">
+<span class="material-symbols-outlined text-primary">history</span>
+<span class="text-sm font-semibold">10+ Years Experience</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<span class="text-sm font-semibold">Japanese Import Expert</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-primary/5">
+<span class="material-symbols-outlined text-primary">engineering</span>
+<span class="text-sm font-semibold">Hybrid System Specialist</span>
+</div>
+</div>
+</section>
+<!-- Equipment Section -->
+<section>
+<h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">construction</span> Professional Tools
+                        </h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-4 bg-primary/5 dark:bg-primary/20 rounded-xl flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+<span class="text-[11px] font-bold uppercase">OBD II Scanner</span>
+</div>
+<div class="p-4 bg-primary/5 dark:bg-primary/20 rounded-xl flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-primary">straighten</span>
+<span class="text-[11px] font-bold uppercase">Paint Depth Gauge</span>
+</div>
+<div class="p-4 bg-primary/5 dark:bg-primary/20 rounded-xl flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-primary">flashlight_on</span>
+<span class="text-[11px] font-bold uppercase">Endoscope Camera</span>
+</div>
+<div class="p-4 bg-primary/5 dark:bg-primary/20 rounded-xl flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-primary">thermostat</span>
+<span class="text-[11px] font-bold uppercase">Thermal Imaging</span>
+</div>
+</div>
+</section>
+<!-- Badge of Authority -->
+<div class="bg-primary text-white p-6 rounded-2xl flex items-center gap-4 relative overflow-hidden shadow-xl">
+<div class="flex-1 relative z-10">
+<h4 class="text-lg font-bold">Background Checked</h4>
+<p class="text-xs text-white/70">Verified Identity, Criminal Records &amp; Professional Standing.</p>
+</div>
+<div class="size-16 bg-white/10 rounded-full flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined text-4xl">shield_person</span>
+</div>
+<!-- Abstract bg pattern -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+</div>
+</div>
+<!-- Right Column: Recent Feedback -->
+<div class="lg:col-span-2">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">reviews</span> Verified Client Feedback
+                    </h3>
+<div class="space-y-6">
+<!-- Review Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center font-bold text-slate-500">RK</div>
+<div>
+<p class="text-sm font-bold">Rahat Khan</p>
+<p class="text-xs text-slate-500">Toyota Aqua 2018 • 2 days ago</p>
+</div>
+</div>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">
+                                "Anwar was incredibly thorough. He caught a repainted door panel that the dealer tried to hide. Saved me from a bad deal. Highly recommend his eye for detail!"
+                            </p>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center font-bold text-slate-500">MS</div>
+<div>
+<p class="text-sm font-bold">Mariam Siddique</p>
+<p class="text-xs text-slate-500">Honda Vezel • 1 week ago</p>
+</div>
+</div>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">
+                                "The audit report was professional and easy to understand. Anwar explained every single point to me. He really knows his hybrids. Top notch service."
+                            </p>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center font-bold text-slate-500">AI</div>
+<div>
+<p class="text-sm font-bold">Asif Iqbal</p>
+<p class="text-xs text-slate-500">Nissan X-Trail • 2 weeks ago</p>
+</div>
+</div>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm italic leading-relaxed">
+                                "Very punctual and professional. Used all the advanced tools like paint depth gauge and scanner. I felt much more confident buying the car after his audit."
+                            </p>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-primary/20 rounded-2xl text-primary font-bold hover:bg-primary/5 transition-colors">
+                            View All 450+ Reviews
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-primary/10 py-10 mt-12">
+<div class="max-w-[1024px] mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 text-slate-400">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+</svg>
+</div>
+<span class="font-bold">GariAudit</span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 GariAudit. All auditors are independent certified professionals.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">brand_awareness</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">alternate_email</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
